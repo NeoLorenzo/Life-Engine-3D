@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ec9993c629b3d46834c285d1a6fa43, type: 3}
+  m_Name: ResourceRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::LifeEngine.World.ResourceRegistry
+  resources:
+  - type: 1
+    visualPrefab: {fileID: 7223079279839087558, guid: 0435039a2aa390b45b18eb758c0f5fae, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: 0435039a2aa390b45b18eb758c0f5fae, type: 3}
+  - type: 2
+    visualPrefab: {fileID: 7223079279839087558, guid: 3f211120e4dfb24449630aec5fe0b86d, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: 3f211120e4dfb24449630aec5fe0b86d, type: 3}
+  - type: 3
+    visualPrefab: {fileID: 7223079279839087558, guid: 58567d051e48242439ce7041f41827b0, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: 58567d051e48242439ce7041f41827b0, type: 3}
+  - type: 4
+    visualPrefab: {fileID: 7223079279839087558, guid: a210dcfa3f7b2d340a3c1b3006314e72, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: a210dcfa3f7b2d340a3c1b3006314e72, type: 3}
+  - type: 5
+    visualPrefab: {fileID: 7223079279839087558, guid: 8d2762330929843458c9719be0d2996d, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: 8d2762330929843458c9719be0d2996d, type: 3}
+  - type: 6
+    visualPrefab: {fileID: 7223079279839087558, guid: d78f59d2f1ce5f643ba37b51ca0f659a, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: d78f59d2f1ce5f643ba37b51ca0f659a, type: 3}
+  - type: 7
+    visualPrefab: {fileID: 7223079279839087558, guid: a1e035729a2025149937a896bceed6a7, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: a1e035729a2025149937a896bceed6a7, type: 3}
+  - type: 8
+    visualPrefab: {fileID: 7223079279839087558, guid: b59f3979c81d42142beddaf9d31cbb25, type: 3}
+    worldPrefab: {fileID: 7223079279839087558, guid: b59f3979c81d42142beddaf9d31cbb25, type: 3}
+  tools:
+  - toolName: Basic_Axe
+    visualPrefab: {fileID: 4032477189162718835, guid: 73a81220f0d5da442870bc3e1a5375ef, type: 3}
+  recipes:
+  - name: Break Stick
+    input: 5
+    inputQuantity: 1
+    outputs:
+    - type: 6
+      count: 2
+    duration: 1
+  - name: Split Log 2
+    input: 2
+    inputQuantity: 1
+    outputs:
+    - type: 1
+      count: 2
+    duration: 1
+  - name: Split Log 3
+    input: 3
+    inputQuantity: 1
+    outputs:
+    - type: 2
+      count: 1
+    - type: 1
+      count: 1
+    duration: 1
+  - name: Split Log 4 to 3+1
+    input: 4
+    inputQuantity: 1
+    outputs:
+    - type: 3
+      count: 1
+    - type: 1
+      count: 1
+    duration: 1
+  - name: Split Log 4 to 2x2
+    input: 4
+    inputQuantity: 1
+    outputs:
+    - type: 2
+      count: 2
+    duration: 1
+  - name: Sharpen Stone
+    input: 7
+    inputQuantity: 2
+    outputs:
+    - type: 8
+      count: 1
+    - type: 7
+      count: 1
+    duration: 5
+  - name: Break Stick 4
+    input: 8
+    inputQuantity: 1
+    outputs:
+    - type: 7
+      count: 1
+    - type: 6
+      count: 1
+    duration: 1
+  - name: Break Stick 3
+    input: 7
+    inputQuantity: 1
+    outputs:
+    - type: 5
+      count: 1
+    - type: 6
+      count: 1
+    duration: 1
+  - name: Break Stick 2
+    input: 5
+    inputQuantity: 1
+    outputs:
+    - type: 6
+      count: 1
+    - type: 6
+      count: 1
+    duration: 1
