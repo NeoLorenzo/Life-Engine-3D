@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 409dee3f6205f904ea461e5031d5061e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 215843
+  packageName: iStep
+  packageVersion: 1.3.11
+  assetPath: Assets/_HoaxGames/iStep/Scripts/GlobalIKTargetCorrector.cs
+  uploadId: 687301
