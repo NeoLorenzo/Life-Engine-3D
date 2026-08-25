@@ -15,6 +15,7 @@ namespace LifeEngine.SimulatedHumans
         [Header("Stuck Detection")]
         public float stuckDistanceThreshold = 0.3f;
         public float stuckTimeThreshold = 1.0f;
+        public float destinationChangeThreshold = 0.3f;
 
         [Header("Local Avoidance")]
         public float avoidanceRadius = 1.5f;
@@ -29,6 +30,9 @@ namespace LifeEngine.SimulatedHumans
         private float stuckTimer;
         private float lastDistanceToTarget;
         private int consecutiveStuckCount = 0;
+        private bool isCurrentlyStuck = false;
+        private Vector3 baselineDestination;
+        private bool hasBaselineDestination = false;
         
         private float rescueActiveTimer = 0f;
         private Vector3 rescueNudgeDir = Vector3.zero;
@@ -199,15 +203,13 @@ namespace LifeEngine.SimulatedHumans
                 lastDesiredVelocity = vel;
 
                 // Check for stuck state more frequently during movement
-                if (CheckIfStuck())
-                {
-                    PerformRescue();
-                }
+                UpdateStuckDetection();
             }
             else
             {
                 rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
                 lastDesiredVelocity = Vector3.zero;
+                ResetStuckTracking();
             }
 
             // --- VISUAL DIAGNOSTICS ---
@@ -281,13 +283,22 @@ namespace LifeEngine.SimulatedHumans
             {
                 agent.ResetPath();
             }
+            hasBaselineDestination = false;
+            ResetStuckTracking();
         }
 
         public bool SetDestination(Vector3 destination)
         {
             if (!IsAgentReady()) return false;
             
-            ResetStuckTracking();
+            bool destinationChanged = !hasBaselineDestination || Vector3.Distance(baselineDestination, destination) > destinationChangeThreshold;
+            if (destinationChanged)
+            {
+                baselineDestination = destination;
+                hasBaselineDestination = true;
+                ResetStuckTracking();
+            }
+
             return agent.SetDestination(destination);
         }
 
@@ -327,20 +338,26 @@ namespace LifeEngine.SimulatedHumans
             return length;
         }
 
-        /// <summary>
-        /// Checks if the agent has been stuck trying to move to a destination.
-        /// Useful during fleeing or navigation where rapid replanning is needed.
-        /// </summary>
+        public bool IsCurrentlyStuck => isCurrentlyStuck;
+
+        public int GetConsecutiveStuckCount() => consecutiveStuckCount;
+        
+        public void ClearStuckCount()
+        {
+            consecutiveStuckCount = 0;
+            isCurrentlyStuck = false;
+        }
+
         /// <summary>
         /// Industry Standard: Progress-Based Stuck Detection
-        /// Detects if we are failing to reduce distance to target, even if jittering.
+        /// Evaluated internally in FixedUpdate. Detects if we are failing to reduce distance to target.
         /// </summary>
-        public bool CheckIfStuck()
+        private void UpdateStuckDetection()
         {
             if (!agent.hasPath || agent.pathPending || HasReachedDestination())
             {
                 ResetStuckTracking();
-                return false;
+                return;
             }
 
             stuckTimer += Time.fixedDeltaTime;
@@ -348,7 +365,8 @@ namespace LifeEngine.SimulatedHumans
             // Every 0.4 seconds, check if we've actually made any progress toward the goal
             if (stuckTimer >= 0.4f)
             {
-                float currentDist = Vector3.Distance(rb.position, agent.destination);
+                Vector3 targetPos = hasBaselineDestination ? baselineDestination : agent.destination;
+                float currentDist = Vector3.Distance(rb.position, targetPos);
                 float progress = lastDistanceToTarget - currentDist;
                 
                 stuckTimer = 0f;
@@ -359,24 +377,25 @@ namespace LifeEngine.SimulatedHumans
                 if (progress < 0.05f && rb.linearVelocity.magnitude < 0.2f)
                 {
                     consecutiveStuckCount++;
-                    return true;
+                    isCurrentlyStuck = true;
+                    PerformRescue();
+                    return;
                 }
                 
                 consecutiveStuckCount = 0;
+                isCurrentlyStuck = false;
             }
-
-            return false;
         }
-
-        public int GetConsecutiveStuckCount() => consecutiveStuckCount;
-        
-        public void ClearStuckCount() => consecutiveStuckCount = 0;
 
         private void ResetStuckTracking()
         {
             stuckTimer = 0f;
-            lastDistanceToTarget = (agent != null && agent.hasPath) ? Vector3.Distance(rb.position, agent.destination) : float.MaxValue;
+            Vector3 targetPos = hasBaselineDestination ? baselineDestination : ((agent != null && agent.hasPath) ? agent.destination : Vector3.zero);
+            lastDistanceToTarget = (hasBaselineDestination || (agent != null && agent.hasPath))
+                ? Vector3.Distance(rb != null ? rb.position : transform.position, targetPos)
+                : float.MaxValue;
             consecutiveStuckCount = 0;
+            isCurrentlyStuck = false;
         }
 
 

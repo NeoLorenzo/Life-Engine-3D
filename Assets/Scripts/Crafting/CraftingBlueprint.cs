@@ -80,24 +80,29 @@ namespace LifeEngine.Crafting
 
         private bool isCompleted = false;
 
-        public void AddResource(ResourceType type, int amount)
+        public int AddResource(ResourceType type, int amount)
         {
-            if (isCompleted) return;
+            if (amount <= 0 || isCompleted) return 0;
 
             foreach (var req in requirements)
             {
                 if (req.type == type && !req.IsSatisfied)
                 {
-                    req.amountCurrent = Mathf.Min(req.amountRequired, req.amountCurrent + amount);
+                    int needed = req.amountRequired - req.amountCurrent;
+                    int accepted = Mathf.Min(needed, amount);
+                    
+                    req.amountCurrent += accepted;
                     req.RefreshVisuals();
                     
                     if (IsComplete())
                     {
                         Complete();
                     }
-                    return;
+                    return accepted;
                 }
             }
+
+            return 0;
         }
 
         private void Complete()

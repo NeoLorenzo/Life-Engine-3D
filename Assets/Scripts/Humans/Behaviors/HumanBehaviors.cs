@@ -220,7 +220,7 @@ namespace LifeEngine.SimulatedHumans.Behaviors
                 return state;
             }
 
-            if (context.Locomotion.CheckIfStuck())
+            if (context.Locomotion.IsCurrentlyStuck)
             {
                 forceFleeReplan = true;
             }
@@ -1504,8 +1504,11 @@ namespace LifeEngine.SimulatedHumans.Behaviors
             if (blueprint != null)
             {
                 int amount = context.Brain.GetResourceCount(context.CurrentNeededResource);
-                blueprint.AddResource(context.CurrentNeededResource, amount);
-                context.Brain.RemoveResource(context.CurrentNeededResource, amount);
+                int accepted = blueprint.AddResource(context.CurrentNeededResource, amount);
+                if (accepted > 0)
+                {
+                    context.Brain.RemoveResource(context.CurrentNeededResource, accepted);
+                }
 
                 // If the blueprint is now complete (destroyed), clear the context reference
                 if (blueprint == null || blueprint.IsComplete()) 
@@ -1667,15 +1670,13 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override string GetDebugText()
         {
-            return $"Perceived: {context.Brain.perceivedTemperature:F1}°C";
+            if (context.Brain == null) return "No Brain";
+            return $"Perceived: {context.Brain.perceivedTemperature:F1}°C [{context.Brain.currentThermalStatus}]";
         }
 
         public override NodeState Evaluate()
         {
-            // 10% padding logic
-            float threshold = context.Brain.comfortRangeMin * 0.9f;
-
-            if (context.Brain.perceivedTemperature < threshold)
+            if (context.Brain != null && context.Brain.currentThermalStatus == HumanBrain.ThermalStatus.Cold)
             {
                 state = NodeState.Success;
                 return state;

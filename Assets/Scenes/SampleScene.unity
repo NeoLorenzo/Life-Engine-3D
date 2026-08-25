@@ -40381,6 +40381,10 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 8242b18fc7252af44a453bcfefda7e7c, type: 3}
+    - target: {fileID: 3363959073211451928, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4216811390893589812, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
       propertyPath: m_LocalPosition.x
       value: 497.60364
@@ -40420,6 +40424,22 @@ PrefabInstance:
     - target: {fileID: 4216811390893589812, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385213048592549276, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160993430706886959, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844875840977910089, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
+      propertyPath: m_collisionLayerMask.m_Bits
+      value: 9216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573880722327219598, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8056148052705010804, guid: 8966b595876d7e64ea2670ac79788619, type: 3}
       propertyPath: m_Name
