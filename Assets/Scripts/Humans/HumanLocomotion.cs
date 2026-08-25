@@ -27,6 +27,9 @@ namespace LifeEngine.SimulatedHumans
         private Collider[] nearbyColliders = new Collider[10];
 
         // Stuck detection state
+        // HumanLocomotion is the sole owner of stuck detection.
+        // baselineDestination acts as a spatial anchor to prevent continuous behavior tree replans
+        // from wiping out elapsed progress timers unless the target meaningfully shifts (> destinationChangeThreshold).
         private float stuckTimer;
         private float lastDistanceToTarget;
         private int consecutiveStuckCount = 0;
@@ -287,6 +290,11 @@ namespace LifeEngine.SimulatedHumans
             ResetStuckTracking();
         }
 
+        /// <summary>
+        /// Sets the agent's target destination. If the incoming target is within destinationChangeThreshold
+        /// of baselineDestination, the underlying NavMesh path updates without resetting elapsed stuck detection
+        /// progress. A full progress reset only occurs when the target meaningfully moves.
+        /// </summary>
         public bool SetDestination(Vector3 destination)
         {
             if (!IsAgentReady()) return false;

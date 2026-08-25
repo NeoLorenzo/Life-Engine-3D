@@ -80,6 +80,11 @@ namespace LifeEngine.Crafting
 
         private bool isCompleted = false;
 
+        /// <summary>
+        /// Accepts resources toward matching unsatisfied requirements, bounded by needed quantity.
+        /// Returns the exact integer amount absorbed. Callers must only deduct the returned value
+        /// from the delivering agent's inventory to enforce strict resource conservation.
+        /// </summary>
         public int AddResource(ResourceType type, int amount)
         {
             if (amount <= 0 || isCompleted) return 0;

@@ -1,5 +1,9 @@
 # Life Engine Flat Planet Simulation Implementation Plan
 
+> [!NOTE]
+> **Status: Future Implementation Plan**
+> This document describes a future architectural roadmap for a procedural flat planet simulation. The systems, APIs, and components detailed here (e.g., `PlanetGenerator`, `TerrainSampler`, tectonic plate modeling, biome Voronoi generation, river networks) are planned additions and are **not** part of the current codebase. For documentation of currently implemented systems, refer to [ARCHITECTURE.md](../ARCHITECTURE.md) and [systems/](../systems/).
+
 This planet generator is an addition to the existing Life Engine project, not a replacement for it. The purpose of this subsystem is to create a realistic flat, square planetary environment in which the current and future life simulation occurs: terrain, climate, water, biomes, resources, navigation surfaces, and ecological constraints.
 
 The existing Life Engine systems should remain first-class:

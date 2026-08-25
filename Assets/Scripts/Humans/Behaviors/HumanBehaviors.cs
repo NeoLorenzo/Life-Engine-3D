@@ -1504,6 +1504,8 @@ namespace LifeEngine.SimulatedHumans.Behaviors
             if (blueprint != null)
             {
                 int amount = context.Brain.GetResourceCount(context.CurrentNeededResource);
+                // Resource Conservation Invariant: The blueprint determines the exact quantity absorbed.
+                // Only deduct 'accepted' so any surplus remains in the agent's inventory.
                 int accepted = blueprint.AddResource(context.CurrentNeededResource, amount);
                 if (accepted > 0)
                 {
@@ -1676,6 +1678,8 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override NodeState Evaluate()
         {
+            // Thermal Authority Invariant: React strictly to HumanBrain.currentThermalStatus
+            // rather than calculating competing temperature thresholds in the behavior node.
             if (context.Brain != null && context.Brain.currentThermalStatus == HumanBrain.ThermalStatus.Cold)
             {
                 state = NodeState.Success;

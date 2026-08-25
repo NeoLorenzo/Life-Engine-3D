@@ -222,6 +222,11 @@ namespace LifeEngine.SimulatedHumans
         }
 
 
+        /// <summary>
+        /// Thermal Authority Invariant: Sole authoritative system for calculating perceived body temperature,
+        /// evaluating 5-point silhouette shade, accumulating heat source bonuses, and transitioning
+        /// currentThermalStatus with a 2°C hysteresis deadband.
+        /// </summary>
         private void UpdateThermalState()
         {
             if (World.EnvironmentManager.Instance != null)
