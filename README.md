@@ -1,94 +1,187 @@
 # Life Engine 3D
 
-**Life Engine 3D** is an advanced 3D simulation of virtual humans powered by a custom behavior tree AI system in Unity. Agents interact with a dynamic environment to satisfy metabolic needs, seek thermal comfort, gather resources, craft tools, and build structures.
+**Life Engine 3D** is an experimental 3D artificial-life simulation built in Unity. Autonomous human agents perceive and remember their environment, manage physiological needs, seek thermal comfort and shelter, gather resources, craft tools, and interact with a dynamic world through a custom behavior-tree architecture.
 
----
+The project explores how relatively simple local rules, drives, perception, memory, and physical constraints can produce complex agent behavior.
 
-## 🛠️ Core Systems Architecture
+## Current Capabilities
+
+* Autonomous agents driven by a custom priority-based behavior tree
+* Hunger and sleep modeled through internal metabolic variables
+* Temperature perception, shade detection, and thermal-comfort behavior
+* Vision, hearing, threat memory, and environmental perception
+* Physics-based locomotion using NavMesh pathfinding and custom steering
+* Resource gathering, tree felling, and item handling
+* Tool crafting and multi-output resource conversion
+* Shelter seeking, campfire use, fleeing, eating, sleeping, and wandering
+* Adjustable simulation speed for observing behavior at accelerated timescales
+
+## Architecture
 
 ```mermaid
 graph TD
-    HB[HumanBrain] --> BT[Behavior Tree Engine]
+    HB[HumanBrain] --> BT[Behavior Tree]
     HB --> HL[HumanLocomotion]
     HB --> HP[HumanPerception]
     HB --> HM[HumanMemory]
-    
+
     HP --> HM
     BT --> HL
     BT --> HP
     BT --> HM
 ```
 
-### 1. 🧠 Human Brain (Orchestration & Drives)
-The [`HumanBrain.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanBrain.cs) component acts as the central coordinator for simulated human agents. It manages metabolic variables, evaluates local environment factors, and updates agent states.
-*   **Metabolic Drives**:
-    *   **Adenosine (Sleep)**: Accumulates at a rate of `5.625` nM per in-game hour while awake, and clears at `11.25` nM per hour while sleeping. When high, agents are driven to seek shelter and sleep.
-    *   **Ghrelin (Hunger)**: Accumulates at `140` pg/mL per hour, triggering food-seeking behaviors when passing the hunger threshold of `1200`.
-*   **Thermal Comfort & Hysteresis**:
-    *   Perceived temperature ranges between comfort bounds (default `18°C` to `26°C`).
-    *   **Shade Detection**: When in daylight, a 5-point raycast silhouette check (Head, Center, Left/Right Shoulders, Feet) is projected towards the sun direction. If all 5 points are blocked by walls or tall trees, the agent is considered in shade, dropping perceived temperature by `10°C`.
-    *   **Hysteresis Filtering**: Ambient temperature changes are interpolated smoothly (`Mathf.MoveTowards`) with a `2°C` buffer zone to prevent rapid, unstable state transitions.
+[`HumanBrain.cs`](Assets/Scripts/Humans/HumanBrain.cs) acts as the central coordinator for each simulated human. The behavior tree determines what an agent is currently trying to do, while locomotion, perception, and memory provide the systems required to execute those decisions.
 
-### 2. 🏃 Human Locomotion & Physics Steering
-The [`HumanLocomotion.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanLocomotion.cs) component features an industry-standard navigation system decoupled from Unity's default agent movement to handle simulations at high speed multipliers (up to 8x).
-*   **Decoupled NavMeshAgent**: `updatePosition` and `updateRotation` are disabled. The `NavMeshAgent` is used purely as an invisible path calculator.
-*   **Corridor Flaring**: Uses `NavMesh.FindClosestEdge` to push steering targets `0.25m` away from walls if agents get within `0.45m` of edges, preventing clipping.
-*   **Predictive Wall Swerve**: Utilizes left/right bumper rays (angled at `35°` out to `0.65m`) to detect obstacles and steer away dynamically.
-*   **Local Repulsion**: Nearby agents are detected using `Physics.OverlapSphereNonAlloc` and exert horizontal repulsion forces to prevent overlapping.
-*   **Glide Stabilization**: Blends velocity profiles (30% new, 70% old) acting as a low-pass filter to eliminate high-frequency physics jitter.
-*   **Hard Position Clamping**: Clamps the Rigidbody position to the nearest NavMesh position via `NavMesh.SamplePosition` if drift occurs.
-*   **Progress-Based Stuck Detection & Rescue Nudges**: Checks progress every `0.4s`. If distance to target hasn't decreased by `0.05m` and physical velocity is `< 0.2m/s`, it initiates a **Rescue Nudge** (micro-teleport perpendicular to current direction + path recalculation) to break solver locks.
+## Agent Systems
 
-### 3. 👁️ Perception & Short-Term Memory
-Simulated humans scan and remember their environment using specialized sensory components.
-*   **Perception ([`HumanPerception.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanPerception.cs))**:
-    *   **Sights & Angle**: Scans a radius of `15m` across a `200°` Field of View.
-    *   **LOS Obstruction Raycasting**: Performs raycasts from eye-level (`1.5m`) using dynamic height offsets depending on target types (e.g. `0.15m` for low items, `0.6m` for tree trunks, `0.8m` for other humans) to prevent incorrect visual blocks.
-    *   **Hearing Radius**: Objects within `2m` are detected in a 360-degree circle regardless of line-of-sight.
-    *   **Ground/Source Scans**: Prioritizes picking up resources already lying on the ground before attempting to fell new trees or bushes.
-*   **Memory ([`HumanMemory.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanMemory.cs))**:
-    *   Remembers threat positions for a duration (default `4.0s`).
-    *   **Position Merging**: Automatically merges threats within `1.0m` of each other to consolidate pathways and prevent redundant memory stacks.
+### Human Brain and Internal Drives
 
----
+[`HumanBrain.cs`](Assets/Scripts/Humans/HumanBrain.cs) manages agent state, physiological drives, environmental evaluation, and high-level behavior.
 
-## 🌳 Resource, Tool & Recipe System
+**Metabolic drives**
 
-The simulated world contains physical resources mapped in the [`ResourceRegistry.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/World/ResourceRegistry.cs) scriptable object.
+* **Adenosine — sleep:** accumulates at `5.625 nM` per in-game hour while awake and clears at `11.25 nM` per hour while sleeping.
+* **Ghrelin — hunger:** accumulates at `140 pg/mL` per hour, with food-seeking behavior triggered after crossing the configured hunger threshold.
 
-*   **Resources (`ResourceType.cs`)**:
-    *   Logs (`Log_1` to `Log_4` representing weights).
-    *   Sticks (`Stick_1` to `Stick_4` representing lengths).
-    *   Stones and Sharpened Stones.
-*   **Recipe Tree Fallbacks**:
-    *   If a specific resource length/weight is needed (e.g., `Stick_2` or `Log_2`), agents automatically evaluate the recipe tree.
-    *   **Multi-Output Conversion**: Agents can collect larger resources (e.g., `Stick_3` or `Log_3`) and split them, yielding the needed item alongside leftover smaller pieces.
+**Thermal comfort**
 
----
+* Default comfort range: `18°C–26°C`
+* Agents evaluate ambient and perceived temperature when deciding whether to seek shade or warmth.
+* A five-point silhouette raycast checks whether the body is fully shaded from direct sunlight.
+* Full shade reduces perceived temperature by `10°C`.
+* Temperature changes are smoothed with `Mathf.MoveTowards` and a `2°C` hysteresis buffer to avoid unstable state switching.
 
-## 🌳 Behavior Tree Hierarchy
+### Locomotion and Physics Steering
 
-The agent evaluates behaviors starting from **Priority 0 (Highest)** down to **Priority 6 (Lowest)**:
+[`HumanLocomotion.cs`](Assets/Scripts/Humans/HumanLocomotion.cs) combines Unity NavMesh pathfinding with custom physical steering.
 
-1.  **Sleep Sequence**: Evaluates adenosine level; navigates to shelter or sleeps in-place.
-2.  **Flee Sequence**: Scans for danger in memory/perception; runs away.
-3.  **Eat Sequence**: Triggers when hungry; scans for food and consumes it.
-4.  **Seek Shelter Sequence**: Searches for shelter when bad weather or night falls.
-5.  **Thermal Comfort**:
-    *   *Seek Shade* if overheating.
-    *   *Seek Warmth* if cold (heats from fires, or initiates campfire crafting).
-6.  **Fell Tree (Test Mode)**: Checks for axes; picks up axes or initiates axe crafting, then chops trees.
-7.  **Wander Sequence**: Wanders within local bounds.
+The `NavMeshAgent` is used primarily for path calculation, while actual movement is handled separately to remain stable at accelerated simulation speeds.
 
----
+Current steering systems include:
 
-## 🛠️ Getting Started
+* **Corridor flaring:** shifts movement away from nearby NavMesh edges to reduce wall clipping.
+* **Predictive wall avoidance:** angled bumper rays detect obstacles before collision.
+* **Local agent repulsion:** nearby humans exert horizontal separation forces to reduce overlap.
+* **Velocity smoothing:** blends movement updates to reduce high-frequency jitter.
+* **NavMesh clamping:** corrects physical drift away from valid navigable space.
+* **Stuck detection:** monitors whether the agent is making meaningful progress toward its target.
+* **Rescue nudges:** applies a small corrective repositioning and recalculates the path when navigation becomes trapped.
 
-### 📋 Prerequisites
-*   Unity Editor (compatible with 3D URP pipelines).
+The system is designed to remain usable at simulation multipliers of up to approximately `8×`.
 
-### 🕹️ How to Run
-1.  Open the project in Unity.
-2.  Open the main scene: `Assets/Scenes/SampleScene.unity`.
-3.  Press the **Play** button in the Editor.
-4.  Use the mouse to select agents in the world to view their active behavior tree state and metabolic levels. Use the UI panel to adjust simulation time-scale.
+### Perception and Memory
+
+[`HumanPerception.cs`](Assets/Scripts/Humans/HumanPerception.cs) controls how agents detect their surroundings.
+
+Current perception includes:
+
+* `15m` visual radius
+* `200°` field of view
+* line-of-sight obstruction raycasts
+* target-specific raycast heights
+* `2m` omnidirectional hearing radius
+* detection of nearby resources, humans, threats, and environmental objects
+* preference for already-dropped resources before harvesting new sources
+
+[`HumanMemory.cs`](Assets/Scripts/Humans/HumanMemory.cs) allows agents to retain information that is no longer directly visible.
+
+Threat positions are remembered temporarily and nearby remembered positions are merged to avoid accumulating redundant observations.
+
+## Resources, Tools, and Recipes
+
+The resource system is defined through [`ResourceRegistry.cs`](Assets/Scripts/World/ResourceRegistry.cs) and [`ResourceType.cs`](Assets/Scripts/World/ResourceType.cs).
+
+Current physical resources include:
+
+* Logs in multiple size classes
+* Sticks in multiple size classes
+* Stones
+* Sharpened stones
+
+Recipes can transform resources into tools or other resources.
+
+The crafting system supports **multi-output conversions**. For example, an agent that needs a smaller piece of wood can process a larger resource while preserving the remaining material as additional outputs rather than destroying the excess.
+
+Agents can therefore reason through simple resource-conversion chains when the exact material required by a task is not immediately available.
+
+## Behavior Tree
+
+Agents evaluate behaviors in priority order.
+
+| Priority | Behavior        | Description                                                          |
+| -------: | --------------- | -------------------------------------------------------------------- |
+|        0 | Sleep           | Seek shelter or sleep when sleep pressure becomes sufficiently high  |
+|        1 | Flee            | React to remembered or currently perceived threats                   |
+|        2 | Eat             | Search for and consume food when hungry                              |
+|        3 | Seek Shelter    | Find shelter in response to environmental conditions                 |
+|        4 | Thermal Comfort | Seek shade when hot or warmth when cold                              |
+|        5 | Fell Tree       | Acquire or craft the required tool and harvest wood                  |
+|        6 | Wander          | Explore the local environment when no higher-priority need is active |
+
+Thermal-comfort behavior can itself lead to additional actions. A cold agent may seek an existing heat source or initiate the resource and crafting chain required to create a campfire.
+
+The behavior tree is intentionally modular: higher-level goals can invoke perception, navigation, resource gathering, and crafting systems rather than implementing those mechanisms independently.
+
+## Project Structure
+
+```text
+Assets/
+├── Scripts/
+│   ├── Humans/
+│   │   ├── Behaviors/
+│   │   ├── HumanBrain.cs
+│   │   ├── HumanLocomotion.cs
+│   │   ├── HumanMemory.cs
+│   │   └── HumanPerception.cs
+│   └── World/
+│       ├── ResourceRegistry.cs
+│       ├── ResourceType.cs
+│       ├── ResourceItem.cs
+│       ├── FellableTree.cs
+│       ├── FruitTree.cs
+│       ├── HeatSource.cs
+│       └── DayNightCycle.cs
+├── Scenes/
+└── ...
+
+Packages/
+ProjectSettings/
+```
+
+## Getting Started
+
+### Requirements
+
+* **Unity `6000.3.12f1`**
+* A system capable of running a Unity 3D project
+
+### Running the Simulation
+
+1. Clone or download the repository.
+2. Open the project in Unity `6000.3.12f1`.
+3. Open `Assets/Scenes/SampleScene.unity`.
+4. Enter Play Mode.
+5. Select human agents to inspect their current internal state and active behavior.
+6. Use the simulation controls to change the time scale and observe behavior over longer periods.
+
+## Project Status
+
+Life Engine 3D is an experimental prototype rather than a finished game or general-purpose artificial-life framework.
+
+The current project focuses on constructing increasingly capable autonomous agents and studying the interactions between:
+
+* internal drives,
+* perception,
+* memory,
+* decision-making,
+* navigation,
+* environmental constraints,
+* resource acquisition,
+* and tool use.
+
+Many systems remain deliberately simplified. The value of the project is primarily in exploring how these components interact and what behaviors emerge as additional constraints and capabilities are introduced.
+
+## License
+
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE).
