@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 887950908847846538}
   - component: {fileID: 1922134766640835617}
   - component: {fileID: 5814016878181243677}
+  - component: {fileID: -8448991062130610402}
   m_Layer: 0
   m_Name: Small Campfire
   m_TagString: Untagged
@@ -106,6 +107,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8448991062130610402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308897033009161784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04544904207dcd94db93f454578bcaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LifeEngine::LifeEngine.Cameras.SkyRevealTarget
+  revealRadius: 2.5
+  drawRing: 1
+  ringRadius: 2.5
+  ringColor: {r: 1, g: 0.6, b: 0.1, a: 0.85}
+  ringWidth: 0.08
+  verticalOffset: 0.05
 --- !u!1001 &60491200701021349
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -44,8 +44,18 @@ graph TD
         BP -->|Spawns Final Object| WO[World Prefabs / Tools / HeatSources]
     end
 
+    subgraph Camera & Visualization
+        SCC[SimulationCameraController] -->|First-Person Head Follow / Hide Renderers| HB
+        SCC -->|Third-Person Yaw Chase| HB
+        SCC -->|Fixed Viewpoint| SCA[SkyCameraAnchor]
+        SRC[SkyRevealController] -->|Uploads Buffers & Toggles Global| TSL[TreeCutoutLit Shader]
+        SRT[SkyRevealTarget] -->|Registers Active Targets & Rings| SRC
+        CCUI[CameraControlsUI] -->|Changes Mode (1, 2, 3)| SCC
+    end
+
     subgraph Inspection & UI
         AS[AgentSelector] -->|Selects Agent & Triggers Visuals| HB
+        AS -->|Notifies Selection| SCC
         BTD[BehaviorTreeDebugger Window] -->|Reads Live Tree Graph| HB
         TCUI[TimeControlsUI] -->|Adjusts Speed & Pauses| TM
     end
@@ -78,6 +88,11 @@ graph TD
 * **[`ResourceRegistry`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/World/ResourceRegistry.cs)**: ScriptableObject database defining resource enums ([`ResourceType`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/World/ResourceType.cs)), visual hand prefabs, physical world drop prefabs, tool mappings, and recipes.
 * **[`CraftingBlueprint`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Crafting/CraftingBlueprint.cs)**: Placed in the world during construction. Manages staged visual feedback, validates resource deliveries, accepts partial quantities, and instantiates the finished prefab upon completion.
 * **[`FellableTree`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/World/FellableTree.cs)** & **[`FruitTree`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/World/FruitTree.cs)**: Interactive harvesting sources that spawn resources upon timed interaction.
+
+### 6. Camera & Visualization
+* **[`SimulationCameraController`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SimulationCameraController.cs)**: Authoritative camera manager supporting First-Person (head bone attachment with eye offset and clean mesh hiding), Third-Person (yaw-stabilized chase view), and Sky (fixed overhead anchor). Detailed in [`docs/systems/camera-and-visualization.md`](docs/systems/camera-and-visualization.md).
+* **[`SkyRevealController`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SkyRevealController.cs)** & **[`SkyRevealTarget`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SkyRevealTarget.cs)**: GPU cutout coordinate uploader and static target registry enabling cylindrical see-through cutouts on [`TreeCutoutLit.shader`](file:///c:/UnityProjects/LifeEngine/Assets/Shaders/Foliage/TreeCutoutLit.shader) in Sky mode.
+* **[`CameraControlsUI`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/UI/CameraControlsUI.cs)**: HUD button and shortcut (`1`, `2`, `3`) manager for seamless perspective switching.
 
 ---
 

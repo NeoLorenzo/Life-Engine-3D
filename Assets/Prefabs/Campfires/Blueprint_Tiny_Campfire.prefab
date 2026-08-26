@@ -53,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8804008589994089346}
   - component: {fileID: 8163874276921559947}
+  - component: {fileID: 4333137599600248443}
   m_Layer: 0
   m_Name: Blueprint_Tiny_Campfire
   m_TagString: Untagged
@@ -127,6 +128,24 @@ MonoBehaviour:
     - {fileID: 3746711313718105901}
     - {fileID: 3492075285992794629}
   finalPrefab: {fileID: 4005003928090681229, guid: b1cdfe9d6ea156d44bb68b6ecbc15e8b, type: 3}
+--- !u!114 &4333137599600248443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005003928090681229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04544904207dcd94db93f454578bcaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LifeEngine::LifeEngine.Cameras.SkyRevealTarget
+  revealRadius: 2.5
+  drawRing: 1
+  ringRadius: 2.5
+  ringColor: {r: 1, g: 0.6, b: 0.1, a: 0.85}
+  ringWidth: 0.08
+  verticalOffset: 0.05
 --- !u!1 &5172192186753865493
 GameObject:
   m_ObjectHideFlags: 0

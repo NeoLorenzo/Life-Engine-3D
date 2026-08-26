@@ -401,6 +401,8 @@ SkinnedMeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -434,9 +436,11 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -775,6 +779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4369455191309817779}
+  - component: {fileID: -2274716812101013861}
   m_Layer: 0
   m_Name: male02_1
   m_TagString: Untagged
@@ -799,6 +804,24 @@ Transform:
   - {fileID: 3458821722751162186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2274716812101013861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507138504148570191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04544904207dcd94db93f454578bcaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LifeEngine::LifeEngine.Cameras.SkyRevealTarget
+  revealRadius: 1.75
+  drawRing: 1
+  ringRadius: 1.75
+  ringColor: {r: 0.2, g: 0.9, b: 1, a: 0.85}
+  ringWidth: 0.08
+  verticalOffset: 0.05
 --- !u!1 &5637333706861436455
 GameObject:
   m_ObjectHideFlags: 0

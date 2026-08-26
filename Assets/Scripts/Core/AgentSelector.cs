@@ -7,27 +7,56 @@ namespace LifeEngine.Core
 {
     public class AgentSelector : MonoBehaviour
     {
+        public static AgentSelector Instance { get; private set; }
         public static event Action<HumanBrain> OnAgentSelected;
 
         private HumanBrain currentlySelected;
+        public HumanBrain CurrentlySelected => currentlySelected;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Update()
         {
             if (Mouse.current == null) return;
 
-            // Select on left click
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
-                Vector2 mousePosition = Mouse.current.position.ReadValue();
-                Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-                
-                if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+                // Prevent raycasting into world when interacting with UI elements
+                if (UnityEngine.EventSystems.EventSystem.current != null &&
+                    UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
                 {
-                    HumanBrain brain = hit.collider.GetComponentInParent<HumanBrain>();
-                    
-                    if (brain != null)
+                    return;
+                }
+
+                Camera cam = Camera.main;
+                if (cam == null) return;
+
+                Vector2 mousePosition = Mouse.current.position.ReadValue();
+                Ray ray = cam.ScreenPointToRay(mousePosition);
+                
+                // Raycast all to allow selecting humans even when standing underneath foliage/trees
+                RaycastHit[] hits = Physics.RaycastAll(ray, 1000f);
+                if (hits != null && hits.Length > 0)
+                {
+                    Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+                    HumanBrain clickedBrain = null;
+                    for (int i = 0; i < hits.Length; i++)
                     {
-                        SelectAgent(brain);
+                        var b = hits[i].collider.GetComponentInParent<HumanBrain>();
+                        if (b != null)
+                        {
+                            clickedBrain = b;
+                            break;
+                        }
+                    }
+
+                    if (clickedBrain != null)
+                    {
+                        SelectAgent(clickedBrain);
                     }
                     else
                     {
@@ -41,23 +70,36 @@ namespace LifeEngine.Core
             }
         }
 
-        private void SelectAgent(HumanBrain brain)
+        public void SelectAgent(HumanBrain brain)
         {
-            if (currentlySelected == brain) return; // Already selected
+            if (brain == null)
+            {
+                ClearSelection();
+                return;
+            }
 
-            ClearSelection();
-
-            currentlySelected = brain;
-            currentlySelected.SetSelected(true);
+            if (currentlySelected != brain)
+            {
+                ClearSelection();
+                currentlySelected = brain;
+                currentlySelected.SetSelected(true);
 
 #if UNITY_EDITOR
-            UnityEditor.Selection.activeGameObject = brain.gameObject;
+                if (!Application.isPlaying)
+                {
+                    UnityEditor.Selection.activeGameObject = brain.gameObject;
+                }
 #endif
+            }
+            else
+            {
+                currentlySelected.SetSelected(true);
+            }
 
             OnAgentSelected?.Invoke(currentlySelected);
         }
 
-        private void ClearSelection()
+        public void ClearSelection()
         {
             if (currentlySelected != null)
             {
@@ -67,7 +109,10 @@ namespace LifeEngine.Core
             currentlySelected = null;
             
 #if UNITY_EDITOR
-            UnityEditor.Selection.activeGameObject = null;
+            if (!Application.isPlaying)
+            {
+                UnityEditor.Selection.activeGameObject = null;
+            }
 #endif
 
             OnAgentSelected?.Invoke(null);

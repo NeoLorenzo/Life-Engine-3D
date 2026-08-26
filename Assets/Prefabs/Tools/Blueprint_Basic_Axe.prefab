@@ -149,6 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 182151220110640153}
   - component: {fileID: 957293132110601530}
+  - component: {fileID: 957293132110601531}
   m_Layer: 0
   m_Name: Blueprint_Basic_Axe
   m_TagString: Untagged
@@ -203,6 +204,24 @@ MonoBehaviour:
     normalVisuals:
     - {fileID: 6873198389960428254}
   finalPrefab: {fileID: 4032477189162718835, guid: 73a81220f0d5da442870bc3e1a5375ef, type: 3}
+--- !u!114 &957293132110601531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032477189162718835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04544904207dcd94db93f454578bcaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LifeEngine::LifeEngine.Cameras.SkyRevealTarget
+  revealRadius: 1.5
+  drawRing: 1
+  ringRadius: 1.5
+  ringColor: {r: 1, g: 0.6, b: 0.1, a: 0.85}
+  ringWidth: 0.08
+  verticalOffset: 0.05
 --- !u!1 &4273649200179159044
 GameObject:
   m_ObjectHideFlags: 0
