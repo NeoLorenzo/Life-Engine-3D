@@ -218,8 +218,9 @@ namespace LifeEngine.SimulatedHumans
 
                 Vector3 targetPos = target.position + Vector3.up * heightOffset; 
                 Vector3 rayDir = targetPos - eyePos;
+                float rayDistance = rayDir.magnitude;
 
-                if (!Physics.Raycast(eyePos, rayDir, dist, obstacleLayer))
+                if (!Physics.Raycast(eyePos, rayDir, rayDistance, obstacleLayer))
                 {
                     return true;
                 }

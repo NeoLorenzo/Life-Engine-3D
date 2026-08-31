@@ -1,0 +1,15 @@
+{
+    "name": "LifeEngine.PlayModeTests",
+    "rootNamespace": "LifeEngine.Tests",
+    "references": ["LifeEngine"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "optionalUnityReferences": ["TestAssemblies"],
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
