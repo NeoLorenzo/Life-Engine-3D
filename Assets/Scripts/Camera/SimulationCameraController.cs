@@ -143,20 +143,6 @@ namespace LifeEngine.Cameras
 
         private void Start()
         {
-            // Ensure all human renderers in the scene are visible on startup
-            var humans = UnityEngine.Object.FindObjectsByType<HumanBrain>(FindObjectsSortMode.None);
-            foreach (var h in humans)
-            {
-                if (h != null)
-                {
-                    var rends = h.GetComponentsInChildren<Renderer>(true);
-                    foreach (var r in rends)
-                    {
-                        if (r != null) r.enabled = true;
-                    }
-                }
-            }
-
             // Start in Sky mode
             SetMode(CameraMode.Sky);
         }
@@ -419,35 +405,23 @@ namespace LifeEngine.Cameras
                 if (human.toolSlot != null && rend.transform.IsChildOf(human.toolSlot)) continue;
                 if (human.resourceSlot != null && rend.transform.IsChildOf(human.resourceSlot)) continue;
 
-                HiddenRenderersState[rend] = true;
+                HiddenRenderersState[rend] = rend.enabled;
                 rend.enabled = false;
             }
         }
 
         private void RestoreHiddenRenderers()
         {
-            if (hiddenHumanBrain != null)
-            {
-                Renderer[] renderers = hiddenHumanBrain.GetComponentsInChildren<Renderer>(true);
-                foreach (var rend in renderers)
-                {
-                    if (rend != null)
-                    {
-                        rend.enabled = true;
-                    }
-                }
-                hiddenHumanBrain = null;
-            }
-
             foreach (var kvp in HiddenRenderersState)
             {
                 if (kvp.Key != null)
                 {
-                    kvp.Key.enabled = true;
+                    kvp.Key.enabled = kvp.Value;
                 }
             }
 
             HiddenRenderersState.Clear();
+            hiddenHumanBrain = null;
         }
     }
 }

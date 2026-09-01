@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Relocated and clarified flat planet simulation roadmap under `docs/plans/planet-implementation-plan.md`.
 
 ### Fixed
+- **First-Person Renderer State**: First-person camera transitions now restore each human renderer's pre-transition enabled state instead of forcing renderers on.
 - **Perception LOS Distance**: Line-of-sight raycasts now use the actual eye-to-target segment length, ensuring obstacles near elevated target points are not skipped.
 - **UI Selection Raycast Bleed**: Added `EventSystem.current.IsPointerOverGameObject()` guard in [`AgentSelector`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Core/AgentSelector.cs) to prevent clicking HUD UI buttons from triggering accidental agent selection or deselection.
 - **Stuck Detection Tracking**: Repeated calls to `HumanLocomotion.SetDestination()` with the same or near-identical destination no longer reset progress timers, preventing agents from endlessly stalling near obstacles.
