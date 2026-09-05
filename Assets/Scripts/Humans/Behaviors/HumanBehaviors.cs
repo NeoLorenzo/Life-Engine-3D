@@ -847,18 +847,19 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override NodeState Evaluate()
         {
-            // 1. Validate existing target (Ensure it matches current filter)
+            // 1. Validate existing target (Ensure it matches current filter and remains perceptible)
             if (context.CurrentTreeTarget != null)
             {
                 bool matchesToolFilter = !requireToolFilter.HasValue || context.CurrentTreeTarget.requiresTool == requireToolFilter.Value;
                 bool matchesResourceFilter = !useResourceFilter || context.CurrentNeededResource == World.ResourceType.None || context.CurrentTreeTarget.DropsResource(context.CurrentNeededResource);
-                if (matchesToolFilter && matchesResourceFilter)
+                bool remainsPerceptible = context.Perception.IsTargetPerceptible(context.CurrentTreeTarget.transform);
+                if (matchesToolFilter && matchesResourceFilter && remainsPerceptible)
                 {
                     state = NodeState.Success;
                     return state;
                 }
 
-                // Target was for a different felling goal, clear it before scanning again.
+                // Target was for a different felling goal or left perception; clear it before scanning again.
                 context.CurrentTreeTarget = null;
             }
 
@@ -1100,11 +1101,15 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override NodeState Evaluate()
         {
-            if (context.TargetTool != null && context.TargetTool.toolName == toolName)
+            if (context.TargetTool != null &&
+                context.TargetTool.toolName == toolName &&
+                context.Perception.IsTargetPerceptible(context.TargetTool.transform))
             {
                 state = NodeState.Success;
                 return state;
             }
+
+            context.TargetTool = null;
 
             if (context.Perception.PerformToolScan(toolName, out World.ToolItem closest))
             {
@@ -1113,7 +1118,6 @@ namespace LifeEngine.SimulatedHumans.Behaviors
             }
             else
             {
-                context.TargetTool = null;
                 state = NodeState.Failure;
             }
 
