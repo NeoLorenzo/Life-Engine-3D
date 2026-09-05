@@ -75,8 +75,7 @@ namespace LifeEngine.Tests
             Assert.That(actual.Count, Is.EqualTo(expected.Length));
             foreach (Vector3 expectedThreat in expected)
             {
-                Assert.That(actual, Has.Some.Matches<Vector3>(candidate =>
-                    (candidate - expectedThreat).sqrMagnitude <= 0.0001f));
+                Assert.That(actual, Does.Contain(expectedThreat));
             }
         }
     }
