@@ -851,46 +851,22 @@ namespace LifeEngine.SimulatedHumans.Behaviors
             if (context.CurrentTreeTarget != null)
             {
                 bool matchesToolFilter = !requireToolFilter.HasValue || context.CurrentTreeTarget.requiresTool == requireToolFilter.Value;
-                if (matchesToolFilter)
+                bool matchesResourceFilter = !useResourceFilter || context.CurrentNeededResource == World.ResourceType.None || context.CurrentTreeTarget.DropsResource(context.CurrentNeededResource);
+                if (matchesToolFilter && matchesResourceFilter)
                 {
                     state = NodeState.Success;
                     return state;
                 }
-                else
-                {
-                    // Target was for a different felling goal (e.g. Tree when we want Bush), clear it.
-                    context.CurrentTreeTarget = null;
-                }
+
+                // Target was for a different felling goal, clear it before scanning again.
+                context.CurrentTreeTarget = null;
             }
 
-            // Fresh scan
-            LifeEngine.World.FellableTree[] all = Object.FindObjectsByType<LifeEngine.World.FellableTree>(FindObjectsSortMode.None);
-            
-            float closestDist = float.MaxValue;
-            LifeEngine.World.FellableTree closest = null;
-
-            foreach (var target in all)
-            {
-                if (target == null) continue;
-
-                // 1. Tool Filter
-                if (requireToolFilter.HasValue && target.requiresTool != requireToolFilter.Value) continue;
-
-                // 2. Resource Filter
-                if (useResourceFilter && context.CurrentNeededResource != World.ResourceType.None)
-                {
-                    if (!target.DropsResource(context.CurrentNeededResource)) continue;
-                }
-
-                float dist = Vector3.Distance(context.Brain.transform.position, target.transform.position);
-                if (dist < closestDist)
-                {
-                    closestDist = dist;
-                    closest = target;
-                }
-            }
-
-            if (closest != null)
+            if (context.Perception.PerformHarvestableSourceScan(
+                requireToolFilter,
+                context.CurrentNeededResource,
+                useResourceFilter,
+                out LifeEngine.World.FellableTree closest))
             {
                 context.CurrentTreeTarget = closest;
                 state = NodeState.Success;
@@ -1130,28 +1106,14 @@ namespace LifeEngine.SimulatedHumans.Behaviors
                 return state;
             }
 
-            World.ToolItem[] tools = Object.FindObjectsByType<World.ToolItem>(FindObjectsSortMode.None);
-            World.ToolItem closest = null;
-            float closestDist = float.MaxValue;
-
-            foreach (var tool in tools)
-            {
-                if (tool.toolName != toolName) continue;
-                float dist = Vector3.Distance(context.Brain.transform.position, tool.transform.position);
-                if (dist < closestDist)
-                {
-                    closestDist = dist;
-                    closest = tool;
-                }
-            }
-
-            if (closest != null)
+            if (context.Perception.PerformToolScan(toolName, out World.ToolItem closest))
             {
                 context.TargetTool = closest;
                 state = NodeState.Success;
             }
             else
             {
+                context.TargetTool = null;
                 state = NodeState.Failure;
             }
 
@@ -1791,26 +1753,7 @@ namespace LifeEngine.SimulatedHumans.Behaviors
                 return state;
             }
 
-            // Find closest tree to stand under
-            LifeEngine.World.FellableTree[] all = Object.FindObjectsByType<LifeEngine.World.FellableTree>(FindObjectsSortMode.None);
-            float closestDist = float.MaxValue;
-            LifeEngine.World.FellableTree closest = null;
-
-            foreach (var tree in all)
-            {
-                // Filter out small bushes (must be > 2m tall to provide real shade)
-                Collider col = tree.GetComponent<Collider>();
-                if (col != null && col.bounds.size.y < 2.0f) continue;
-
-                float dist = Vector3.Distance(context.Brain.transform.position, tree.transform.position);
-                if (dist < closestDist)
-                {
-                    closestDist = dist;
-                    closest = tree;
-                }
-            }
-
-            if (closest != null)
+            if (context.Perception.PerformShadeTreeScan(2.0f, out LifeEngine.World.FellableTree closest))
             {
                 Vector3 sunDir = World.DayNightCycle.Instance.SunDirection;
                 // The shadow position is away from the sun relative to the tree
@@ -1824,6 +1767,7 @@ namespace LifeEngine.SimulatedHumans.Behaviors
                 return state;
             }
 
+            context.CurrentShadeTarget = Vector3.zero;
             state = NodeState.Failure;
             return state;
         }
