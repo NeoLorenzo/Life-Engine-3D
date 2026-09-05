@@ -214,6 +214,11 @@ namespace LifeEngine.SimulatedHumans
             return closestTree != null;
         }
 
+        public bool IsTargetPerceptible(Transform target)
+        {
+            return target != null && CanSeeTarget(target);
+        }
+
         public bool PerformFoodScan(out Transform closestFood)
         {
             closestFood = primaryFood;
