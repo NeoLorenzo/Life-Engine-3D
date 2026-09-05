@@ -133,7 +133,19 @@ The scene requires single instances of:
 ## 6. Testing & Validation
 
 ### Automated Testing
-* **Status**: Automated unit and integration tests are not yet implemented. The `com.unity.test-framework` package is installed and ready for test fixture creation under `Assets/Tests/`.
+Play Mode regression coverage lives under [`Assets/Tests/PlayMode`](file:///c:/UnityProjects/LifeEngine/Assets/Tests/PlayMode) and uses Unity Test Framework `1.6.0`.
+
+The maintained suite currently covers:
+* perception line-of-sight distance and bounded target discovery;
+* threat-memory persistence/expiry;
+* first-person camera renderer-state restoration;
+* resource-conservation behavior for bounded blueprint delivery;
+* locomotion destination-baseline/stuck-progress behavior;
+* destroyed blueprint target safety during resource delivery.
+
+Run the complete Play Mode suite from **Window → General → Test Runner**, select the **PlayMode** tab, and run all tests in the `LifeEngine.PlayModeTests` assembly. Tests should pass from a clean project load and must not leave scene-global or static state behind for subsequent fixtures.
+
+Thermal-state authority remains a manual validation item for now. `HumanBrain.UpdateThermalState()` combines environment-manager temperature, shelter/NavMesh state, registered heat sources, shade raycasts, and time-smoothed runtime state. A deterministic automated test would currently require recreating a substantial scene-specific environment rather than testing the authority boundary in isolation, so thermal calibration/authority should continue to be checked through the runtime workflow below until a smaller stable seam exists.
 
 ### Manual Validation Workflow
 When introducing changes:
@@ -141,3 +153,4 @@ When introducing changes:
 2. **Behavior Tree Inspection**: Open **Window $\rightarrow$ Life Engine $\rightarrow$ Behavior Tree Debugger**, select an active human, and verify proper state transitions (green = `Running`, grey = `Idle`/`Success`/`Failure`).
 3. **High Timescale Stress Test**: Accelerate simulation speed to $8\times$, $16\times$, and $32\times$ using `+`. Verify that physical locomotion remains stable without jitter, wall penetration, or physics solver lock.
 4. **Locomotion Diagnostics**: Enable Gizmos in the Scene View to inspect real-time steering vectors (white desired velocity, green linear velocity, red collision normals).
+5. **Thermal Authority Check**: Exercise shade, shelter, heat-source, and ambient-temperature transitions and verify behavior nodes react to `HumanBrain.currentThermalStatus`/`isInShade` rather than introducing independent temperature thresholds.
