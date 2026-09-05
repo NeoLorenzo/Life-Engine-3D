@@ -57,20 +57,16 @@ This document records the foundational invariants and architectural rules of the
 
 ---
 
-## 6. Agent Knowledge Boundaries & Known Exceptions
+## 6. Agent Knowledge Boundaries
 
-> **Rule**: Agents should observe the world strictly through sensory perception (`HumanPerception`), except where explicitly recorded as technical debt.
+> **Rule**: Agents observe useful world targets through sensory perception (`HumanPerception`) rather than unrestricted scene-wide discovery.
 
 ### Standard Sensory Perception
 * Visual detection requires target proximity $\le 15\text{m}$, horizontal angle within $200^\circ$ FOV, and unobstructed line-of-sight raycasts to target height offsets.
 * Hearing operates omnidirectionally within $2.0\text{m}$.
 * Heat sources are queried via proximity scan against active registered sources.
-
-### Known Exceptions / Technical Debt (Non-Invariants)
-* [`FindHarvestableSourceNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) queries all scene trees via `Object.FindObjectsByType<FellableTree>()`.
-* [`FindToolOnGroundNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) queries all scene tools via `Object.FindObjectsByType<ToolItem>()`.
-* [`FindShadeSpotNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) queries all trees globally via `Object.FindObjectsByType<FellableTree>()`.
-* *Future refactors should route these queries through `HumanPerception` or spatial partitions.*
+* Harvestable sources, dropped tools, and shade-providing trees are selected through bounded `HumanPerception` scans and therefore cannot be chosen solely because they exist elsewhere in the scene.
+* Persistent knowledge beyond the current sensory window must come from an explicit memory subsystem; perception scans themselves do not provide global object knowledge.
 
 ---
 
