@@ -136,6 +136,84 @@ namespace LifeEngine.SimulatedHumans
             return closestResource != null;
         }
 
+        public bool PerformHarvestableSourceScan(
+            bool? requireToolFilter,
+            World.ResourceType resourceType,
+            bool useResourceFilter,
+            out World.FellableTree closestTree)
+        {
+            closestTree = null;
+            int hitCount = Physics.OverlapSphereNonAlloc(transform.position, dangerDetectionRadius, overlapResults, treeLayer);
+            float closestDistanceSqr = float.MaxValue;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                var tree = overlapResults[i].GetComponent<World.FellableTree>();
+                if (tree == null) continue;
+                if (requireToolFilter.HasValue && tree.requiresTool != requireToolFilter.Value) continue;
+                if (useResourceFilter && resourceType != World.ResourceType.None && !tree.DropsResource(resourceType)) continue;
+                if (!CanSeeTarget(tree.transform)) continue;
+
+                float distSqr = (tree.transform.position - transform.position).sqrMagnitude;
+                if (distSqr < closestDistanceSqr)
+                {
+                    closestDistanceSqr = distSqr;
+                    closestTree = tree;
+                }
+            }
+
+            return closestTree != null;
+        }
+
+        public bool PerformToolScan(string toolName, out World.ToolItem closestTool)
+        {
+            closestTool = null;
+            int hitCount = Physics.OverlapSphereNonAlloc(transform.position, dangerDetectionRadius, overlapResults, ~0);
+            float closestDistanceSqr = float.MaxValue;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                var tool = overlapResults[i].GetComponent<World.ToolItem>();
+                if (tool == null || tool.toolName != toolName) continue;
+                if (!CanSeeTarget(tool.transform)) continue;
+
+                float distSqr = (tool.transform.position - transform.position).sqrMagnitude;
+                if (distSqr < closestDistanceSqr)
+                {
+                    closestDistanceSqr = distSqr;
+                    closestTool = tool;
+                }
+            }
+
+            return closestTool != null;
+        }
+
+        public bool PerformShadeTreeScan(float minimumHeight, out World.FellableTree closestTree)
+        {
+            closestTree = null;
+            int hitCount = Physics.OverlapSphereNonAlloc(transform.position, dangerDetectionRadius, overlapResults, treeLayer);
+            float closestDistanceSqr = float.MaxValue;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                var tree = overlapResults[i].GetComponent<World.FellableTree>();
+                if (tree == null) continue;
+
+                Collider collider = tree.GetComponent<Collider>();
+                if (collider != null && collider.bounds.size.y < minimumHeight) continue;
+                if (!CanSeeTarget(tree.transform)) continue;
+
+                float distSqr = (tree.transform.position - transform.position).sqrMagnitude;
+                if (distSqr < closestDistanceSqr)
+                {
+                    closestDistanceSqr = distSqr;
+                    closestTree = tree;
+                }
+            }
+
+            return closestTree != null;
+        }
+
         public bool PerformFoodScan(out Transform closestFood)
         {
             closestFood = primaryFood;
