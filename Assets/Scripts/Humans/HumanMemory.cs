@@ -64,7 +64,8 @@ namespace LifeEngine.SimulatedHumans
         public Vector3 GetLastKnownThreatPosition() => lastKnownThreatPosition;
 
         /// <summary>
-        /// Retrieves an aggregated list of all recently seen threat positions, merging duplicates.
+        /// Retrieves an aggregated list of all currently visible and recently seen threat positions,
+        /// refreshing bounded memory for every currently visible threat before returning the result.
         /// Useful for fleeing from multiple threats or avoiding "hot" areas.
         /// </summary>
         public List<Vector3> GetActiveThreatPositions(List<Vector3> currentlyVisibleThreats)
@@ -75,7 +76,9 @@ namespace LifeEngine.SimulatedHumans
             {
                 for (int i = 0; i < currentlyVisibleThreats.Count; i++)
                 {
-                    AddUniqueThreatPosition(activeThreatPositions, currentlyVisibleThreats[i]);
+                    Vector3 visibleThreat = currentlyVisibleThreats[i];
+                    AddOrRefreshThreat(visibleThreat);
+                    AddUniqueThreatPosition(activeThreatPositions, visibleThreat);
                 }
             }
 
@@ -87,12 +90,6 @@ namespace LifeEngine.SimulatedHumans
                 {
                     AddUniqueThreatPosition(activeThreatPositions, memory.position);
                 }
-            }
-
-            if (activeThreatPositions.Count == 0 && primaryThreat == null && lastKnownThreatPosition != Vector3.zero)
-            {
-                // We lost the threat but still remember its last known spot momentarily.
-                activeThreatPositions.Add(lastKnownThreatPosition);
             }
 
             return activeThreatPositions;
