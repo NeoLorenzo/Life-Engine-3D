@@ -30,13 +30,49 @@ Use the structured specification at:
 
 `<PATH TO ASSET PACK SPEC YAML>`
 
-as the authoritative asset-specific requirements.
+for machine-readable asset requirements such as IDs, dimensions, budgets, source/output paths, seeds, pivots, export settings, and validation settings.
+
+The descriptive brief in this prompt is authoritative for what the asset should look like and how it should be interpreted. Do not duplicate the full visual description into the YAML specification.
 
 If the specification conflicts with a pipeline default, the explicit asset specification wins. If it appears to conflict with a hard validation or safety rule, stop and report the conflict instead of silently ignoring either requirement.
 
 ## Objective
 
-<SHORT DESCRIPTION OF WHAT TO CREATE AND WHERE IT WILL BE USED>
+<DESCRIBE WHAT TO CREATE, WHY IT EXISTS, AND WHERE/HOW IT WILL BE USED IN LIFE ENGINE>
+
+## Visual and construction brief
+
+<DESCRIBE THE REQUIRED SHAPE, PROPORTIONS, STYLE, CONSTRUCTION, MATERIAL APPEARANCE, IMPORTANT FEATURES, AND ANY DETAILS THAT MUST OR MUST NOT BE PRESENT>
+
+Use this section for the substantive asset description rather than encoding prose descriptions into the structured YAML template.
+
+## Reference images
+
+Use the following reference images as visual evidence for the requested assets:
+
+<REFERENCE IMAGE PATHS / URLS / SUPPLIED ATTACHMENTS>
+
+For each reference, determine which role it serves:
+
+- **authoritative geometry / measurement reference** — use it to determine proportions, placement, shape, or construction;
+- **appearance reference** — use it primarily for materials, colors, surface treatment, or style;
+- **context reference** — use it to understand how the asset appears, is positioned, or relates to surrounding objects/environment.
+
+If useful, record the role of each image in task notes or the completion report.
+
+When supplied explicit measurements conflict with apparent proportions in an image, the explicit measurements are authoritative unless this task explicitly says otherwise.
+
+Do not infer hidden geometry with false precision. If something is not visible, measured, or otherwise specified, make the simplest plausible construction consistent with the available evidence and record any meaningful uncertainty in the completion report.
+
+Do not commit copyrighted reference imagery to the repository unless redistribution is appropriate. Use external links, local task inputs, or provenance/reference notes where required by the pipeline rules.
+
+## Measurements and known facts
+
+<LIST ANY IMPORTANT MEASUREMENTS, REAL-WORLD FACTS, OR RELATIONSHIPS THAT REQUIRE EXPLANATION BEYOND THE MACHINE-READABLE DIMENSIONS IN THE YAML>
+
+## Asset-specific constraints
+
+<LIST ANY TASK-SPECIFIC REQUIREMENTS, EXCLUSIONS, OR EXCEPTIONS>
 
 ## Source strategy
 
@@ -72,6 +108,35 @@ Place final pack assets in a clearly named collection and arrange them in a clea
 
 Do not create one `.blend` per variant merely because runtime assets export individually.
 
+## Pipeline tooling
+
+Inspect `asset_pipeline/blender/` before implementing task-specific automation.
+
+Reuse existing pipeline helpers wherever possible.
+
+If required reusable functionality does not yet exist, implement it under `asset_pipeline/blender/` as part of this task rather than duplicating the same mechanics in an asset-specific scratch script.
+
+Functionality that should normally become reusable includes:
+
+- dimension enforcement and measurement;
+- pivot/origin placement;
+- transform normalization;
+- triangle and vertex counting;
+- topology checks;
+- UV and material validation;
+- isolated GLB export;
+- clean re-import validation;
+- preview rendering;
+- structured validation reporting.
+
+Asset-specific modelling or procedural generation logic may live under:
+
+`asset_pipeline/blender/generators/`
+
+Temporary scripts are acceptable during exploration, but any logic required to reproduce or maintain committed assets must be promoted into the repository before completion.
+
+Do not build speculative abstractions merely because they might be useful later. Add reusable infrastructure when the current task actually needs it, and keep it general enough for subsequent asset runs to reuse.
+
 ## Export
 
 Export runtime assets according to the specification.
@@ -104,14 +169,6 @@ Create consistent individual preview renders and, for packs, an overview render 
 
 Previews should prioritize inspection clarity over cinematic presentation.
 
-## Reusable tooling
-
-Where practical, preserve reusable Blender generation, export, preview, and validation logic under:
-
-`asset_pipeline/blender/`
-
-Do not leave important reproducibility logic only in temporary agent scratch directories.
-
 ## Blender MCP behavior
 
 Follow `asset_pipeline/docs/BLENDER_MCP_OPERATIONS.md` exactly.
@@ -130,6 +187,8 @@ At completion, report:
 - dimensions and triangle counts per asset;
 - deterministic seeds where applicable;
 - provenance for external assets;
+- how supplied reference images were used where relevant;
+- any meaningful visual/geometry uncertainty;
 - any warnings or unresolved limitations.
 
 Do not claim completion while any hard validation failure remains.
