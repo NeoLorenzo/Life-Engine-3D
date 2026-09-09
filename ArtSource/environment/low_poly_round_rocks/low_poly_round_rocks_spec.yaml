@@ -1,0 +1,139 @@
+pack:
+  id: low_poly_round_rocks
+  display_name: Low-Poly Round Rocks
+  category: environment
+
+source_strategy:
+  default: generate
+  evaluate_existing_models: false
+  provenance_required: false
+
+source:
+  blend_path: ArtSource/environment/low_poly_round_rocks/source/low_poly_round_rocks.blend
+  collection: Low_Poly_Round_Rocks
+  one_blend_per_pack: true
+
+units: meters
+
+defaults:
+  exact_dimension_tolerance_m: 0.001
+  origin_tolerance_m: 0.0001
+  preferred_max_triangles: 250
+  hard_max_triangles: 400
+  origin: bottom_center
+  rotation: [0, 0, 0]
+  scale: [1, 1, 1]
+  uv_required: true
+  material_required: true
+
+assets:
+  - id: round_rock_01
+    seed: 1001
+    generation_mode: generate
+    dimensions_m: [0.32, 0.28, 0.22]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_01
+    provenance: null
+
+  - id: round_rock_02
+    seed: 1002
+    generation_mode: generate
+    dimensions_m: [0.38, 0.32, 0.19]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_02
+    provenance: null
+
+  - id: round_rock_03
+    seed: 1003
+    generation_mode: generate
+    dimensions_m: [0.44, 0.36, 0.26]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_03
+    provenance: null
+
+  - id: round_rock_04
+    seed: 1004
+    generation_mode: generate
+    dimensions_m: [0.50, 0.42, 0.34]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_01
+    provenance: null
+
+  - id: round_rock_05
+    seed: 1005
+    generation_mode: generate
+    dimensions_m: [0.55, 0.46, 0.36]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_04
+    provenance: null
+
+  - id: round_rock_06
+    seed: 1006
+    generation_mode: generate
+    dimensions_m: [0.62, 0.50, 0.28]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_02
+    provenance: null
+
+  - id: round_rock_07
+    seed: 1007
+    generation_mode: generate
+    dimensions_m: [0.70, 0.58, 0.40]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_03
+    provenance: null
+
+  - id: round_rock_08
+    seed: 1008
+    generation_mode: generate
+    dimensions_m: [0.76, 0.62, 0.46]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_04
+    provenance: null
+
+  - id: round_rock_09
+    seed: 1009
+    generation_mode: generate
+    dimensions_m: [0.86, 0.72, 0.52]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_01
+    provenance: null
+
+  - id: round_rock_10
+    seed: 1010
+    generation_mode: generate
+    dimensions_m: [0.96, 0.80, 0.60]
+    preferred_max_triangles: 250
+    hard_max_triangles: 400
+    material_id: mat_stone_grey_03
+    provenance: null
+
+inspection:
+  layout: grid
+  individual_previews: true
+  overview_preview: true
+
+export:
+  format: glb
+  individual_assets: true
+  output_directory: Assets/Art/environment/low_poly_round_rocks/Models
+  export_at_world_origin: true
+
+validation:
+  clean_reimport: true
+  json_report: ArtSource/environment/low_poly_round_rocks/validation_report.json
+  markdown_report: ArtSource/environment/low_poly_round_rocks/validation_report.md
+
+notes:
+  - Stylized rounded faceted natural rock pack.
+  - Geometry is strictly faceted with flat shading.
+  - Dimension bounds: width 0.25-1.00m, depth 0.20-0.85m, height 0.18-0.65m.
