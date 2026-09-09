@@ -1,25 +1,23 @@
 # Life Engine 3D asset-pack specification template
+#
+# Keep substantive asset descriptions, visual requirements, construction notes,
+# measurements requiring explanation, and reference images in the task prompt.
+# This file is the machine-readable execution/validation template.
 
 pack:
   id: <pack_id>
   display_name: <Pack Name>
   category: <environment/props/etc>
-  description: <what this pack contains and where it is used>
 
 source_strategy:
   default: <generate|model_from_reference|source_existing|source_and_modify|hybrid>
-  search_existing_models_first: false
+  evaluate_existing_models: true
   provenance_required: true
 
 source:
   blend_path: <ArtSource/category/pack/source/pack.blend>
   collection: <Collection_Name>
   one_blend_per_pack: true
-
-style:
-  description: <visual style>
-  shading: <flat|smooth|mixed>
-  reference_notes: <optional>
 
 units: meters
 
@@ -41,8 +39,7 @@ assets:
     dimensions_m: [<x>, <y>, <z>]
     preferred_max_triangles: <number>
     hard_max_triangles: <number>
-    form: <description>
-    material: <description or shared material id>
+    material_id: <shared_material_id|null>
     provenance: null
 
   - id: <asset_02>
@@ -51,8 +48,7 @@ assets:
     dimensions_m: [<x>, <y>, <z>]
     preferred_max_triangles: <number>
     hard_max_triangles: <number>
-    form: <description>
-    material: <description or shared material id>
+    material_id: <shared_material_id|null>
     provenance: null
 
 inspection:
@@ -72,4 +68,4 @@ validation:
   markdown_report: <path>
 
 notes:
-  - <additional asset-specific constraint>
+  - <optional structured-run exception or override; keep descriptive brief in prompt>
