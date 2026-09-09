@@ -46,6 +46,8 @@ Use `templates/ASSET_GENERATION_PROMPT.md` as the standard agent prompt and `tem
 8. **Make procedural work reproducible.** Record seeds and generator parameters where randomness is used.
 9. **Make packs easy to inspect.** Source files should contain a clean inspection layout and overview render.
 10. **Tool failure is not authorization to repair applications or the OS.** Follow the bounded Blender MCP recovery procedure and stop if it fails.
+11. **The structured pack specification is the machine-readable source of truth.** Do not duplicate IDs, dimensions, seeds, budgets, material IDs, or output paths in generator code.
+12. **Do not destroy unrelated Blender state.** Pipeline runs must use isolated contexts and restore the user's original working scene.
 
 ## Standard completion criteria
 
@@ -57,7 +59,10 @@ An asset or pack is complete only when:
 - polygon budgets pass;
 - runtime exports succeed;
 - each runtime export passes clean-scene re-import validation;
+- Unity/runtime validation passes when the exported asset is intended for Unity;
 - requested previews exist;
 - provenance is recorded where relevant;
 - reusable generation/validation logic is preserved in the repository when practical;
 - the final report contains no unresolved hard failures.
+
+For Unity-facing FBX assets, a Blender-only PASS is not full completion. The pack remains incomplete until the Unity validation report passes.

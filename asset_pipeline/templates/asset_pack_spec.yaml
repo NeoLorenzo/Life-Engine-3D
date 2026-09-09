@@ -19,6 +19,10 @@ source:
   collection: <Collection_Name>
   one_blend_per_pack: true
 
+generator:
+  module: <generators.module_name|null>
+  entrypoint: <generate_pack|null>
+
 units: meters
 
 defaults:
@@ -57,7 +61,7 @@ inspection:
   overview_preview: true
 
 export:
-  format: glb
+  format: fbx
   individual_assets: true
   output_directory: <Assets/Art/category/pack/Models>
   export_at_world_origin: true
@@ -66,6 +70,8 @@ validation:
   clean_reimport: true
   json_report: <path>
   markdown_report: <path>
+  unity_manifest: <path>
+  unity_report: <path>
 
 notes:
   - <optional structured-run exception or override; keep descriptive brief in prompt>

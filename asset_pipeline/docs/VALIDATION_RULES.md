@@ -81,9 +81,30 @@ For each imported asset verify:
 - materials survived export;
 - import completed without errors.
 
+The validator must inspect all imported objects, not merely count mesh objects.
+
+Imported validation datablocks must be cleaned up after each run so repeated validation does not accumulate `.001`/`.002` resources or alter later results.
+
 A file existing on disk is not sufficient validation.
 
-## 6. Visual inspection
+## 6. Unity runtime validation
+
+FBX assets placed under `Assets/` must also be validated after Unity imports them.
+
+At minimum verify:
+
+- Unity successfully imports the FBX as an asset;
+- the expected mesh count is present;
+- no unintended cameras, lights, or skinned meshes are present for static props;
+- physical dimensions remain correct after Blender-to-Unity axis conversion;
+- triangle budgets remain valid;
+- the runtime pivot semantics remain correct;
+- required materials survive import;
+- the imported root transform is suitable for runtime placement.
+
+The Blender re-import result and Unity import result are separate validation stages. Passing one does not imply the other passed.
+
+## 7. Visual inspection
 
 Inspect individual previews and the pack overview for:
 
@@ -97,7 +118,7 @@ Inspect individual previews and the pack overview for:
 
 Visual review complements numerical validation; it does not replace it.
 
-## 7. Failure policy
+## 8. Failure policy
 
 Any hard validation failure means the asset is incomplete.
 
@@ -105,11 +126,13 @@ Correct the asset and rerun validation.
 
 Do not silently convert hard failures into warnings. Do not claim completion while unresolved hard failures remain.
 
-## 8. Validation outputs
+## 9. Validation outputs
 
-Prefer producing both:
+Prefer producing:
 
-- structured machine-readable results (`.json`);
-- a concise human-readable Markdown report.
+- structured Blender/source/runtime results (`.json`);
+- a concise human-readable Markdown report;
+- a Unity validation manifest for FBX assets under `Assets/`;
+- a Unity-side validation report after Unity imports those assets.
 
-Use `templates/validation_report.md` as the default report shape.
+Validation reports must derive provenance/license information from the asset specification or provenance record. Validators must not invent licensing terms.

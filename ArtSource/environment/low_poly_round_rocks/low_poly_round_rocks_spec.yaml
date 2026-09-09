@@ -13,6 +13,10 @@ source:
   collection: Low_Poly_Round_Rocks
   one_blend_per_pack: true
 
+generator:
+  module: generators.low_poly_round_rocks
+  entrypoint: generate_pack
+
 units: meters
 
 defaults:
@@ -31,8 +35,6 @@ assets:
     seed: 1001
     generation_mode: generate
     dimensions_m: [0.32, 0.28, 0.22]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_01
     provenance: null
 
@@ -40,8 +42,6 @@ assets:
     seed: 1002
     generation_mode: generate
     dimensions_m: [0.38, 0.32, 0.19]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_02
     provenance: null
 
@@ -49,8 +49,6 @@ assets:
     seed: 1003
     generation_mode: generate
     dimensions_m: [0.44, 0.36, 0.26]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_03
     provenance: null
 
@@ -58,8 +56,6 @@ assets:
     seed: 1004
     generation_mode: generate
     dimensions_m: [0.50, 0.42, 0.34]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_01
     provenance: null
 
@@ -67,8 +63,6 @@ assets:
     seed: 1005
     generation_mode: generate
     dimensions_m: [0.55, 0.46, 0.36]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_04
     provenance: null
 
@@ -76,8 +70,6 @@ assets:
     seed: 1006
     generation_mode: generate
     dimensions_m: [0.62, 0.50, 0.28]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_02
     provenance: null
 
@@ -85,8 +77,6 @@ assets:
     seed: 1007
     generation_mode: generate
     dimensions_m: [0.70, 0.58, 0.40]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_03
     provenance: null
 
@@ -94,8 +84,6 @@ assets:
     seed: 1008
     generation_mode: generate
     dimensions_m: [0.76, 0.62, 0.46]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_04
     provenance: null
 
@@ -103,8 +91,6 @@ assets:
     seed: 1009
     generation_mode: generate
     dimensions_m: [0.86, 0.72, 0.52]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_01
     provenance: null
 
@@ -112,8 +98,6 @@ assets:
     seed: 1010
     generation_mode: generate
     dimensions_m: [0.96, 0.80, 0.60]
-    preferred_max_triangles: 250
-    hard_max_triangles: 400
     material_id: mat_stone_grey_03
     provenance: null
 
@@ -123,7 +107,7 @@ inspection:
   overview_preview: true
 
 export:
-  format: glb
+  format: fbx
   individual_assets: true
   output_directory: Assets/Art/environment/low_poly_round_rocks/Models
   export_at_world_origin: true
@@ -132,6 +116,8 @@ validation:
   clean_reimport: true
   json_report: ArtSource/environment/low_poly_round_rocks/validation_report.json
   markdown_report: ArtSource/environment/low_poly_round_rocks/validation_report.md
+  unity_manifest: ArtSource/environment/low_poly_round_rocks/unity_validation_manifest.json
+  unity_report: ArtSource/environment/low_poly_round_rocks/unity_validation_report.json
 
 notes:
   - Stylized rounded faceted natural rock pack.

@@ -1,166 +1,38 @@
 """
-low_poly_round_rocks.py
-Deterministic procedural generator for the 'low_poly_round_rocks' asset pack.
-Generates 10 distinct, naturally irregular, rounded, visibly faceted low-poly rocks.
-Adheres strictly to triangle budgets (preferred <= 250, hard max 400),
-exact target dimensions (+-0.001 m), and bottom-center pivots.
+Deterministic procedural generator for the low_poly_round_rocks asset pack.
+
+Structured asset values (IDs, dimensions, seeds, budgets, material IDs) come
+from the pack YAML. This module contains only rock-specific generation recipes
+and visual material definitions.
 """
+
+from __future__ import annotations
 
 import math
 import random
-import bpy
+
 import bmesh
+import bpy
 from mathutils import Vector
 
-# Import common utilities
-from common.geometry import enforce_dimensions_and_origin, count_triangles, ensure_flat_shading
-from common.materials import get_or_create_pbr_material, assign_material, unwrap_smart_uvs
+from common.geometry import count_triangles, enforce_dimensions_and_origin, ensure_flat_shading
+from common.materials import assign_material, get_or_create_pbr_material, unwrap_smart_uvs
+from common.spec import merge_asset_defaults
 
-# Authoritative specification of the 10 rocks
-ROCK_CONFIGS = [
-    {
-        "id": "round_rock_01",
-        "seed": 1001,
-        "name": "Small Compact River Pebble",
-        "dimensions_m": (0.32, 0.28, 0.22),
-        "num_pts": 55,
-        "roundness": 0.88,
-        "asymmetry": (0.03, -0.03, 0.04),
-        "flatness_bottom": 0.25,
-        "num_cuts": 2,
-        "cut_depth": 0.86,
-        "mat_id": "mat_stone_grey_01",
-        "grid_pos": (-2.2, 0.65, 0.0)
-    },
-    {
-        "id": "round_rock_02",
-        "seed": 1002,
-        "name": "Small Flattened Skipping Stone",
-        "dimensions_m": (0.38, 0.32, 0.19),
-        "num_pts": 58,
-        "roundness": 0.84,
-        "asymmetry": (-0.02, 0.02, 0.02),
-        "flatness_bottom": 0.55,
-        "num_cuts": 3,
-        "cut_depth": 0.84,
-        "mat_id": "mat_stone_grey_02",
-        "grid_pos": (-1.1, 0.65, 0.0)
-    },
-    {
-        "id": "round_rock_03",
-        "seed": 1003,
-        "name": "Small Asymmetrical Field Stone",
-        "dimensions_m": (0.44, 0.36, 0.26),
-        "num_pts": 65,
-        "roundness": 0.78,
-        "asymmetry": (-0.06, 0.05, -0.04),
-        "flatness_bottom": 0.32,
-        "num_cuts": 3,
-        "cut_depth": 0.82,
-        "mat_id": "mat_stone_grey_03",
-        "grid_pos": (0.0, 0.65, 0.0)
-    },
-    {
-        "id": "round_rock_04",
-        "seed": 1004,
-        "name": "Medium Rounded Egg Rock",
-        "dimensions_m": (0.50, 0.42, 0.34),
-        "num_pts": 70,
-        "roundness": 0.86,
-        "asymmetry": (0.04, -0.04, 0.03),
-        "flatness_bottom": 0.28,
-        "num_cuts": 3,
-        "cut_depth": 0.85,
-        "mat_id": "mat_stone_grey_01",
-        "grid_pos": (1.1, 0.65, 0.0)
-    },
-    {
-        "id": "round_rock_05",
-        "seed": 1005,
-        "name": "Medium Chunky Ground Stone",
-        "dimensions_m": (0.55, 0.46, 0.36),
-        "num_pts": 75,
-        "roundness": 0.76,
-        "asymmetry": (0.05, 0.04, -0.05),
-        "flatness_bottom": 0.36,
-        "num_cuts": 4,
-        "cut_depth": 0.80,
-        "mat_id": "mat_stone_grey_04",
-        "grid_pos": (2.2, 0.65, 0.0)
-    },
-    {
-        "id": "round_rock_06",
-        "seed": 1006,
-        "name": "Medium Low-Profile Rounded Mound",
-        "dimensions_m": (0.62, 0.50, 0.28),
-        "num_pts": 75,
-        "roundness": 0.82,
-        "asymmetry": (-0.03, -0.04, 0.03),
-        "flatness_bottom": 0.48,
-        "num_cuts": 3,
-        "cut_depth": 0.83,
-        "mat_id": "mat_stone_grey_02",
-        "grid_pos": (-2.6, -0.65, 0.0)
-    },
-    {
-        "id": "round_rock_07",
-        "seed": 1007,
-        "name": "Broad Rounded Terrain Boulder",
-        "dimensions_m": (0.70, 0.58, 0.40),
-        "num_pts": 82,
-        "roundness": 0.80,
-        "asymmetry": (0.04, 0.05, 0.05),
-        "flatness_bottom": 0.32,
-        "num_cuts": 4,
-        "cut_depth": 0.81,
-        "mat_id": "mat_stone_grey_03",
-        "grid_pos": (-1.3, -0.65, 0.0)
-    },
-    {
-        "id": "round_rock_08",
-        "seed": 1008,
-        "name": "Chunky Asymmetrical Rounded Boulder",
-        "dimensions_m": (0.76, 0.62, 0.46),
-        "num_pts": 88,
-        "roundness": 0.74,
-        "asymmetry": (-0.05, 0.06, -0.05),
-        "flatness_bottom": 0.38,
-        "num_cuts": 4,
-        "cut_depth": 0.79,
-        "mat_id": "mat_stone_grey_04",
-        "grid_pos": (0.0, -0.65, 0.0)
-    },
-    {
-        "id": "round_rock_09",
-        "seed": 1009,
-        "name": "Large Rounded Field Boulder",
-        "dimensions_m": (0.86, 0.72, 0.52),
-        "num_pts": 95,
-        "roundness": 0.78,
-        "asymmetry": (0.05, -0.04, 0.05),
-        "flatness_bottom": 0.34,
-        "num_cuts": 5,
-        "cut_depth": 0.80,
-        "mat_id": "mat_stone_grey_01",
-        "grid_pos": (1.4, -0.65, 0.0)
-    },
-    {
-        "id": "round_rock_10",
-        "seed": 1010,
-        "name": "Substantial Rounded Landmark Boulder",
-        "dimensions_m": (0.96, 0.80, 0.60),
-        "num_pts": 105,
-        "roundness": 0.82,
-        "asymmetry": (-0.04, 0.04, 0.04),
-        "flatness_bottom": 0.36,
-        "num_cuts": 5,
-        "cut_depth": 0.82,
-        "mat_id": "mat_stone_grey_03",
-        "grid_pos": (2.8, -0.65, 0.0)
-    }
-]
 
-# Stone Material Palette
+ROCK_RECIPES = {
+    "round_rock_01": {"num_pts":55,"roundness":0.88,"asymmetry":(0.03,-0.03,0.04),"flatness_bottom":0.25,"num_cuts":2,"cut_depth":0.86},
+    "round_rock_02": {"num_pts":58,"roundness":0.84,"asymmetry":(-0.02,0.02,0.02),"flatness_bottom":0.55,"num_cuts":3,"cut_depth":0.84},
+    "round_rock_03": {"num_pts":65,"roundness":0.78,"asymmetry":(-0.06,0.05,-0.04),"flatness_bottom":0.32,"num_cuts":3,"cut_depth":0.82},
+    "round_rock_04": {"num_pts":70,"roundness":0.86,"asymmetry":(0.04,-0.04,0.03),"flatness_bottom":0.28,"num_cuts":3,"cut_depth":0.85},
+    "round_rock_05": {"num_pts":75,"roundness":0.76,"asymmetry":(0.05,0.04,-0.05),"flatness_bottom":0.36,"num_cuts":4,"cut_depth":0.80},
+    "round_rock_06": {"num_pts":75,"roundness":0.82,"asymmetry":(-0.03,-0.04,0.03),"flatness_bottom":0.48,"num_cuts":3,"cut_depth":0.83},
+    "round_rock_07": {"num_pts":82,"roundness":0.80,"asymmetry":(0.04,0.05,0.05),"flatness_bottom":0.32,"num_cuts":4,"cut_depth":0.81},
+    "round_rock_08": {"num_pts":88,"roundness":0.74,"asymmetry":(-0.05,0.06,-0.05),"flatness_bottom":0.38,"num_cuts":4,"cut_depth":0.79},
+    "round_rock_09": {"num_pts":95,"roundness":0.78,"asymmetry":(0.05,-0.04,0.05),"flatness_bottom":0.34,"num_cuts":5,"cut_depth":0.80},
+    "round_rock_10": {"num_pts":105,"roundness":0.82,"asymmetry":(-0.04,0.04,0.04),"flatness_bottom":0.36,"num_cuts":5,"cut_depth":0.82},
+}
+
 PALETTE = {
     "mat_stone_grey_01": {"color": (0.32, 0.33, 0.35, 1.0), "roughness": 0.88},
     "mat_stone_grey_02": {"color": (0.28, 0.29, 0.30, 1.0), "roughness": 0.90},
@@ -169,43 +41,44 @@ PALETTE = {
 }
 
 
-def build_stone_materials():
-    """Builds all shared materials from the palette."""
+def _build_materials(pack_spec):
+    requested_ids = {
+        merge_asset_defaults(pack_spec, asset).get("material_id")
+        for asset in pack_spec["assets"]
+    }
     materials = {}
-    for mat_id, params in PALETTE.items():
+    for mat_id in requested_ids:
+        if not mat_id:
+            continue
+        if mat_id not in PALETTE:
+            raise ValueError(f"No rock material recipe exists for material_id '{mat_id}'.")
+        params = PALETTE[mat_id]
         materials[mat_id] = get_or_create_pbr_material(
             mat_id=mat_id,
             base_color=params["color"],
-            roughness=params["roughness"]
+            roughness=params["roughness"],
         )
     return materials
 
 
-def generate_round_rock_mesh(config):
-    """
-    Deterministically generates a single low-poly rounded rock mesh according to config.
-    Uses Fibonacci point distribution on an ellipsoid deformed by low-frequency harmonics,
-    projected planar facet cuts, and convex hull generation.
-    Guarantees 100% 2-manifold watertight geometry.
-    """
-    seed = config["seed"]
-    random.seed(seed)
+def _generate_round_rock_mesh(asset_spec, recipe):
+    asset_id = asset_spec["id"]
+    rng = random.Random(int(asset_spec["seed"]))
 
-    target_w, target_d, target_h = config["dimensions_m"]
+    target_w, target_d, target_h = [float(v) for v in asset_spec["dimensions_m"]]
     rx = target_w * 0.5
     ry = target_d * 0.5
     rz = target_h * 0.5
 
-    num_pts = config.get("num_pts", 65)
-    roundness = config.get("roundness", 0.8)
-    asymmetry = config.get("asymmetry", (0, 0, 0))
-    flatness_bottom = config.get("flatness_bottom", 0.3)
-    num_cuts = config.get("num_cuts", 3)
-    cut_depth = config.get("cut_depth", 0.82)
+    num_pts = int(recipe.get("num_pts", 65))
+    roundness = float(recipe.get("roundness", 0.8))
+    asymmetry = recipe.get("asymmetry", (0.0, 0.0, 0.0))
+    flatness_bottom = float(recipe.get("flatness_bottom", 0.3))
+    num_cuts = int(recipe.get("num_cuts", 3))
+    cut_depth = float(recipe.get("cut_depth", 0.82))
 
-    # 1. Distribute points using golden-angle Fibonacci spiral on sphere
     phi = math.pi * (math.sqrt(5.0) - 1.0)
-    pts = []
+    points = []
 
     for i in range(num_pts):
         y_norm = 1.0 - (i / float(num_pts - 1)) * 2.0
@@ -215,119 +88,113 @@ def generate_round_rock_mesh(config):
         x_norm = math.cos(theta) * radius_at_y
         z_norm = math.sin(theta) * radius_at_y
 
-        # Multi-frequency organic perturbation
-        n1 = math.sin(x_norm * 2.5 + seed * 0.1) * math.cos(y_norm * 2.1)
-        n2 = math.cos(z_norm * 2.8 + seed * 0.2) * math.sin(x_norm * 1.9)
-        disp = 1.0 + (n1 * 0.10 + n2 * 0.07) * (1.0 - roundness * 0.5)
+        n1 = math.sin(x_norm * 2.5 + asset_spec["seed"] * 0.1) * math.cos(y_norm * 2.1)
+        n2 = math.cos(z_norm * 2.8 + asset_spec["seed"] * 0.2) * math.sin(x_norm * 1.9)
+        displacement = 1.0 + (n1 * 0.10 + n2 * 0.07) * (1.0 - roundness * 0.5)
 
-        # Base proportions directly controlled by generator
-        vx = x_norm * rx * disp
-        vy = y_norm * ry * disp
-        vz = z_norm * rz * disp
+        vx = x_norm * rx * displacement
+        vy = y_norm * ry * displacement
+        vz = z_norm * rz * displacement
 
-        # Controlled organic asymmetry
-        vx += asymmetry[0] * rx * (vz / rz if rz > 0 else 0)
-        vy += asymmetry[1] * ry * (vx / rx if rx > 0 else 0)
-        vz += asymmetry[2] * rz * (vx * vx / (rx * rx) if rx > 0 else 0)
+        vx += asymmetry[0] * rx * (vz / rz if rz else 0.0)
+        vy += asymmetry[1] * ry * (vx / rx if rx else 0.0)
+        vz += asymmetry[2] * rz * (vx * vx / (rx * rx) if rx else 0.0)
 
-        # Grounding bottom flattening
         if vz < 0:
-            vz *= (1.0 - flatness_bottom * 0.40)
+            vz *= 1.0 - flatness_bottom * 0.40
 
-        pts.append(Vector((vx, vy, vz)))
+        points.append(Vector((vx, vy, vz)))
 
-    # 2. Projected planar cuts: project points outside each cut plane onto that plane.
     for _ in range(num_cuts):
-        plane_normal = Vector((
-            random.uniform(-1.0, 1.0),
-            random.uniform(-1.0, 1.0),
-            random.uniform(-0.35, 0.75)
-        )).normalized()
+        plane_normal = Vector((rng.uniform(-1.0, 1.0), rng.uniform(-1.0, 1.0), rng.uniform(-0.35, 0.75))).normalized()
+        plane_point = Vector((plane_normal.x * rx * cut_depth, plane_normal.y * ry * cut_depth, plane_normal.z * rz * cut_depth))
 
-        plane_pt = Vector((
-            plane_normal.x * rx * cut_depth,
-            plane_normal.y * ry * cut_depth,
-            plane_normal.z * rz * cut_depth
-        ))
+        for index, point in enumerate(points):
+            distance = (point - plane_point).dot(plane_normal)
+            if distance > 0:
+                points[index] = point - distance * plane_normal
 
-        for i, pt in enumerate(pts):
-            dist_to_plane = (pt - plane_pt).dot(plane_normal)
-            if dist_to_plane > 0:
-                pts[i] = pt - dist_to_plane * plane_normal
-
-    # 3. Build convex hull in bmesh
     bm = bmesh.new()
-    for pt in pts:
-        bm.verts.new(pt)
+    for point in points:
+        bm.verts.new(point)
 
-    res = bmesh.ops.convex_hull(bm, input=bm.verts)
-    unused_verts = [v for v in res['geom_unused'] if isinstance(v, bmesh.types.BMVert)]
-    bmesh.ops.delete(bm, geom=unused_verts, context='VERTS')
+    result = bmesh.ops.convex_hull(bm, input=bm.verts)
+    unused = [element for element in result["geom_unused"] if isinstance(element, bmesh.types.BMVert)]
+    if unused:
+        bmesh.ops.delete(bm, geom=unused, context="VERTS")
 
-    # Convert to mesh
-    mesh = bpy.data.meshes.new(config["id"])
+    mesh = bpy.data.meshes.new(asset_id)
     bm.to_mesh(mesh)
     bm.free()
 
-    obj = bpy.data.objects.new(config["id"], mesh)
+    obj = bpy.data.objects.new(asset_id, mesh)
     bpy.context.scene.collection.objects.link(obj)
 
-    # 4. Enforce bottom-center origin and exact dimensions (+-0.001 m)
-    enforce_dimensions_and_origin(obj, config["dimensions_m"])
-
-    # 5. Flat Shading
+    enforce_dimensions_and_origin(
+        obj,
+        asset_spec["dimensions_m"],
+        exact_tol=float(asset_spec.get("exact_dimension_tolerance_m", 0.001)),
+        origin_tol=float(asset_spec.get("origin_tolerance_m", 0.0001)),
+    )
     ensure_flat_shading(obj)
-
-    # 6. UV Unwrapping
     unwrap_smart_uvs(obj)
 
+    obj["asset_pipeline_seed"] = int(asset_spec["seed"])
+    obj["asset_pipeline_generator"] = __name__
     return obj
 
 
-def generate_all_round_rocks(collection_name="Low_Poly_Round_Rocks"):
-    """
-    Generates all 10 round rocks, places them in collection_name in an inspection grid,
-    and assigns cohesive stone materials.
-    """
-    scene = bpy.context.scene
+def _grid_position(index, count, max_width):
+    columns = min(5, count)
+    rows = int(math.ceil(count / float(columns)))
+    column = index % columns
+    row = index // columns
+    x_spacing = max(0.9, max_width + 0.35)
+    y_spacing = max(1.0, max_width + 0.45)
+    return Vector(((column - (columns - 1) * 0.5) * x_spacing, ((rows - 1) * 0.5 - row) * y_spacing, 0.0))
 
-    # Setup target collection
-    pack_col = bpy.data.collections.get(collection_name)
-    if pack_col is None:
-        pack_col = bpy.data.collections.new(collection_name)
-    if pack_col.name not in scene.collection.children:
-        scene.collection.children.link(pack_col)
 
-    materials = build_stone_materials()
-    generated_objects = []
+def generate_pack(pack_spec):
+    """Generate this pack from the YAML-backed structured specification."""
+    collection_name = pack_spec["source"]["collection"]
+    if bpy.data.collections.get(collection_name) is not None:
+        raise RuntimeError(
+            f"Collection '{collection_name}' already exists in live Blender data; refusing to overwrite unrelated work."
+        )
 
-    for cfg in ROCK_CONFIGS:
-        # Remove any existing object with this ID
-        existing = bpy.data.objects.get(cfg["id"])
-        if existing:
-            bpy.data.objects.remove(existing, do_unlink=True)
+    pack_collection = bpy.data.collections.new(collection_name)
+    bpy.context.scene.collection.children.link(pack_collection)
+    materials = _build_materials(pack_spec)
+    generated = []
+    max_width = max(float(asset["dimensions_m"][0]) for asset in pack_spec["assets"])
 
-        obj = generate_round_rock_mesh(cfg)
+    for index, raw_asset in enumerate(pack_spec["assets"]):
+        asset_spec = merge_asset_defaults(pack_spec, raw_asset)
+        asset_id = asset_spec["id"]
+        if bpy.data.objects.get(asset_id) is not None:
+            raise RuntimeError(f"Object '{asset_id}' already exists in live Blender data; refusing to overwrite unrelated work.")
+        recipe = ROCK_RECIPES.get(asset_id)
+        if recipe is None:
+            raise ValueError(f"No low-poly round-rock recipe exists for '{asset_id}'.")
 
-        # Move to pack collection
-        for col in list(obj.users_collection):
-            col.objects.unlink(obj)
-        pack_col.objects.link(obj)
+        obj = _generate_round_rock_mesh(asset_spec, recipe)
+        for collection in list(obj.users_collection):
+            collection.objects.unlink(obj)
+        pack_collection.objects.link(obj)
 
-        # Assign material
-        mat = materials.get(cfg["mat_id"])
-        if mat:
-            assign_material(obj, mat)
+        material_id = asset_spec.get("material_id")
+        if material_id:
+            assign_material(obj, materials[material_id])
 
-        # Position in inspection grid
-        grid_pos = cfg.get("grid_pos", (0.0, 0.0, 0.0))
-        obj.location = Vector(grid_pos)
+        obj.location = _grid_position(index, len(pack_spec["assets"]), max_width)
         obj.rotation_euler = (0.0, 0.0, 0.0)
         obj.scale = (1.0, 1.0, 1.0)
 
-        tris = count_triangles(obj.data)
-        verts = len(obj.data.vertices)
-        print(f"Generated {cfg['id']}: tris={tris}, verts={verts}, grid_pos={grid_pos}")
-        generated_objects.append(obj)
+        triangles = count_triangles(obj.data)
+        if triangles > int(asset_spec["hard_max_triangles"]):
+            raise RuntimeError(
+                f"{asset_id} generated {triangles} triangles, exceeding hard maximum {asset_spec['hard_max_triangles']}."
+            )
+        generated.append(obj)
 
-    return generated_objects
+    return generated
