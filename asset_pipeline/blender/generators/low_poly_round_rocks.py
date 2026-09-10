@@ -1,9 +1,9 @@
 """
 Deterministic procedural generator for the low_poly_round_rocks asset pack.
 
-Structured asset values (IDs, dimensions, seeds, budgets, material IDs) come
-from the pack YAML. This module contains only rock-specific generation recipes
-and visual material definitions.
+Structured asset values (IDs, dimensions, seeds, budgets, material IDs, and
+per-asset generator parameters) come from the pack YAML. This module owns the
+rock-generation algorithm, required parameter schema, and visual material palette.
 """
 
 from __future__ import annotations
