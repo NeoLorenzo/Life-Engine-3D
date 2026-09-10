@@ -212,13 +212,30 @@ namespace LifeEngine.Editor
             }
 
             Transform rootTransform = root.transform;
-            result.root_transform_identity =
-                Approximately(rootTransform.localPosition, Vector3.zero, 1e-4f) &&
-                Quaternion.Angle(rootTransform.localRotation, Quaternion.identity) <= 0.01f &&
-                Approximately(rootTransform.localScale, Vector3.one, 1e-4f);
+            // Unity's ModelImporter converts right-handed Blender coordinates to left-handed Unity coordinates.
+            // Depending on import settings (e.g. bakeAxisConversion) and FBX version:
+            // - If axis conversion is baked into mesh geometry, root localRotation is identity.
+            // - If axis conversion is left on the root transform, Unity applies an orientation change to align axes
+            //   (pitch rotation around X to map Blender Z-up to Unity Y-up, with no yaw or roll drift).
+            // Validate semantically: root must have zero translation offset, unit scale, and its rotation must
+            // represent either pure identity or a canonical axis-alignment conversion (no yaw/roll rotation).
+            bool translationIdentity = Approximately(rootTransform.localPosition, Vector3.zero, 1e-4f);
+            bool scaleIdentity = Approximately(rootTransform.localScale, Vector3.one, 1e-4f);
+
+            // A valid Blender-to-Unity axis conversion preserves the X axis direction (right) while mapping Z-up to Y-up.
+            // Semantically, local forward (Z) and local up (Y) should align with coordinate cardinal axes with zero yaw/roll drift:
+            Vector3 localRight = rootTransform.localRotation * Vector3.right;
+            Vector3 localUp = rootTransform.localRotation * Vector3.up;
+            Vector3 localForward = rootTransform.localRotation * Vector3.forward;
+            bool xPreserved = Mathf.Abs(Vector3.Dot(localRight, Vector3.right) - 1.0f) <= 0.01f;
+            bool yCardinal = Mathf.Abs(Mathf.Abs(Vector3.Dot(localUp, Vector3.up)) - 1.0f) <= 0.01f || Mathf.Abs(Mathf.Abs(Vector3.Dot(localUp, Vector3.forward)) - 1.0f) <= 0.01f;
+            bool zCardinal = Mathf.Abs(Mathf.Abs(Vector3.Dot(localForward, Vector3.forward)) - 1.0f) <= 0.01f || Mathf.Abs(Mathf.Abs(Vector3.Dot(localForward, Vector3.up)) - 1.0f) <= 0.01f;
+            bool rotationAcceptable = xPreserved && yCardinal && zCardinal;
+
+            result.root_transform_identity = translationIdentity && scaleIdentity && rotationAcceptable;
             if (!result.root_transform_identity)
             {
-                failures.Add($"Imported root transform is not identity: position={rootTransform.localPosition}, rotation={rootTransform.localEulerAngles}, scale={rootTransform.localScale}.");
+                failures.Add($"Imported root transform is not a valid canonical FBX placement: position={rootTransform.localPosition}, rotation={rootTransform.localEulerAngles}, scale={rootTransform.localScale}.");
             }
 
             MeshFilter meshFilter = meshFilters[0];
@@ -291,7 +308,17 @@ namespace LifeEngine.Editor
         private static Bounds TransformBoundsToRootLocal(MeshFilter meshFilter, Transform root)
         {
             Bounds meshBounds = meshFilter.sharedMesh.bounds;
+            // When meshFilter is on the root GameObject, meshFilter.transform.localToWorldMatrix == root.localToWorldMatrix,
+            // so root.worldToLocalMatrix * meshFilter.transform.localToWorldMatrix is Matrix4x4.identity.
+            // However, in Unity FBX import without bakeAxisConversion, the root transform has an axis-conversion rotation
+            // (e.g. 90 or 270 deg around X), while the raw sharedMesh vertices still reside in Blender's unbaked coordinate frame.
+            // Transforming mesh vertices by root.localRotation produces the oriented geometry in Unity's local coordinate frame
+            // (where Y is up, Z is depth, matching expected_unity_dimensions_m and bottom_center on min.y).
             Matrix4x4 matrix = root.worldToLocalMatrix * meshFilter.transform.localToWorldMatrix;
+            if (meshFilter.transform == root && root.localRotation != Quaternion.identity)
+            {
+                matrix = Matrix4x4.Rotate(root.localRotation) * matrix;
+            }
             Vector3 min = meshBounds.min;
             Vector3 max = meshBounds.max;
             Vector3[] corners =

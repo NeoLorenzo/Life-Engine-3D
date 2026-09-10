@@ -1,0 +1,227 @@
+{
+    "pack_id": "low_poly_round_rocks",
+    "generated_at_utc": "2026-09-10T10:49:12.9692407Z",
+    "all_passed": true,
+    "assets": [
+        {
+            "id": "round_rock_01",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_01.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 106,
+            "expected_unity_dimensions_m": {
+                "x": 0.3199999928474426,
+                "y": 0.2199999988079071,
+                "z": 0.2800000011920929
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3199999928474426,
+                "y": 0.2199999839067459,
+                "z": 0.2799999713897705
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_02",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_02.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 110,
+            "expected_unity_dimensions_m": {
+                "x": 0.3799999952316284,
+                "y": 0.1899999976158142,
+                "z": 0.3199999928474426
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3799999952316284,
+                "y": 0.1900000274181366,
+                "z": 0.31999996304512026
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_03",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_03.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 126,
+            "expected_unity_dimensions_m": {
+                "x": 0.4399999976158142,
+                "y": 0.25999999046325686,
+                "z": 0.36000001430511477
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.4399999976158142,
+                "y": 0.25999999046325686,
+                "z": 0.35999998450279238
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_04",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_04.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 136,
+            "expected_unity_dimensions_m": {
+                "x": 0.5,
+                "y": 0.3400000035762787,
+                "z": 0.41999998688697817
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5,
+                "y": 0.3400000035762787,
+                "z": 0.41999995708465578
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_05",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_05.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 138,
+            "expected_unity_dimensions_m": {
+                "x": 0.550000011920929,
+                "y": 0.36000001430511477,
+                "z": 0.46000000834465029
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.550000011920929,
+                "y": 0.36000001430511477,
+                "z": 0.4599999785423279
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_06",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_06.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 144,
+            "expected_unity_dimensions_m": {
+                "x": 0.6200000047683716,
+                "y": 0.2800000011920929,
+                "z": 0.5
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.6200000047683716,
+                "y": 0.2800000011920929,
+                "z": 0.4999999403953552
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_07",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_07.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 150,
+            "expected_unity_dimensions_m": {
+                "x": 0.699999988079071,
+                "y": 0.4000000059604645,
+                "z": 0.5799999833106995
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.699999988079071,
+                "y": 0.4000000059604645,
+                "z": 0.5799999237060547
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_08",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_08.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 160,
+            "expected_unity_dimensions_m": {
+                "x": 0.7599999904632568,
+                "y": 0.46000000834465029,
+                "z": 0.6200000047683716
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.7599999904632568,
+                "y": 0.4599999785423279,
+                "z": 0.6199999451637268
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_09",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_09.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 178,
+            "expected_unity_dimensions_m": {
+                "x": 0.8600000143051148,
+                "y": 0.5199999809265137,
+                "z": 0.7200000286102295
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.8600000143051148,
+                "y": 0.5199999809265137,
+                "z": 0.7199999690055847
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "round_rock_10",
+            "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_10.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 194,
+            "expected_unity_dimensions_m": {
+                "x": 0.9599999785423279,
+                "y": 0.6000000238418579,
+                "z": 0.800000011920929
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.9599999785423279,
+                "y": 0.6000000238418579,
+                "z": 0.800000011920929
+            },
+            "root_transform_identity": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        }
+    ]
+}

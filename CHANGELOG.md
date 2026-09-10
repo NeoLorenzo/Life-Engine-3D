@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Stuck Detection Ownership**: Encapsulated stuck evaluation and recovery strictly inside `HumanLocomotion.FixedUpdate()`, removing diagnostic mutations from behavior-tree action nodes.
 - **Resource Delivery Conservation**: `CraftingBlueprint.AddResource()` now returns the exact integer quantity accepted; `DeliverResourceNode` only deducts what was accepted, preserving surplus resources in agent inventory.
 - **Authoritative Thermal Evaluation**: `NeedsWarmthNode` now directly reads the authoritative `HumanBrain.currentThermalStatus` enum (`ThermalStatus.Cold`) instead of evaluating independent temperature thresholds.
+- **Asset Pipeline FBX Validation**: Updated [`AssetPipelineFbxValidator`](file:///c:/UnityProjects/LifeEngine/Assets/Editor/AssetPipelineFbxValidator.cs) to recognize standard Unity FBX coordinate conversion rotations on root transforms and measure mesh bounding box dimensions in the oriented local coordinate frame.
 
 ## 0.1.0 - Initial Prototype Baseline
 

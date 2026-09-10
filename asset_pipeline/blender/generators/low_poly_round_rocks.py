@@ -20,25 +20,21 @@ from common.materials import assign_material, get_or_create_pbr_material, unwrap
 from common.spec import merge_asset_defaults
 
 
-ROCK_RECIPES = {
-    "round_rock_01": {"num_pts":55,"roundness":0.88,"asymmetry":(0.03,-0.03,0.04),"flatness_bottom":0.25,"num_cuts":2,"cut_depth":0.86},
-    "round_rock_02": {"num_pts":58,"roundness":0.84,"asymmetry":(-0.02,0.02,0.02),"flatness_bottom":0.55,"num_cuts":3,"cut_depth":0.84},
-    "round_rock_03": {"num_pts":65,"roundness":0.78,"asymmetry":(-0.06,0.05,-0.04),"flatness_bottom":0.32,"num_cuts":3,"cut_depth":0.82},
-    "round_rock_04": {"num_pts":70,"roundness":0.86,"asymmetry":(0.04,-0.04,0.03),"flatness_bottom":0.28,"num_cuts":3,"cut_depth":0.85},
-    "round_rock_05": {"num_pts":75,"roundness":0.76,"asymmetry":(0.05,0.04,-0.05),"flatness_bottom":0.36,"num_cuts":4,"cut_depth":0.80},
-    "round_rock_06": {"num_pts":75,"roundness":0.82,"asymmetry":(-0.03,-0.04,0.03),"flatness_bottom":0.48,"num_cuts":3,"cut_depth":0.83},
-    "round_rock_07": {"num_pts":82,"roundness":0.80,"asymmetry":(0.04,0.05,0.05),"flatness_bottom":0.32,"num_cuts":4,"cut_depth":0.81},
-    "round_rock_08": {"num_pts":88,"roundness":0.74,"asymmetry":(-0.05,0.06,-0.05),"flatness_bottom":0.38,"num_cuts":4,"cut_depth":0.79},
-    "round_rock_09": {"num_pts":95,"roundness":0.78,"asymmetry":(0.05,-0.04,0.05),"flatness_bottom":0.34,"num_cuts":5,"cut_depth":0.80},
-    "round_rock_10": {"num_pts":105,"roundness":0.82,"asymmetry":(-0.04,0.04,0.04),"flatness_bottom":0.36,"num_cuts":5,"cut_depth":0.82},
-}
-
 PALETTE = {
     "mat_stone_grey_01": {"color": (0.32, 0.33, 0.35, 1.0), "roughness": 0.88},
     "mat_stone_grey_02": {"color": (0.28, 0.29, 0.30, 1.0), "roughness": 0.90},
     "mat_stone_grey_03": {"color": (0.36, 0.35, 0.34, 1.0), "roughness": 0.87},
     "mat_stone_grey_04": {"color": (0.24, 0.25, 0.26, 1.0), "roughness": 0.92},
 }
+
+REQUIRED_GENERATOR_PARAMS = (
+    "num_pts",
+    "roundness",
+    "asymmetry",
+    "flatness_bottom",
+    "num_cuts",
+    "cut_depth",
+)
 
 
 def _build_materials(pack_spec):
@@ -63,6 +59,15 @@ def _build_materials(pack_spec):
 
 def _generate_round_rock_mesh(asset_spec, recipe):
     asset_id = asset_spec["id"]
+    if not isinstance(recipe, dict):
+        raise ValueError(f"Asset '{asset_id}' is missing required 'generator_params' mapping.")
+
+    missing_params = [param for param in REQUIRED_GENERATOR_PARAMS if param not in recipe]
+    if missing_params:
+        raise ValueError(
+            f"Asset '{asset_id}' generator_params is missing required parameters: {', '.join(missing_params)}"
+        )
+
     rng = random.Random(int(asset_spec["seed"]))
 
     target_w, target_d, target_h = [float(v) for v in asset_spec["dimensions_m"]]
@@ -70,12 +75,14 @@ def _generate_round_rock_mesh(asset_spec, recipe):
     ry = target_d * 0.5
     rz = target_h * 0.5
 
-    num_pts = int(recipe.get("num_pts", 65))
-    roundness = float(recipe.get("roundness", 0.8))
-    asymmetry = recipe.get("asymmetry", (0.0, 0.0, 0.0))
-    flatness_bottom = float(recipe.get("flatness_bottom", 0.3))
-    num_cuts = int(recipe.get("num_cuts", 3))
-    cut_depth = float(recipe.get("cut_depth", 0.82))
+    num_pts = int(recipe["num_pts"])
+    roundness = float(recipe["roundness"])
+    asymmetry = [float(v) for v in recipe["asymmetry"]]
+    if len(asymmetry) != 3:
+        raise ValueError(f"Asset '{asset_id}' asymmetry must contain exactly 3 components.")
+    flatness_bottom = float(recipe["flatness_bottom"])
+    num_cuts = int(recipe["num_cuts"])
+    cut_depth = float(recipe["cut_depth"])
 
     phi = math.pi * (math.sqrt(5.0) - 1.0)
     points = []
@@ -173,9 +180,9 @@ def generate_pack(pack_spec):
         asset_id = asset_spec["id"]
         if bpy.data.objects.get(asset_id) is not None:
             raise RuntimeError(f"Object '{asset_id}' already exists in live Blender data; refusing to overwrite unrelated work.")
-        recipe = ROCK_RECIPES.get(asset_id)
-        if recipe is None:
-            raise ValueError(f"No low-poly round-rock recipe exists for '{asset_id}'.")
+        recipe = asset_spec.get("generator_params")
+        if not recipe or not isinstance(recipe, dict):
+            raise ValueError(f"Asset '{asset_id}' is missing required 'generator_params' mapping in specification.")
 
         obj = _generate_round_rock_mesh(asset_spec, recipe)
         for collection in list(obj.users_collection):

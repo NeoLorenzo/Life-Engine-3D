@@ -3,15 +3,155 @@
   "runtime_format": "fbx",
   "unity_report_path": "ArtSource/environment/low_poly_round_rocks/unity_validation_report.json",
   "assets": [
-    {"id":"round_rock_01","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_01.fbx","dimensions_blender_xyz_m":[0.32,0.28,0.22],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_02","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_02.fbx","dimensions_blender_xyz_m":[0.38,0.32,0.19],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_03","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_03.fbx","dimensions_blender_xyz_m":[0.44,0.36,0.26],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_04","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_04.fbx","dimensions_blender_xyz_m":[0.50,0.42,0.34],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_05","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_05.fbx","dimensions_blender_xyz_m":[0.55,0.46,0.36],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_06","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_06.fbx","dimensions_blender_xyz_m":[0.62,0.50,0.28],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_07","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_07.fbx","dimensions_blender_xyz_m":[0.70,0.58,0.40],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_08","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_08.fbx","dimensions_blender_xyz_m":[0.76,0.62,0.46],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_09","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_09.fbx","dimensions_blender_xyz_m":[0.86,0.72,0.52],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true},
-    {"id":"round_rock_10","asset_path":"Assets/Art/environment/low_poly_round_rocks/Models/round_rock_10.fbx","dimensions_blender_xyz_m":[0.96,0.80,0.60],"origin":"bottom_center","origin_tolerance_m":0.0001,"dimension_tolerance_m":0.001,"preferred_max_triangles":250,"hard_max_triangles":400,"material_required":true}
+    {
+      "id": "round_rock_01",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_01.fbx",
+      "dimensions_blender_xyz_m": [
+        0.32,
+        0.28,
+        0.22
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_02",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_02.fbx",
+      "dimensions_blender_xyz_m": [
+        0.38,
+        0.32,
+        0.19
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_03",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_03.fbx",
+      "dimensions_blender_xyz_m": [
+        0.44,
+        0.36,
+        0.26
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_04",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_04.fbx",
+      "dimensions_blender_xyz_m": [
+        0.5,
+        0.42,
+        0.34
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_05",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_05.fbx",
+      "dimensions_blender_xyz_m": [
+        0.55,
+        0.46,
+        0.36
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_06",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_06.fbx",
+      "dimensions_blender_xyz_m": [
+        0.62,
+        0.5,
+        0.28
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_07",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_07.fbx",
+      "dimensions_blender_xyz_m": [
+        0.7,
+        0.58,
+        0.4
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_08",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_08.fbx",
+      "dimensions_blender_xyz_m": [
+        0.76,
+        0.62,
+        0.46
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_09",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_09.fbx",
+      "dimensions_blender_xyz_m": [
+        0.86,
+        0.72,
+        0.52
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    },
+    {
+      "id": "round_rock_10",
+      "asset_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_10.fbx",
+      "dimensions_blender_xyz_m": [
+        0.96,
+        0.8,
+        0.6
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 400,
+      "material_required": true
+    }
   ]
 }
