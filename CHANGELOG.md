@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - **3-Mode Camera System**: Added [`SimulationCameraController`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SimulationCameraController.cs) supporting First-Person (animated head bone follow with local eye offset and character renderer hiding), Third-Person (yaw-stabilized torso chase camera), and fixed Sky viewpoint anchored to `SkyCameraAnchor`.
+- **Low-Poly Round Rock Asset Pack**: Added `low_poly_round_rocks` containing 10 distinct, procedurally generated, faceted rounded environmental rock assets (`round_rock_01` through `round_rock_10`) with one authoritative `.blend`, inspection previews, a YAML-driven generator contract, isolated FBX export/re-import validation, and Unity-side FBX validation tooling.
 - **GPU Foliage Cutout Shader**: Implemented [`TreeCutoutLit.shader`](file:///c:/UnityProjects/LifeEngine/Assets/Shaders/Foliage/TreeCutoutLit.shader) in URP, performing dynamic circular/cylindrical fragment clipping across Forward, Shadow, and Depth passes during Sky mode so agents and structures remain visible under foliage.
 - **Sky Reveal Target Registry & Indicators**: Added [`SkyRevealTarget`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SkyRevealTarget.cs) and [`SkyRevealController`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Camera/SkyRevealController.cs) managing active world coordinates and rendering unlit horizontal ground indicator rings during Sky mode.
 - **Camera Controls HUD**: Integrated [`CameraControlsUI`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/UI/CameraControlsUI.cs) with mode buttons (`1: First Person`, `2: Third Person`, `3: Sky`) and keyboard hotkeys (`1`, `2`, `3`) with automatic non-selection dimming.
@@ -24,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Stuck Detection Ownership**: Encapsulated stuck evaluation and recovery strictly inside `HumanLocomotion.FixedUpdate()`, removing diagnostic mutations from behavior-tree action nodes.
 - **Resource Delivery Conservation**: `CraftingBlueprint.AddResource()` now returns the exact integer quantity accepted; `DeliverResourceNode` only deducts what was accepted, preserving surplus resources in agent inventory.
 - **Authoritative Thermal Evaluation**: `NeedsWarmthNode` now directly reads the authoritative `HumanBrain.currentThermalStatus` enum (`ThermalStatus.Cold`) instead of evaluating independent temperature thresholds.
+- **Asset Pipeline FBX Validation**: Updated [`AssetPipelineFbxValidator`](file:///c:/UnityProjects/LifeEngine/Assets/Editor/AssetPipelineFbxValidator.cs) to recognize standard Unity FBX coordinate conversion rotations on root transforms and measure mesh bounding box dimensions in the oriented local coordinate frame.
 
 ## 0.1.0 - Initial Prototype Baseline
 

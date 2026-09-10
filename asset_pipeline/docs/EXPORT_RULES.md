@@ -2,13 +2,15 @@
 
 ## Runtime format
 
-Default runtime mesh format: **glTF 2.0 binary (`.glb`)** unless Unity integration or an asset-specific constraint requires another format.
+Default runtime mesh format: **FBX (`.fbx`)**.
+
+FBX is the standard runtime mesh artifact for Unity-facing static and skinned assets unless an asset-specific requirement explicitly selects another supported format.
 
 ## Source vs runtime
 
-The editable `.blend` is the source of truth for authored geometry. The exported `.glb` is the runtime artifact.
+The editable `.blend` is the source of truth for authored geometry. The exported `.fbx` is the Unity/runtime artifact.
 
-Do not assume that because the Blender source is correct, the exported GLB is also correct.
+Do not assume that because the Blender source is correct, the exported FBX is also correct.
 
 ## Individual export from packs
 
@@ -36,9 +38,21 @@ An individual runtime export must not include unintended:
 - other pack assets;
 - temporary geometry.
 
+## Unity-oriented FBX conventions
+
+Unless explicitly overridden:
+
+- export only the intended mesh object(s);
+- use metric units;
+- export with `-Z` forward and `Y` up for Unity-facing FBX files;
+- do not export animation for static props;
+- do not export cameras or lights;
+- preserve UVs, normals, materials, dimensions, and the local pivot;
+- do not bake inspection-layout transforms into runtime geometry.
+
 ## Transform expectations
 
-Unless explicitly overridden, exported static props should re-import with:
+Unless explicitly overridden, exported static props should re-import into Blender's FBX importer with:
 
 ```text
 Location = (0, 0, 0)
@@ -48,10 +62,17 @@ Scale    = (1, 1, 1)
 
 The local mesh origin must still satisfy the asset's pivot convention.
 
+Unity validation is authoritative for the final Unity import result. Coordinate-system conversion may change axis ordering between Blender and Unity while preserving physical dimensions and pivot semantics.
+
 ## Materials and UVs
 
-Use export-compatible PBR materials. Verify that required UVs and material assignments survive export.
+Use FBX-compatible material inputs. Verify that required UVs and material assignments survive export and Unity import.
 
 ## Export success is not completion
 
-A successful export operation or non-zero file size is necessary but insufficient. Every runtime file must pass the clean re-import validation defined in `VALIDATION_RULES.md`.
+A successful export operation or non-zero file size is necessary but insufficient.
+
+Every runtime file must pass:
+
+1. the clean Blender re-import validation defined in `VALIDATION_RULES.md`; and
+2. Unity-side validation when the asset is intended to live under `Assets/`.

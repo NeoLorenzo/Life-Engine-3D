@@ -1,0 +1,1823 @@
+{
+  "pack_info": {
+    "id": "low_poly_round_rocks",
+    "display_name": "Low-Poly Round Rocks",
+    "category": "environment",
+    "runtime_format": "fbx",
+    "source_blend": "ArtSource/environment/low_poly_round_rocks/source/low_poly_round_rocks.blend",
+    "export_dir": "Assets/Art/environment/low_poly_round_rocks/Models",
+    "overview_render": "ArtSource/environment/low_poly_round_rocks/renders/low_poly_round_rocks_overview.png",
+    "unity_manifest": "ArtSource/environment/low_poly_round_rocks/unity_validation_manifest.json",
+    "unity_report": "ArtSource/environment/low_poly_round_rocks/unity_validation_report.json"
+  },
+  "source_results": [
+    {
+      "asset_id": "round_rock_01",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.32,
+          0.28,
+          0.22
+        ],
+        "actual": [
+          0.32,
+          0.28,
+          0.22
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 55,
+        "triangles": 106,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          -2.62,
+          0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1001
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_02",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.38,
+          0.32,
+          0.19
+        ],
+        "actual": [
+          0.38,
+          0.32,
+          0.19
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 57,
+        "triangles": 110,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_02"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          -1.31,
+          0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1002
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_03",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.44,
+          0.36,
+          0.26
+        ],
+        "actual": [
+          0.44,
+          0.36,
+          0.26
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 65,
+        "triangles": 126,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          0.0,
+          0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1003
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_04",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.5,
+          0.42,
+          0.34
+        ],
+        "actual": [
+          0.5,
+          0.42,
+          0.34
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 70,
+        "triangles": 136,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          1.31,
+          0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1004
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_05",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.55,
+          0.46,
+          0.36
+        ],
+        "actual": [
+          0.55,
+          0.46,
+          0.36
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 71,
+        "triangles": 138,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_04"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          2.62,
+          0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1005
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_06",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.62,
+          0.5,
+          0.28
+        ],
+        "actual": [
+          0.62,
+          0.5,
+          0.28
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 74,
+        "triangles": 144,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_02"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          -2.62,
+          -0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1006
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_07",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.7,
+          0.58,
+          0.4
+        ],
+        "actual": [
+          0.7,
+          0.58,
+          0.4
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 77,
+        "triangles": 150,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          -1.31,
+          -0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1007
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_08",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.76,
+          0.62,
+          0.46
+        ],
+        "actual": [
+          0.76,
+          0.62,
+          0.46
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 82,
+        "triangles": 160,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_04"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          0.0,
+          -0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1008
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_09",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.86,
+          0.72,
+          0.52
+        ],
+        "actual": [
+          0.86,
+          0.72,
+          0.52
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 91,
+        "triangles": 178,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          1.31,
+          -0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1009
+      },
+      "provenance": null
+    },
+    {
+      "asset_id": "round_rock_10",
+      "stage": "source",
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "dimensions": {
+        "target": [
+          0.96,
+          0.8,
+          0.6
+        ],
+        "actual": [
+          0.96,
+          0.8,
+          0.6
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 99,
+        "triangles": 194,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03"
+        ],
+        "passed": true
+      },
+      "source_transform": {
+        "inspection_location": [
+          2.62,
+          -0.705,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "generation": {
+        "mode": "generate",
+        "seed": 1010
+      },
+      "provenance": null
+    }
+  ],
+  "runtime_results": [
+    {
+      "asset_id": "round_rock_01",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_01.fbx",
+      "file_exists": true,
+      "file_size_bytes": 19244,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1001
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_01",
+        "actual": "round_rock_01.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.32,
+          0.28,
+          0.22
+        ],
+        "actual": [
+          0.32,
+          0.28,
+          0.22
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 55,
+        "triangles": 106,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_02",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_02.fbx",
+      "file_exists": true,
+      "file_size_bytes": 19500,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1002
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_02",
+        "actual": "round_rock_02.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.38,
+          0.32,
+          0.19
+        ],
+        "actual": [
+          0.38,
+          0.32,
+          0.19
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 57,
+        "triangles": 110,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_02.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_03",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_03.fbx",
+      "file_exists": true,
+      "file_size_bytes": 20076,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1003
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_03",
+        "actual": "round_rock_03.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.44,
+          0.36,
+          0.26
+        ],
+        "actual": [
+          0.44,
+          0.36,
+          0.26
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 65,
+        "triangles": 126,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_04",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_04.fbx",
+      "file_exists": true,
+      "file_size_bytes": 20460,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1004
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_04",
+        "actual": "round_rock_04.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.5,
+          0.42,
+          0.34
+        ],
+        "actual": [
+          0.5,
+          0.42,
+          0.34
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 70,
+        "triangles": 136,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_05",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_05.fbx",
+      "file_exists": true,
+      "file_size_bytes": 20524,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1005
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_05",
+        "actual": "round_rock_05.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.55,
+          0.46,
+          0.36
+        ],
+        "actual": [
+          0.55,
+          0.46,
+          0.36
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 71,
+        "triangles": 138,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_04.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_06",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_06.fbx",
+      "file_exists": true,
+      "file_size_bytes": 20780,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1006
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_06",
+        "actual": "round_rock_06.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.62,
+          0.5,
+          0.28
+        ],
+        "actual": [
+          0.62,
+          0.5,
+          0.28
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 74,
+        "triangles": 144,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_02.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_07",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_07.fbx",
+      "file_exists": true,
+      "file_size_bytes": 21052,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1007
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_07",
+        "actual": "round_rock_07.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.7,
+          0.58,
+          0.4
+        ],
+        "actual": [
+          0.7,
+          0.58,
+          0.4
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 77,
+        "triangles": 150,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_08",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_08.fbx",
+      "file_exists": true,
+      "file_size_bytes": 21484,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1008
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_08",
+        "actual": "round_rock_08.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.76,
+          0.62,
+          0.46
+        ],
+        "actual": [
+          0.76,
+          0.62,
+          0.46
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 82,
+        "triangles": 160,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_04.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_09",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_09.fbx",
+      "file_exists": true,
+      "file_size_bytes": 22012,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1009
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_09",
+        "actual": "round_rock_09.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.86,
+          0.72,
+          0.52
+        ],
+        "actual": [
+          0.86,
+          0.72,
+          0.52
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 91,
+        "triangles": 178,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_01.001"
+        ],
+        "passed": true
+      }
+    },
+    {
+      "asset_id": "round_rock_10",
+      "stage": "runtime_reimport",
+      "format": "fbx",
+      "runtime_path": "Assets/Art/environment/low_poly_round_rocks/Models/round_rock_10.fbx",
+      "file_exists": true,
+      "file_size_bytes": 22588,
+      "passed": true,
+      "failure_reasons": [],
+      "warnings": [],
+      "generation": {
+        "mode": "generate",
+        "seed": 1010
+      },
+      "provenance": null,
+      "object_inventory": {
+        "total": 1,
+        "mesh_count": 1,
+        "non_mesh": [],
+        "passed": true
+      },
+      "identity": {
+        "expected": "round_rock_10",
+        "actual": "round_rock_10.001",
+        "blender_name_collision_normalized": true,
+        "passed": true
+      },
+      "transforms": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "passed": true
+      },
+      "dimensions": {
+        "target": [
+          0.96,
+          0.8,
+          0.6
+        ],
+        "actual": [
+          0.96,
+          0.8,
+          0.6
+        ],
+        "errors": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "passed": true
+      },
+      "origin": {
+        "mode": "bottom_center",
+        "center_xy": [
+          0.0,
+          0.0
+        ],
+        "min_z": 0.0,
+        "passed": true
+      },
+      "topology": {
+        "vertices": 99,
+        "triangles": 194,
+        "preferred_max": 250,
+        "hard_max": 400,
+        "within_preferred": true,
+        "within_hard_max": true,
+        "non_manifold_edges": 0,
+        "manifold": true,
+        "passed": true
+      },
+      "uv": {
+        "required": true,
+        "present": true,
+        "layer_count": 1,
+        "passed": true
+      },
+      "material": {
+        "required": true,
+        "assigned": true,
+        "names": [
+          "mat_stone_grey_03.001"
+        ],
+        "passed": true
+      }
+    }
+  ],
+  "all_source_passed": true,
+  "all_runtime_passed": true,
+  "blender_validation_passed": true,
+  "unity_validation_status": "PENDING",
+  "pipeline_complete": false,
+  "generated_at": "2026-09-10T10:48:50.440609+00:00"
+}

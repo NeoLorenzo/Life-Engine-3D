@@ -3,15 +3,18 @@
 ## Summary
 
 - Pack ID: `<pack_id>`
+- Runtime format: `<format>`
 - Source file: `<path>`
-- Validation date: `<date>`
+- Blender source validation: `<PASS|FAIL>`
+- Blender runtime re-import validation: `<PASS|FAIL>`
+- Unity import validation: `<PASS|FAIL|NOT RUN>`
 - Overall status: `<PASS|FAIL>`
 
 ## Asset results
 
-| Asset | Target dimensions (m) | Actual dimensions (m) | Dimension error | Vertices | Triangles | Origin | UV | Material | Re-import | Status |
-|---|---:|---:|---:|---:|---:|---|---|---|---|---|
-| `<asset>` | `<x × y × z>` | `<x × y × z>` | `<dx, dy, dz>` | `<n>` | `<n>` | `<PASS>` | `<PASS>` | `<PASS>` | `<PASS>` | `<PASS>` |
+| Asset | Source | Runtime re-import | Unity | Dimensions | Triangles | Origin | UV | Material |
+|---|:---:|:---:|:---:|:---:|---:|:---:|:---:|:---:|
+| `<asset>` | `<PASS>` | `<PASS>` | `<PASS|NOT RUN>` | `<PASS>` | `<n>` | `<PASS>` | `<PASS>` | `<PASS>` |
 
 ## Hard validation failures
 
@@ -23,9 +26,7 @@
 
 ## Provenance
 
-| Asset | Source | Creator | License | Modifications | Attribution required |
-|---|---|---|---|---|---|
-| `<asset>` | `<url/id/or generated>` | `<creator>` | `<license>` | `<notes>` | `<yes/no>` |
+Record provenance exactly as supplied by the asset specification/provenance record. Do not infer or invent creator, license, permission, or attribution terms.
 
 ## Generated files
 
@@ -33,7 +34,9 @@
 - Runtime exports: `<path or list>`
 - Individual previews: `<path>`
 - Overview preview: `<path>`
-- Machine-readable validation: `<path>`
+- Blender machine-readable validation: `<path>`
+- Unity validation manifest: `<path>`
+- Unity validation report: `<path>`
 
 ## Notes
 
