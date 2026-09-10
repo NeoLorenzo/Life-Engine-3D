@@ -1,0 +1,1309 @@
+pack:
+  id: natural_rock_pack
+  display_name: Natural Rock Pack
+  category: environment
+
+source_strategy:
+  default: generate
+  evaluate_existing_models: false
+  provenance_required: false
+
+source:
+  blend_path: ArtSource/environment/natural_rock_pack/source/natural_rock_pack.blend
+  collection: Natural_Rock_Pack
+  one_blend_per_pack: true
+
+generator:
+  module: generators.natural_rock_pack
+  entrypoint: generate_pack
+
+units: meters
+
+defaults:
+  exact_dimension_tolerance_m: 0.001
+  origin_tolerance_m: 0.0001
+  preferred_max_triangles: 100
+  hard_max_triangles: 160
+  origin: bottom_center
+  rotation: [0, 0, 0]
+  scale: [1, 1, 1]
+  uv_required: true
+  material_required: true
+
+assets:
+  - id: natural_rock_001
+    seed: 2001
+    generation_mode: generate
+    dimensions_m: [0.12, 0.1, 0.08]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      verts: 5
+      asym: [0.05, -0.04, 0.02]
+      shape_family: tiny_pebble
+  - id: natural_rock_002
+    seed: 2002
+    generation_mode: generate
+    dimensions_m: [0.14, 0.09, 0.07]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      verts: 5
+      asym: [-0.08, 0.06, 0.05]
+      shape_family: tiny_chip
+  - id: natural_rock_003
+    seed: 2003
+    generation_mode: generate
+    dimensions_m: [0.15, 0.13, 0.06]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      verts: 6
+      bevel: 0.25
+      shape_family: tiny_slab
+  - id: natural_rock_004
+    seed: 2004
+    generation_mode: generate
+    dimensions_m: [0.11, 0.11, 0.1]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      verts: 6
+      asym: [0.03, 0.05, -0.04]
+      shape_family: tiny_pebble
+  - id: natural_rock_005
+    seed: 2005
+    generation_mode: generate
+    dimensions_m: [0.16, 0.08, 0.09]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      verts: 5
+      slope: 0.55
+      shape_family: tiny_wedge
+  - id: natural_rock_006
+    seed: 2006
+    generation_mode: generate
+    dimensions_m: [0.13, 0.12, 0.09]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      verts: 6
+      asym: [0.06, -0.06, 0.04]
+      shape_family: tiny_chip
+  - id: natural_rock_007
+    seed: 2007
+    generation_mode: generate
+    dimensions_m: [0.17, 0.14, 0.07]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      verts: 6
+      bevel: 0.28
+      shape_family: tiny_slab
+  - id: natural_rock_008
+    seed: 2008
+    generation_mode: generate
+    dimensions_m: [0.1, 0.1, 0.08]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      verts: 5
+      asym: [-0.04, 0.03, 0.06]
+      shape_family: tiny_pebble
+  - id: natural_rock_009
+    seed: 2009
+    generation_mode: generate
+    dimensions_m: [0.18, 0.11, 0.08]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      verts: 6
+      slope: 0.6
+      shape_family: tiny_wedge
+  - id: natural_rock_010
+    seed: 2010
+    generation_mode: generate
+    dimensions_m: [0.15, 0.1, 0.09]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      verts: 7
+      asym: [-0.05, 0.07, -0.04]
+      shape_family: tiny_chip
+  - id: natural_rock_011
+    seed: 2011
+    generation_mode: generate
+    dimensions_m: [0.14, 0.13, 0.11]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      verts: 6
+      asym: [0.04, -0.03, 0.05]
+      shape_family: tiny_pebble
+  - id: natural_rock_012
+    seed: 2012
+    generation_mode: generate
+    dimensions_m: [0.19, 0.12, 0.06]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      verts: 6
+      bevel: 0.22
+      shape_family: tiny_slab
+  - id: natural_rock_013
+    seed: 2013
+    generation_mode: generate
+    dimensions_m: [0.12, 0.09, 0.11]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      verts: 5
+      slope: 0.5
+      shape_family: tiny_wedge
+  - id: natural_rock_014
+    seed: 2014
+    generation_mode: generate
+    dimensions_m: [0.16, 0.15, 0.1]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      verts: 7
+      asym: [0.07, 0.04, -0.05]
+      shape_family: tiny_chip
+  - id: natural_rock_015
+    seed: 2015
+    generation_mode: generate
+    dimensions_m: [0.13, 0.11, 0.09]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      verts: 5
+      asym: [-0.03, -0.05, 0.03]
+      shape_family: tiny_pebble
+  - id: natural_rock_016
+    seed: 2016
+    generation_mode: generate
+    dimensions_m: [0.2, 0.14, 0.07]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      verts: 7
+      bevel: 0.3
+      shape_family: tiny_slab
+  - id: natural_rock_017
+    seed: 2017
+    generation_mode: generate
+    dimensions_m: [0.15, 0.09, 0.08]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      verts: 6
+      asym: [-0.06, 0.05, 0.06]
+      shape_family: tiny_chip
+  - id: natural_rock_018
+    seed: 2018
+    generation_mode: generate
+    dimensions_m: [0.17, 0.13, 0.12]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      verts: 7
+      asym: [0.05, -0.04, -0.03]
+      shape_family: tiny_pebble
+  - id: natural_rock_019
+    seed: 2019
+    generation_mode: generate
+    dimensions_m: [0.18, 0.1, 0.09]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      verts: 6
+      slope: 0.65
+      shape_family: tiny_wedge
+  - id: natural_rock_020
+    seed: 2020
+    generation_mode: generate
+    dimensions_m: [0.14, 0.12, 0.08]
+    preferred_max_triangles: 8
+    hard_max_triangles: 10
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      verts: 5
+      asym: [0.04, 0.06, -0.04]
+      shape_family: tiny_chip
+  - id: natural_rock_021
+    seed: 2021
+    generation_mode: generate
+    dimensions_m: [0.25, 0.22, 0.16]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 10
+      num_cuts: 2
+      cut_depth: 0.85
+      shape_family: angular_rock
+  - id: natural_rock_022
+    seed: 2022
+    generation_mode: generate
+    dimensions_m: [0.28, 0.2, 0.14]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 7
+      bevel: 0.32
+      waviness: 0.12
+      shape_family: slab
+  - id: natural_rock_023
+    seed: 2023
+    generation_mode: generate
+    dimensions_m: [0.26, 0.24, 0.18]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 9
+      roundness: 0.85
+      shape_family: round_rock
+  - id: natural_rock_024
+    seed: 2024
+    generation_mode: generate
+    dimensions_m: [0.3, 0.18, 0.15]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 8
+      slope: 0.55
+      shape_family: wedge
+  - id: natural_rock_025
+    seed: 2025
+    generation_mode: generate
+    dimensions_m: [0.32, 0.26, 0.17]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 10
+      num_cuts: 3
+      cut_depth: 0.82
+      shape_family: angular_rock
+  - id: natural_rock_026
+    seed: 2026
+    generation_mode: generate
+    dimensions_m: [0.27, 0.25, 0.12]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 8
+      bevel: 0.28
+      waviness: 0.15
+      shape_family: slab
+  - id: natural_rock_027
+    seed: 2027
+    generation_mode: generate
+    dimensions_m: [0.31, 0.22, 0.19]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 10
+      flat_top: 0.4
+      shape_family: squat_rock
+  - id: natural_rock_028
+    seed: 2028
+    generation_mode: generate
+    dimensions_m: [0.29, 0.24, 0.2]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 10
+      roundness: 0.82
+      shape_family: round_rock
+  - id: natural_rock_029
+    seed: 2029
+    generation_mode: generate
+    dimensions_m: [0.34, 0.21, 0.16]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 9
+      slope: 0.6
+      shape_family: wedge
+  - id: natural_rock_030
+    seed: 2030
+    generation_mode: generate
+    dimensions_m: [0.33, 0.28, 0.22]
+    preferred_max_triangles: 16
+    hard_max_triangles: 20
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 11
+      num_cuts: 3
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_031
+    seed: 2031
+    generation_mode: generate
+    dimensions_m: [0.38, 0.32, 0.24]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 16
+      num_cuts: 4
+      cut_depth: 0.82
+      shape_family: angular_rock
+  - id: natural_rock_032
+    seed: 2032
+    generation_mode: generate
+    dimensions_m: [0.42, 0.36, 0.18]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 12
+      bevel: 0.35
+      waviness: 0.18
+      shape_family: slab
+  - id: natural_rock_033
+    seed: 2033
+    generation_mode: generate
+    dimensions_m: [0.4, 0.34, 0.28]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 15
+      roundness: 0.8
+      shape_family: round_rock
+  - id: natural_rock_034
+    seed: 2034
+    generation_mode: generate
+    dimensions_m: [0.45, 0.3, 0.22]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 14
+      slope: 0.58
+      shape_family: wedge
+  - id: natural_rock_035
+    seed: 2035
+    generation_mode: generate
+    dimensions_m: [0.43, 0.38, 0.26]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 16
+      flat_top: 0.45
+      shape_family: squat_rock
+  - id: natural_rock_036
+    seed: 2036
+    generation_mode: generate
+    dimensions_m: [0.47, 0.35, 0.2]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 14
+      bevel: 0.3
+      waviness: 0.2
+      shape_family: slab
+  - id: natural_rock_037
+    seed: 2037
+    generation_mode: generate
+    dimensions_m: [0.44, 0.39, 0.3]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 17
+      num_cuts: 4
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_038
+    seed: 2038
+    generation_mode: generate
+    dimensions_m: [0.48, 0.36, 0.32]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 16
+      roundness: 0.78
+      shape_family: round_rock
+  - id: natural_rock_039
+    seed: 2039
+    generation_mode: generate
+    dimensions_m: [0.46, 0.42, 0.25]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      arch_depth: 0.30
+      shape_family: eroded_boulder
+  - id: natural_rock_040
+    seed: 2040
+    generation_mode: generate
+    dimensions_m: [0.49, 0.4, 0.34]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 17
+      num_cuts: 4
+      cut_depth: 0.78
+      shape_family: angular_rock
+  - id: natural_rock_041
+    seed: 2041
+    generation_mode: generate
+    dimensions_m: [0.55, 0.46, 0.36]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 16
+      num_cuts: 4
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_042
+    seed: 2042
+    generation_mode: generate
+    dimensions_m: [0.58, 0.48, 0.22]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 14
+      bevel: 0.32
+      waviness: 0.22
+      shape_family: slab
+  - id: natural_rock_043
+    seed: 2043
+    generation_mode: generate
+    dimensions_m: [0.54, 0.44, 0.38]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 16
+      roundness: 0.82
+      shape_family: round_rock
+  - id: natural_rock_044
+    seed: 2044
+    generation_mode: generate
+    dimensions_m: [0.57, 0.42, 0.3]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 15
+      slope: 0.62
+      shape_family: wedge
+  - id: natural_rock_045
+    seed: 2045
+    generation_mode: generate
+    dimensions_m: [0.59, 0.5, 0.35]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 17
+      flat_top: 0.42
+      shape_family: squat_rock
+  - id: natural_rock_046
+    seed: 2046
+    generation_mode: generate
+    dimensions_m: [0.56, 0.52, 0.26]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 15
+      bevel: 0.3
+      waviness: 0.2
+      shape_family: slab
+  - id: natural_rock_047
+    seed: 2047
+    generation_mode: generate
+    dimensions_m: [0.6, 0.45, 0.38]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 17
+      num_cuts: 4
+      cut_depth: 0.79
+      shape_family: angular_rock
+  - id: natural_rock_048
+    seed: 2048
+    generation_mode: generate
+    dimensions_m: [0.58, 0.52, 0.4]
+    preferred_max_triangles: 28
+    hard_max_triangles: 35
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      arch_depth: 0.32
+      shape_family: eroded_boulder
+  - id: natural_rock_049
+    seed: 2049
+    generation_mode: generate
+    dimensions_m: [0.68, 0.55, 0.42]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 26
+      num_cuts: 5
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_050
+    seed: 2050
+    generation_mode: generate
+    dimensions_m: [0.72, 0.6, 0.28]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 22
+      bevel: 0.34
+      waviness: 0.24
+      shape_family: slab
+  - id: natural_rock_051
+    seed: 2051
+    generation_mode: generate
+    dimensions_m: [0.65, 0.58, 0.48]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 25
+      roundness: 0.8
+      shape_family: round_rock
+  - id: natural_rock_052
+    seed: 2052
+    generation_mode: generate
+    dimensions_m: [0.75, 0.52, 0.4]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 24
+      slope: 0.65
+      shape_family: wedge
+  - id: natural_rock_053
+    seed: 2053
+    generation_mode: generate
+    dimensions_m: [0.78, 0.64, 0.45]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 27
+      flat_top: 0.45
+      shape_family: squat_rock
+  - id: natural_rock_054
+    seed: 2054
+    generation_mode: generate
+    dimensions_m: [0.82, 0.68, 0.32]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 24
+      bevel: 0.32
+      waviness: 0.25
+      shape_family: slab
+  - id: natural_rock_055
+    seed: 2055
+    generation_mode: generate
+    dimensions_m: [0.8, 0.62, 0.52]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 28
+      num_cuts: 5
+      cut_depth: 0.78
+      shape_family: angular_rock
+  - id: natural_rock_056
+    seed: 2056
+    generation_mode: generate
+    dimensions_m: [0.85, 0.7, 0.55]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 27
+      roundness: 0.78
+      shape_family: round_rock
+  - id: natural_rock_057
+    seed: 2057
+    generation_mode: generate
+    dimensions_m: [0.88, 0.65, 0.46]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 26
+      shelf_height: 0.45
+      shelf_depth: 0.35
+      shape_family: shelved_crag
+  - id: natural_rock_058
+    seed: 2058
+    generation_mode: generate
+    dimensions_m: [0.92, 0.74, 0.58]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 29
+      num_cuts: 5
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_059
+    seed: 2059
+    generation_mode: generate
+    dimensions_m: [0.95, 0.8, 0.62]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      arch_depth: 0.35
+      shape_family: eroded_boulder
+  - id: natural_rock_060
+    seed: 2060
+    generation_mode: generate
+    dimensions_m: [0.98, 0.78, 0.65]
+    preferred_max_triangles: 48
+    hard_max_triangles: 60
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 28
+      split_ratio: 0.42
+      saddle_depth: 0.4
+      shape_family: clustered_duo
+  - id: natural_rock_061
+    seed: 2061
+    generation_mode: generate
+    dimensions_m: [1.15, 0.95, 0.75]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 45
+      num_cuts: 6
+      cut_depth: 0.8
+      shape_family: angular_rock
+  - id: natural_rock_062
+    seed: 2062
+    generation_mode: generate
+    dimensions_m: [1.25, 1.05, 0.45]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 38
+      bevel: 0.35
+      waviness: 0.26
+      shape_family: slab
+  - id: natural_rock_063
+    seed: 2063
+    generation_mode: generate
+    dimensions_m: [1.1, 0.9, 1.35]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 44
+      taper: 0.55
+      shelves: 2
+      shape_family: tall_pillar
+  - id: natural_rock_064
+    seed: 2064
+    generation_mode: generate
+    dimensions_m: [1.3, 1.1, 0.85]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 46
+      shelf_height: 0.5
+      shelf_depth: 0.38
+      shape_family: shelved_crag
+  - id: natural_rock_065
+    seed: 2065
+    generation_mode: generate
+    dimensions_m: [1.35, 1.15, 0.9]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 44
+      roundness: 0.78
+      shape_family: round_rock
+  - id: natural_rock_066
+    seed: 2066
+    generation_mode: generate
+    dimensions_m: [1.4, 1.05, 0.75]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 42
+      slope: 0.68
+      shape_family: wedge
+  - id: natural_rock_067
+    seed: 2067
+    generation_mode: generate
+    dimensions_m: [1.45, 1.2, 0.95]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 46
+      flat_top: 0.48
+      shape_family: squat_rock
+  - id: natural_rock_068
+    seed: 2068
+    generation_mode: generate
+    dimensions_m: [1.38, 1.18, 0.88]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 46
+      split_ratio: 0.45
+      saddle_depth: 0.42
+      shape_family: clustered_duo
+  - id: natural_rock_069
+    seed: 2069
+    generation_mode: generate
+    dimensions_m: [1.48, 1.25, 1.0]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 48
+      num_cuts: 6
+      cut_depth: 0.78
+      shape_family: angular_rock
+  - id: natural_rock_070
+    seed: 2070
+    generation_mode: generate
+    dimensions_m: [1.2, 1.0, 1.48]
+    preferred_max_triangles: 80
+    hard_max_triangles: 100
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 45
+      taper: 0.6
+      shelves: 2
+      shape_family: tall_pillar
+  - id: natural_rock_071
+    seed: 2071
+    generation_mode: generate
+    dimensions_m: [1.65, 1.35, 1.1]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 68
+      shelf_height: 0.52
+      shelf_depth: 0.4
+      shape_family: shelved_crag
+  - id: natural_rock_072
+    seed: 2072
+    generation_mode: generate
+    dimensions_m: [1.75, 1.45, 0.6]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 58
+      bevel: 0.38
+      waviness: 0.28
+      shape_family: slab
+  - id: natural_rock_073
+    seed: 2073
+    generation_mode: generate
+    dimensions_m: [1.7, 1.4, 1.2]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 68
+      roundness: 0.76
+      shape_family: round_rock
+  - id: natural_rock_074
+    seed: 2074
+    generation_mode: generate
+    dimensions_m: [1.55, 1.25, 1.85]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 66
+      taper: 0.58
+      shelves: 3
+      shape_family: tall_pillar
+  - id: natural_rock_075
+    seed: 2075
+    generation_mode: generate
+    dimensions_m: [1.85, 1.5, 1.25]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 72
+      num_cuts: 7
+      cut_depth: 0.78
+      shape_family: angular_rock
+  - id: natural_rock_076
+    seed: 2076
+    generation_mode: generate
+    dimensions_m: [1.8, 1.55, 1.15]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 70
+      split_ratio: 0.48
+      saddle_depth: 0.45
+      shape_family: clustered_duo
+  - id: natural_rock_077
+    seed: 2077
+    generation_mode: generate
+    dimensions_m: [1.9, 1.6, 1.3]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 72
+      flat_top: 0.5
+      shape_family: squat_rock
+  - id: natural_rock_078
+    seed: 2078
+    generation_mode: generate
+    dimensions_m: [1.95, 1.45, 1.1]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 66
+      slope: 0.7
+      shape_family: wedge
+  - id: natural_rock_079
+    seed: 2079
+    generation_mode: generate
+    dimensions_m: [1.6, 1.3, 1.95]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 68
+      taper: 0.62
+      shelves: 3
+      shape_family: tall_pillar
+  - id: natural_rock_080
+    seed: 2080
+    generation_mode: generate
+    dimensions_m: [1.98, 1.65, 1.35]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 72
+      shelf_height: 0.54
+      shelf_depth: 0.42
+      shape_family: shelved_crag
+  - id: natural_rock_081
+    seed: 2081
+    generation_mode: generate
+    dimensions_m: [2.2, 1.8, 1.45]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 72
+      num_cuts: 7
+      cut_depth: 0.78
+      shape_family: angular_rock
+  - id: natural_rock_082
+    seed: 2082
+    generation_mode: generate
+    dimensions_m: [2.35, 1.9, 0.85]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 60
+      bevel: 0.4
+      waviness: 0.3
+      shape_family: slab
+  - id: natural_rock_083
+    seed: 2083
+    generation_mode: generate
+    dimensions_m: [1.8, 1.5, 2.4]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 70
+      taper: 0.6
+      shelves: 3
+      shape_family: tall_pillar
+  - id: natural_rock_084
+    seed: 2084
+    generation_mode: generate
+    dimensions_m: [2.45, 1.95, 1.55]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 74
+      shelf_height: 0.55
+      shelf_depth: 0.45
+      shape_family: shelved_crag
+  - id: natural_rock_085
+    seed: 2085
+    generation_mode: generate
+    dimensions_m: [2.3, 1.85, 1.6]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 72
+      split_ratio: 0.46
+      saddle_depth: 0.46
+      shape_family: clustered_duo
+  - id: natural_rock_086
+    seed: 2086
+    generation_mode: generate
+    dimensions_m: [2.5, 2.05, 1.65]
+    preferred_max_triangles: 130
+    hard_max_triangles: 160
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 74
+      flat_top: 0.52
+      shape_family: squat_rock
+  - id: natural_rock_087
+    seed: 2087
+    generation_mode: generate
+    dimensions_m: [2.8, 2.25, 1.85]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 96
+      num_cuts: 8
+      cut_depth: 0.77
+      shape_family: angular_rock
+  - id: natural_rock_088
+    seed: 2088
+    generation_mode: generate
+    dimensions_m: [3.0, 2.4, 1.1]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 82
+      bevel: 0.42
+      waviness: 0.32
+      shape_family: slab
+  - id: natural_rock_089
+    seed: 2089
+    generation_mode: generate
+    dimensions_m: [2.2, 1.8, 3.2]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 95
+      taper: 0.65
+      shelves: 4
+      shape_family: tall_pillar
+  - id: natural_rock_090
+    seed: 2090
+    generation_mode: generate
+    dimensions_m: [3.25, 2.55, 2.1]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 100
+      shelf_height: 0.58
+      shelf_depth: 0.48
+      shape_family: shelved_crag
+  - id: natural_rock_091
+    seed: 2091
+    generation_mode: generate
+    dimensions_m: [3.1, 2.45, 2.0]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 98
+      split_ratio: 0.5
+      saddle_depth: 0.48
+      shape_family: clustered_duo
+  - id: natural_rock_092
+    seed: 2092
+    generation_mode: generate
+    dimensions_m: [3.45, 2.75, 2.25]
+    preferred_max_triangles: 180
+    hard_max_triangles: 220
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 102
+      flat_top: 0.55
+      shape_family: squat_rock
+  - id: natural_rock_093
+    seed: 2093
+    generation_mode: generate
+    dimensions_m: [3.6, 3.0, 4.8]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 135
+      taper: 0.62
+      shelves: 4
+      cleavage_angle: 18
+      shape_family: landmark_monolith
+  - id: natural_rock_094
+    seed: 2094
+    generation_mode: generate
+    dimensions_m: [4.85, 3.4, 2.8]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 140
+      shelves: 4
+      shelf_depth: 0.52
+      num_cuts: 8
+      shape_family: landmark_crag
+  - id: natural_rock_095
+    seed: 2095
+    generation_mode: generate
+    dimensions_m: [4.2, 3.8, 3.2]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 135
+      roundness: 0.75
+      shape_family: round_rock
+  - id: natural_rock_096
+    seed: 2096
+    generation_mode: generate
+    dimensions_m: [4.5, 3.2, 3.5]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_01
+    provenance: null
+    generator_params:
+      num_pts: 138
+      shelf_height: 0.6
+      shelf_depth: 0.5
+      shape_family: shelved_crag
+  - id: natural_rock_097
+    seed: 2097
+    generation_mode: generate
+    dimensions_m: [2.8, 2.5, 4.95]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_02
+    provenance: null
+    generator_params:
+      num_pts: 136
+      taper: 0.7
+      shelves: 5
+      cleavage_angle: 22
+      shape_family: landmark_monolith
+  - id: natural_rock_098
+    seed: 2098
+    generation_mode: generate
+    dimensions_m: [4.4, 3.6, 3.1]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_03
+    provenance: null
+    generator_params:
+      num_pts: 138
+      num_cuts: 9
+      cut_depth: 0.76
+      shape_family: angular_rock
+  - id: natural_rock_099
+    seed: 2099
+    generation_mode: generate
+    dimensions_m: [4.6, 3.3, 3.4]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_04
+    provenance: null
+    generator_params:
+      num_pts: 135
+      split_ratio: 0.52
+      saddle_depth: 0.5
+      shape_family: clustered_duo
+  - id: natural_rock_100
+    seed: 2100
+    generation_mode: generate
+    dimensions_m: [4.95, 4.2, 2.1]
+    preferred_max_triangles: 250
+    hard_max_triangles: 300
+    material_id: mat_stone_grey_05
+    provenance: null
+    generator_params:
+      num_pts: 120
+      bevel: 0.45
+      waviness: 0.35
+      shape_family: slab
+
+inspection:
+  layout: grid
+  individual_previews: true
+  overview_preview: true
+
+export:
+  format: fbx
+  individual_assets: true
+  output_directory: Assets/Art/environment/natural_rock_pack/Models
+  export_at_world_origin: true
+
+validation:
+  clean_reimport: true
+  json_report: ArtSource/environment/natural_rock_pack/validation_report.json
+  markdown_report: ArtSource/environment/natural_rock_pack/validation_report.md
+  unity_manifest: ArtSource/environment/natural_rock_pack/unity_validation_manifest.json
+  unity_report: ArtSource/environment/natural_rock_pack/unity_validation_report.json
+
+notes:
+  - Diverse 100-rock low-poly natural rock asset pack for Life Engine 3D.
+  - Spans 10 cm pebbles to 5 m landmark boulders with 10 shape families.
+  - Triangle budget strictly scales with physical dimension from max 10 to max 300.
+  - All assets have bottom-center origin at Z=0.

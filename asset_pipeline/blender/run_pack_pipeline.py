@@ -122,10 +122,10 @@ def execute_pipeline_in_blender(pack_spec,repo_root=REPO_ROOT):
 
 def run_via_mcp(spec_path,host="127.0.0.1",port=9876):
     spec_path=os.path.abspath(spec_path); pack_spec=load_pack_spec(spec_path); repo_root=REPO_ROOT; serialized_spec=json.dumps(pack_spec); serialized_root=json.dumps(repo_root)
-    code=f'''\nimport importlib, json, os, sys\npipeline_dir = {json.dumps(PIPELINE_BLENDER_DIR)}\nif pipeline_dir not in sys.path: sys.path.insert(0, pipeline_dir)\nimport run_pack_pipeline\nimportlib.reload(run_pack_pipeline)\npack_spec = json.loads({json.dumps(serialized_spec)})\nrepo_root = json.loads({json.dumps(serialized_root)})\nresult = run_pack_pipeline.execute_pipeline_in_blender(pack_spec, repo_root)\nprint("PIPELINE_RESULT_JSON:" + json.dumps(result))\n'''
+    code=f'''\nimport importlib, json, os, sys\npipeline_dir = {json.dumps(PIPELINE_BLENDER_DIR)}\nif pipeline_dir in sys.path: sys.path.remove(pipeline_dir)\nsys.path.insert(0, pipeline_dir)\nif "run_pack_pipeline" in sys.modules and getattr(sys.modules["run_pack_pipeline"], "__file__", "") != os.path.join(pipeline_dir, "run_pack_pipeline.py"): del sys.modules["run_pack_pipeline"]\nimport run_pack_pipeline\nimportlib.reload(run_pack_pipeline)\npack_spec = json.loads({json.dumps(serialized_spec)})\nrepo_root = json.loads({json.dumps(serialized_root)})\nresult = run_pack_pipeline.execute_pipeline_in_blender(pack_spec, repo_root)\nprint("PIPELINE_RESULT_JSON:" + json.dumps(result))\n'''
     command={"type":"execute_code","params":{"code":code}}
     with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as connection:
-        connection.settimeout(300.0); connection.connect((host,int(port))); connection.sendall(json.dumps(command).encode("utf-8")); chunks=[]
+        connection.settimeout(900.0); connection.connect((host,int(port))); connection.sendall(json.dumps(command).encode("utf-8")); chunks=[]
         while True:
             chunk=connection.recv(16384)
             if not chunk: break

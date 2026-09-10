@@ -4,6 +4,7 @@ Reusable preview rendering utilities for the Life Engine 3D asset pipeline.
 
 from __future__ import annotations
 
+import math
 import os
 
 import bpy
@@ -149,11 +150,51 @@ def render_overview(pack_collection, output_path, resolution=(1920, 1080)):
 
     try:
         pack_collection.hide_render = False
+        mesh_objs = [obj for obj in pack_collection.objects if obj.type == "MESH"]
         for obj in pack_collection.objects:
             obj.hide_render = False
-        camera.data.lens = 28.0
-        camera.location = Vector((0.0, -5.2, 3.2))
-        camera.rotation_euler = (Vector((0.0, 0.0, 0.25)) - camera.location).to_track_quat("-Z", "Y").to_euler()
+
+        if mesh_objs:
+            min_x = min(obj.location.x + min(v.co.x for v in obj.data.vertices) for obj in mesh_objs)
+            max_x = max(obj.location.x + max(v.co.x for v in obj.data.vertices) for obj in mesh_objs)
+            min_y = min(obj.location.y + min(v.co.y for v in obj.data.vertices) for obj in mesh_objs)
+            max_y = max(obj.location.y + max(v.co.y for v in obj.data.vertices) for obj in mesh_objs)
+            min_z = min(obj.location.z + min(v.co.z for v in obj.data.vertices) for obj in mesh_objs)
+            max_z = max(obj.location.z + max(v.co.z for v in obj.data.vertices) for obj in mesh_objs)
+
+            span_x = max_x - min_x
+            span_y = max_y - min_y
+            span_z = max_z - min_z
+            center_x = (min_x + max_x) * 0.5
+            center_y = (min_y + max_y) * 0.5
+            center_z = (min_z + max_z) * 0.5
+
+            # Dynamically adapt floor plane to cover the pack extent
+            floor = bpy.data.objects.get(INSPECTION_NAMES["floor"])
+            if floor is not None:
+                floor_extent = max(40.0, max(span_x, span_y) * 3.0)
+                floor.scale = (floor_extent / 30.0, floor_extent / 30.0, 1.0)
+                floor.location = (center_x, center_y, -0.0005)
+
+            # Frame camera so all assets fit comfortably in 16:9 view
+            camera.data.lens = 32.0
+            dist_x = (span_x * 0.5) / math.tan(math.radians(28.0))
+            dist_y = (span_y * 0.5) / math.tan(math.radians(16.0))
+            dist_z = (span_z * 0.5) / math.tan(math.radians(16.0))
+            distance = max(dist_x * 1.15, dist_y * 1.35, dist_z * 1.5, 5.2)
+
+            target_point = Vector((center_x, center_y + span_y * 0.08, center_z * 0.45))
+            camera.location = Vector((
+                center_x,
+                center_y - distance * 0.90,
+                center_z + distance * 0.48,
+            ))
+            camera.rotation_euler = (target_point - camera.location).to_track_quat("-Z", "Y").to_euler()
+        else:
+            camera.data.lens = 28.0
+            camera.location = Vector((0.0, -5.2, 3.2))
+            camera.rotation_euler = (Vector((0.0, 0.0, 0.25)) - camera.location).to_track_quat("-Z", "Y").to_euler()
+
         scene.render.filepath = output_path
         scene.render.resolution_x = int(resolution[0])
         scene.render.resolution_y = int(resolution[1])
