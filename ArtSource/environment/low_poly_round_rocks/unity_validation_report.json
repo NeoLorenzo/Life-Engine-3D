@@ -21,7 +21,7 @@
                 "y": 0.2199999839067459,
                 "z": 0.2799999713897705
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -43,7 +43,7 @@
                 "y": 0.1900000274181366,
                 "z": 0.31999996304512026
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -65,7 +65,7 @@
                 "y": 0.25999999046325686,
                 "z": 0.35999998450279238
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -87,7 +87,7 @@
                 "y": 0.3400000035762787,
                 "z": 0.41999995708465578
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -109,7 +109,7 @@
                 "y": 0.36000001430511477,
                 "z": 0.4599999785423279
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -131,7 +131,7 @@
                 "y": 0.2800000011920929,
                 "z": 0.4999999403953552
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -153,7 +153,7 @@
                 "y": 0.4000000059604645,
                 "z": 0.5799999237060547
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -175,7 +175,7 @@
                 "y": 0.4599999785423279,
                 "z": 0.6199999451637268
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -197,7 +197,7 @@
                 "y": 0.5199999809265137,
                 "z": 0.7199999690055847
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         },
@@ -219,7 +219,7 @@
                 "y": 0.6000000238418579,
                 "z": 0.800000011920929
             },
-            "root_transform_identity": true,
+            "root_transform_valid": true,
             "bottom_center_origin": true,
             "material_present": true
         }
