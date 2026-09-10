@@ -51,7 +51,7 @@ namespace LifeEngine.Editor
             public int triangle_count;
             public Vector3 expected_unity_dimensions_m;
             public Vector3 measured_unity_dimensions_m;
-            public bool root_transform_identity;
+            public bool root_transform_valid;
             public bool bottom_center_origin;
             public bool material_present;
         }
@@ -232,8 +232,8 @@ namespace LifeEngine.Editor
             bool zCardinal = Mathf.Abs(Mathf.Abs(Vector3.Dot(localForward, Vector3.forward)) - 1.0f) <= 0.01f || Mathf.Abs(Mathf.Abs(Vector3.Dot(localForward, Vector3.up)) - 1.0f) <= 0.01f;
             bool rotationAcceptable = xPreserved && yCardinal && zCardinal;
 
-            result.root_transform_identity = translationIdentity && scaleIdentity && rotationAcceptable;
-            if (!result.root_transform_identity)
+            result.root_transform_valid = translationIdentity && scaleIdentity && rotationAcceptable;
+            if (!result.root_transform_valid)
             {
                 failures.Add($"Imported root transform is not a valid canonical FBX placement: position={rootTransform.localPosition}, rotation={rootTransform.localEulerAngles}, scale={rootTransform.localScale}.");
             }
