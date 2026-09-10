@@ -1,0 +1,1507 @@
+{
+  "pack_id": "natural_rock_pack",
+  "runtime_format": "fbx",
+  "unity_report_path": "ArtSource/environment/natural_rock_pack/unity_validation_report.json",
+  "assets": [
+    {
+      "id": "natural_rock_001",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_001.fbx",
+      "dimensions_blender_xyz_m": [
+        0.12,
+        0.1,
+        0.08
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_002",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_002.fbx",
+      "dimensions_blender_xyz_m": [
+        0.14,
+        0.09,
+        0.07
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_003",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_003.fbx",
+      "dimensions_blender_xyz_m": [
+        0.15,
+        0.13,
+        0.06
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_004",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_004.fbx",
+      "dimensions_blender_xyz_m": [
+        0.11,
+        0.11,
+        0.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_005",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_005.fbx",
+      "dimensions_blender_xyz_m": [
+        0.16,
+        0.08,
+        0.09
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_006",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_006.fbx",
+      "dimensions_blender_xyz_m": [
+        0.13,
+        0.12,
+        0.09
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_007",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_007.fbx",
+      "dimensions_blender_xyz_m": [
+        0.17,
+        0.14,
+        0.07
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_008",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_008.fbx",
+      "dimensions_blender_xyz_m": [
+        0.1,
+        0.1,
+        0.08
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_009",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_009.fbx",
+      "dimensions_blender_xyz_m": [
+        0.18,
+        0.11,
+        0.08
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_010",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_010.fbx",
+      "dimensions_blender_xyz_m": [
+        0.15,
+        0.1,
+        0.09
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_011",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_011.fbx",
+      "dimensions_blender_xyz_m": [
+        0.14,
+        0.13,
+        0.11
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_012",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_012.fbx",
+      "dimensions_blender_xyz_m": [
+        0.19,
+        0.12,
+        0.06
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_013",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_013.fbx",
+      "dimensions_blender_xyz_m": [
+        0.12,
+        0.09,
+        0.11
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_014",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_014.fbx",
+      "dimensions_blender_xyz_m": [
+        0.16,
+        0.15,
+        0.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_015",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_015.fbx",
+      "dimensions_blender_xyz_m": [
+        0.13,
+        0.11,
+        0.09
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_016",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_016.fbx",
+      "dimensions_blender_xyz_m": [
+        0.2,
+        0.14,
+        0.07
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_017",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_017.fbx",
+      "dimensions_blender_xyz_m": [
+        0.15,
+        0.09,
+        0.08
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_018",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_018.fbx",
+      "dimensions_blender_xyz_m": [
+        0.17,
+        0.13,
+        0.12
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_019",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_019.fbx",
+      "dimensions_blender_xyz_m": [
+        0.18,
+        0.1,
+        0.09
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_020",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_020.fbx",
+      "dimensions_blender_xyz_m": [
+        0.14,
+        0.12,
+        0.08
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 8,
+      "hard_max_triangles": 10,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_021",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_021.fbx",
+      "dimensions_blender_xyz_m": [
+        0.25,
+        0.22,
+        0.16
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_022",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_022.fbx",
+      "dimensions_blender_xyz_m": [
+        0.28,
+        0.2,
+        0.14
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_023",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_023.fbx",
+      "dimensions_blender_xyz_m": [
+        0.26,
+        0.24,
+        0.18
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_024",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_024.fbx",
+      "dimensions_blender_xyz_m": [
+        0.3,
+        0.18,
+        0.15
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_025",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_025.fbx",
+      "dimensions_blender_xyz_m": [
+        0.32,
+        0.26,
+        0.17
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_026",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_026.fbx",
+      "dimensions_blender_xyz_m": [
+        0.27,
+        0.25,
+        0.12
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_027",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_027.fbx",
+      "dimensions_blender_xyz_m": [
+        0.31,
+        0.22,
+        0.19
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_028",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_028.fbx",
+      "dimensions_blender_xyz_m": [
+        0.29,
+        0.24,
+        0.2
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_029",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_029.fbx",
+      "dimensions_blender_xyz_m": [
+        0.34,
+        0.21,
+        0.16
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_030",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_030.fbx",
+      "dimensions_blender_xyz_m": [
+        0.33,
+        0.28,
+        0.22
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 16,
+      "hard_max_triangles": 20,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_031",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_031.fbx",
+      "dimensions_blender_xyz_m": [
+        0.38,
+        0.32,
+        0.24
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_032",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_032.fbx",
+      "dimensions_blender_xyz_m": [
+        0.42,
+        0.36,
+        0.18
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_033",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_033.fbx",
+      "dimensions_blender_xyz_m": [
+        0.4,
+        0.34,
+        0.28
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_034",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_034.fbx",
+      "dimensions_blender_xyz_m": [
+        0.45,
+        0.3,
+        0.22
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_035",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_035.fbx",
+      "dimensions_blender_xyz_m": [
+        0.43,
+        0.38,
+        0.26
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_036",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_036.fbx",
+      "dimensions_blender_xyz_m": [
+        0.47,
+        0.35,
+        0.2
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_037",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_037.fbx",
+      "dimensions_blender_xyz_m": [
+        0.44,
+        0.39,
+        0.3
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_038",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_038.fbx",
+      "dimensions_blender_xyz_m": [
+        0.48,
+        0.36,
+        0.32
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_039",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_039.fbx",
+      "dimensions_blender_xyz_m": [
+        0.46,
+        0.42,
+        0.25
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_040",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_040.fbx",
+      "dimensions_blender_xyz_m": [
+        0.49,
+        0.4,
+        0.34
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_041",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_041.fbx",
+      "dimensions_blender_xyz_m": [
+        0.55,
+        0.46,
+        0.36
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_042",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_042.fbx",
+      "dimensions_blender_xyz_m": [
+        0.58,
+        0.48,
+        0.22
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_043",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_043.fbx",
+      "dimensions_blender_xyz_m": [
+        0.54,
+        0.44,
+        0.38
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_044",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_044.fbx",
+      "dimensions_blender_xyz_m": [
+        0.57,
+        0.42,
+        0.3
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_045",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_045.fbx",
+      "dimensions_blender_xyz_m": [
+        0.59,
+        0.5,
+        0.35
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_046",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_046.fbx",
+      "dimensions_blender_xyz_m": [
+        0.56,
+        0.52,
+        0.26
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_047",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_047.fbx",
+      "dimensions_blender_xyz_m": [
+        0.6,
+        0.45,
+        0.38
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_048",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_048.fbx",
+      "dimensions_blender_xyz_m": [
+        0.58,
+        0.52,
+        0.4
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 28,
+      "hard_max_triangles": 35,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_049",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_049.fbx",
+      "dimensions_blender_xyz_m": [
+        0.68,
+        0.55,
+        0.42
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_050",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_050.fbx",
+      "dimensions_blender_xyz_m": [
+        0.72,
+        0.6,
+        0.28
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_051",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_051.fbx",
+      "dimensions_blender_xyz_m": [
+        0.65,
+        0.58,
+        0.48
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_052",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_052.fbx",
+      "dimensions_blender_xyz_m": [
+        0.75,
+        0.52,
+        0.4
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_053",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_053.fbx",
+      "dimensions_blender_xyz_m": [
+        0.78,
+        0.64,
+        0.45
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_054",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_054.fbx",
+      "dimensions_blender_xyz_m": [
+        0.82,
+        0.68,
+        0.32
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_055",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_055.fbx",
+      "dimensions_blender_xyz_m": [
+        0.8,
+        0.62,
+        0.52
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_056",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_056.fbx",
+      "dimensions_blender_xyz_m": [
+        0.85,
+        0.7,
+        0.55
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_057",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_057.fbx",
+      "dimensions_blender_xyz_m": [
+        0.88,
+        0.65,
+        0.46
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_058",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_058.fbx",
+      "dimensions_blender_xyz_m": [
+        0.92,
+        0.74,
+        0.58
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_059",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_059.fbx",
+      "dimensions_blender_xyz_m": [
+        0.95,
+        0.8,
+        0.62
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_060",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_060.fbx",
+      "dimensions_blender_xyz_m": [
+        0.98,
+        0.78,
+        0.65
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 48,
+      "hard_max_triangles": 60,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_061",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_061.fbx",
+      "dimensions_blender_xyz_m": [
+        1.15,
+        0.95,
+        0.75
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_062",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_062.fbx",
+      "dimensions_blender_xyz_m": [
+        1.25,
+        1.05,
+        0.45
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_063",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_063.fbx",
+      "dimensions_blender_xyz_m": [
+        1.1,
+        0.9,
+        1.35
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_064",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_064.fbx",
+      "dimensions_blender_xyz_m": [
+        1.3,
+        1.1,
+        0.85
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_065",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_065.fbx",
+      "dimensions_blender_xyz_m": [
+        1.35,
+        1.15,
+        0.9
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_066",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_066.fbx",
+      "dimensions_blender_xyz_m": [
+        1.4,
+        1.05,
+        0.75
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_067",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_067.fbx",
+      "dimensions_blender_xyz_m": [
+        1.45,
+        1.2,
+        0.95
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_068",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_068.fbx",
+      "dimensions_blender_xyz_m": [
+        1.38,
+        1.18,
+        0.88
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_069",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_069.fbx",
+      "dimensions_blender_xyz_m": [
+        1.48,
+        1.25,
+        1.0
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_070",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_070.fbx",
+      "dimensions_blender_xyz_m": [
+        1.2,
+        1.0,
+        1.48
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 80,
+      "hard_max_triangles": 100,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_071",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_071.fbx",
+      "dimensions_blender_xyz_m": [
+        1.65,
+        1.35,
+        1.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_072",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_072.fbx",
+      "dimensions_blender_xyz_m": [
+        1.75,
+        1.45,
+        0.6
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_073",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_073.fbx",
+      "dimensions_blender_xyz_m": [
+        1.7,
+        1.4,
+        1.2
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_074",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_074.fbx",
+      "dimensions_blender_xyz_m": [
+        1.55,
+        1.25,
+        1.85
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_075",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_075.fbx",
+      "dimensions_blender_xyz_m": [
+        1.85,
+        1.5,
+        1.25
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_076",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_076.fbx",
+      "dimensions_blender_xyz_m": [
+        1.8,
+        1.55,
+        1.15
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_077",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_077.fbx",
+      "dimensions_blender_xyz_m": [
+        1.9,
+        1.6,
+        1.3
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_078",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_078.fbx",
+      "dimensions_blender_xyz_m": [
+        1.95,
+        1.45,
+        1.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_079",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_079.fbx",
+      "dimensions_blender_xyz_m": [
+        1.6,
+        1.3,
+        1.95
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_080",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_080.fbx",
+      "dimensions_blender_xyz_m": [
+        1.98,
+        1.65,
+        1.35
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_081",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_081.fbx",
+      "dimensions_blender_xyz_m": [
+        2.2,
+        1.8,
+        1.45
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_082",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_082.fbx",
+      "dimensions_blender_xyz_m": [
+        2.35,
+        1.9,
+        0.85
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_083",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_083.fbx",
+      "dimensions_blender_xyz_m": [
+        1.8,
+        1.5,
+        2.4
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_084",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_084.fbx",
+      "dimensions_blender_xyz_m": [
+        2.45,
+        1.95,
+        1.55
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_085",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_085.fbx",
+      "dimensions_blender_xyz_m": [
+        2.3,
+        1.85,
+        1.6
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_086",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_086.fbx",
+      "dimensions_blender_xyz_m": [
+        2.5,
+        2.05,
+        1.65
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 130,
+      "hard_max_triangles": 160,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_087",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_087.fbx",
+      "dimensions_blender_xyz_m": [
+        2.8,
+        2.25,
+        1.85
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_088",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_088.fbx",
+      "dimensions_blender_xyz_m": [
+        3.0,
+        2.4,
+        1.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_089",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_089.fbx",
+      "dimensions_blender_xyz_m": [
+        2.2,
+        1.8,
+        3.2
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_090",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_090.fbx",
+      "dimensions_blender_xyz_m": [
+        3.25,
+        2.55,
+        2.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_091",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_091.fbx",
+      "dimensions_blender_xyz_m": [
+        3.1,
+        2.45,
+        2.0
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_092",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_092.fbx",
+      "dimensions_blender_xyz_m": [
+        3.45,
+        2.75,
+        2.25
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 180,
+      "hard_max_triangles": 220,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_093",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_093.fbx",
+      "dimensions_blender_xyz_m": [
+        3.6,
+        3.0,
+        4.8
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_094",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_094.fbx",
+      "dimensions_blender_xyz_m": [
+        4.85,
+        3.4,
+        2.8
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_095",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_095.fbx",
+      "dimensions_blender_xyz_m": [
+        4.2,
+        3.8,
+        3.2
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_096",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_096.fbx",
+      "dimensions_blender_xyz_m": [
+        4.5,
+        3.2,
+        3.5
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_097",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_097.fbx",
+      "dimensions_blender_xyz_m": [
+        2.8,
+        2.5,
+        4.95
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_098",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_098.fbx",
+      "dimensions_blender_xyz_m": [
+        4.4,
+        3.6,
+        3.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_099",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_099.fbx",
+      "dimensions_blender_xyz_m": [
+        4.6,
+        3.3,
+        3.4
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    },
+    {
+      "id": "natural_rock_100",
+      "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_100.fbx",
+      "dimensions_blender_xyz_m": [
+        4.95,
+        4.2,
+        2.1
+      ],
+      "origin": "bottom_center",
+      "origin_tolerance_m": 0.0001,
+      "dimension_tolerance_m": 0.001,
+      "preferred_max_triangles": 250,
+      "hard_max_triangles": 300,
+      "material_required": true
+    }
+  ]
+}

@@ -1,0 +1,2235 @@
+{
+    "pack_id": "natural_rock_pack",
+    "generated_at_utc": "2026-09-10T12:33:55.4208132Z",
+    "all_passed": true,
+    "assets": [
+        {
+            "id": "natural_rock_001",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_001.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.11999999731779099,
+                "y": 0.07999999821186066,
+                "z": 0.10000000149011612
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.11999999731779099,
+                "y": 0.07999999821186066,
+                "z": 0.10000000149011612
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_002",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_002.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.07000000029802323,
+                "z": 0.09000000357627869
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.06999999284744263,
+                "z": 0.08999999612569809
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_003",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_003.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.05999999865889549,
+                "z": 0.12999999523162843
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.06000000238418579,
+                "z": 0.12999996542930604
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_004",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_004.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.10999999940395355,
+                "y": 0.10000000149011612,
+                "z": 0.10999999940395355
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.10999999940395355,
+                "y": 0.09999999403953552,
+                "z": 0.10999999940395355
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_005",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_005.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.1599999964237213,
+                "y": 0.09000000357627869,
+                "z": 0.07999999821186066
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.1599999964237213,
+                "y": 0.08999998867511749,
+                "z": 0.07999999821186066
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_006",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_006.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.12999999523162843,
+                "y": 0.09000000357627869,
+                "z": 0.11999999731779099
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.12999999523162843,
+                "y": 0.09000000357627869,
+                "z": 0.11999998986721039
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_007",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_007.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.17000000178813935,
+                "y": 0.07000000029802323,
+                "z": 0.14000000059604646
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.17000000178813935,
+                "y": 0.07000000029802323,
+                "z": 0.13999998569488526
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_008",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_008.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.10000000149011612,
+                "y": 0.07999999821186066,
+                "z": 0.10000000149011612
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.10000000149011612,
+                "y": 0.07999999821186066,
+                "z": 0.10000000149011612
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_009",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_009.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.18000000715255738,
+                "y": 0.07999999821186066,
+                "z": 0.10999999940395355
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.18000000715255738,
+                "y": 0.07999999821186066,
+                "z": 0.10999998450279236
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_010",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_010.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 10 exceeds preferred maximum 8."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 10,
+            "expected_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.09000000357627869,
+                "z": 0.10000000149011612
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.09000000357627869,
+                "z": 0.10000000149011612
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_011",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_011.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.10999999940395355,
+                "z": 0.12999999523162843
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.10999999195337296,
+                "z": 0.12999998033046723
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_012",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_012.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.1899999976158142,
+                "y": 0.05999999865889549,
+                "z": 0.11999999731779099
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.1899999976158142,
+                "y": 0.06000000238418579,
+                "z": 0.11999998241662979
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_013",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_013.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.11999999731779099,
+                "y": 0.10999999940395355,
+                "z": 0.09000000357627869
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.11999999731779099,
+                "y": 0.10999998450279236,
+                "z": 0.09000000357627869
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_014",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_014.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 10 exceeds preferred maximum 8."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 10,
+            "expected_unity_dimensions_m": {
+                "x": 0.1599999964237213,
+                "y": 0.10000000149011612,
+                "z": 0.15000000596046449
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.1599999964237213,
+                "y": 0.10000000149011612,
+                "z": 0.14999999105930329
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_015",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_015.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.12999999523162843,
+                "y": 0.09000000357627869,
+                "z": 0.10999999940395355
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.12999999523162843,
+                "y": 0.09000000357627869,
+                "z": 0.10999999940395355
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_016",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_016.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 10 exceeds preferred maximum 8."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 10,
+            "expected_unity_dimensions_m": {
+                "x": 0.20000000298023225,
+                "y": 0.07000000029802323,
+                "z": 0.14000000059604646
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.20000000298023225,
+                "y": 0.07000000029802323,
+                "z": 0.13999998569488526
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_017",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_017.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.07999999821186066,
+                "z": 0.09000000357627869
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.15000000596046449,
+                "y": 0.07999999821186066,
+                "z": 0.08999999612569809
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_018",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_018.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 10 exceeds preferred maximum 8."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 10,
+            "expected_unity_dimensions_m": {
+                "x": 0.17000000178813935,
+                "y": 0.11999999731779099,
+                "z": 0.12999999523162843
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.17000000178813935,
+                "y": 0.11999998986721039,
+                "z": 0.12999998033046723
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_019",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_019.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.18000000715255738,
+                "y": 0.09000000357627869,
+                "z": 0.10000000149011612
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.18000000715255738,
+                "y": 0.09000000357627869,
+                "z": 0.10000000149011612
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_020",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_020.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 6,
+            "expected_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.07999999821186066,
+                "z": 0.11999999731779099
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.14000000059604646,
+                "y": 0.07999999821186066,
+                "z": 0.11999998986721039
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_021",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_021.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 14,
+            "expected_unity_dimensions_m": {
+                "x": 0.25,
+                "y": 0.1599999964237213,
+                "z": 0.2199999988079071
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.25,
+                "y": 0.1599999964237213,
+                "z": 0.21999996900558473
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_022",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_022.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 16,
+            "expected_unity_dimensions_m": {
+                "x": 0.2800000011920929,
+                "y": 0.14000000059604646,
+                "z": 0.20000000298023225
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.2800000011920929,
+                "y": 0.14000000059604646,
+                "z": 0.20000000298023225
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_023",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_023.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 14,
+            "expected_unity_dimensions_m": {
+                "x": 0.25999999046325686,
+                "y": 0.18000000715255738,
+                "z": 0.23999999463558198
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.25999999046325686,
+                "y": 0.18000000715255738,
+                "z": 0.23999997973442079
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_024",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_024.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 20 exceeds preferred maximum 16."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 20,
+            "expected_unity_dimensions_m": {
+                "x": 0.30000001192092898,
+                "y": 0.15000000596046449,
+                "z": 0.18000000715255738
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.30000001192092898,
+                "y": 0.15000000596046449,
+                "z": 0.17999999225139619
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_025",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_025.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 8,
+            "expected_unity_dimensions_m": {
+                "x": 0.3199999928474426,
+                "y": 0.17000000178813935,
+                "z": 0.25999999046325686
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3199999928474426,
+                "y": 0.17000000178813935,
+                "z": 0.25999996066093447
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_026",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_026.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 12,
+            "expected_unity_dimensions_m": {
+                "x": 0.27000001072883608,
+                "y": 0.11999999731779099,
+                "z": 0.25
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.27000001072883608,
+                "y": 0.12000000476837158,
+                "z": 0.2499999701976776
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_027",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_027.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 16,
+            "expected_unity_dimensions_m": {
+                "x": 0.3100000023841858,
+                "y": 0.1899999976158142,
+                "z": 0.2199999988079071
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3100000023841858,
+                "y": 0.1899999976158142,
+                "z": 0.2199999988079071
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_028",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_028.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 16,
+            "expected_unity_dimensions_m": {
+                "x": 0.28999999165534975,
+                "y": 0.20000000298023225,
+                "z": 0.23999999463558198
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.28999999165534975,
+                "y": 0.20000000298023225,
+                "z": 0.23999997973442079
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_029",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_029.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 16,
+            "expected_unity_dimensions_m": {
+                "x": 0.3400000035762787,
+                "y": 0.1599999964237213,
+                "z": 0.20999999344348908
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3400000035762787,
+                "y": 0.1599999964237213,
+                "z": 0.20999997854232789
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_030",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_030.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 16,
+            "expected_unity_dimensions_m": {
+                "x": 0.33000001311302187,
+                "y": 0.2199999988079071,
+                "z": 0.2800000011920929
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.33000001311302187,
+                "y": 0.2199999839067459,
+                "z": 0.2799999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_031",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_031.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.3799999952316284,
+                "y": 0.23999999463558198,
+                "z": 0.3199999928474426
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.3799999952316284,
+                "y": 0.24000000953674317,
+                "z": 0.31999996304512026
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_032",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_032.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.41999998688697817,
+                "y": 0.18000000715255738,
+                "z": 0.36000001430511477
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.41999998688697817,
+                "y": 0.18000003695487977,
+                "z": 0.35999995470046999
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_033",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_033.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 26,
+            "expected_unity_dimensions_m": {
+                "x": 0.4000000059604645,
+                "y": 0.2800000011920929,
+                "z": 0.3400000035762787
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.4000000059604645,
+                "y": 0.2799999713897705,
+                "z": 0.3399999737739563
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_034",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_034.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 28,
+            "expected_unity_dimensions_m": {
+                "x": 0.44999998807907107,
+                "y": 0.2199999988079071,
+                "z": 0.30000001192092898
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.44999998807907107,
+                "y": 0.2199999988079071,
+                "z": 0.29999998211860659
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_035",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_035.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 32 exceeds preferred maximum 28."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 0.4300000071525574,
+                "y": 0.25999999046325686,
+                "z": 0.3799999952316284
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.4300000071525574,
+                "y": 0.25999999046325686,
+                "z": 0.37999996542930605
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_036",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_036.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.4699999988079071,
+                "y": 0.20000000298023225,
+                "z": 0.3499999940395355
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.4699999988079071,
+                "y": 0.20000001788139344,
+                "z": 0.34999996423721316
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_037",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_037.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.4399999976158142,
+                "y": 0.30000001192092898,
+                "z": 0.38999998569488528
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.4399999976158142,
+                "y": 0.30000001192092898,
+                "z": 0.38999995589256289
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_038",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_038.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 28,
+            "expected_unity_dimensions_m": {
+                "x": 0.47999998927116396,
+                "y": 0.3199999928474426,
+                "z": 0.36000001430511477
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.47999998927116396,
+                "y": 0.3199999928474426,
+                "z": 0.35999998450279238
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_039",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_039.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 30 exceeds preferred maximum 28."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 30,
+            "expected_unity_dimensions_m": {
+                "x": 0.46000000834465029,
+                "y": 0.25,
+                "z": 0.41999998688697817
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.46000000834465029,
+                "y": 0.25,
+                "z": 0.4199999272823334
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_040",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_040.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 14,
+            "expected_unity_dimensions_m": {
+                "x": 0.49000000953674319,
+                "y": 0.3400000035762787,
+                "z": 0.4000000059604645
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.49000000953674319,
+                "y": 0.3400000035762787,
+                "z": 0.4000000059604645
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_041",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_041.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 20,
+            "expected_unity_dimensions_m": {
+                "x": 0.550000011920929,
+                "y": 0.36000001430511477,
+                "z": 0.46000000834465029
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.550000011920929,
+                "y": 0.36000001430511477,
+                "z": 0.4599999785423279
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_042",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_042.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.5799999833106995,
+                "y": 0.2199999988079071,
+                "z": 0.47999998927116396
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5799999833106995,
+                "y": 0.2200000137090683,
+                "z": 0.47999992966651919
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_043",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_043.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 28,
+            "expected_unity_dimensions_m": {
+                "x": 0.5400000214576721,
+                "y": 0.3799999952316284,
+                "z": 0.4399999976158142
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5400000214576721,
+                "y": 0.3799999952316284,
+                "z": 0.4399999976158142
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_044",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_044.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 32 exceeds preferred maximum 28."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 0.5699999928474426,
+                "y": 0.30000001192092898,
+                "z": 0.41999998688697817
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5699999928474426,
+                "y": 0.30000001192092898,
+                "z": 0.41999995708465578
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_045",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_045.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 30 exceeds preferred maximum 28."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 30,
+            "expected_unity_dimensions_m": {
+                "x": 0.5899999737739563,
+                "y": 0.3499999940395355,
+                "z": 0.5
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5899999737739563,
+                "y": 0.3499999940395355,
+                "z": 0.5
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_046",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_046.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 20,
+            "expected_unity_dimensions_m": {
+                "x": 0.5600000023841858,
+                "y": 0.25999999046325686,
+                "z": 0.5199999809265137
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5600000023841858,
+                "y": 0.25999999046325686,
+                "z": 0.5199998617172241
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_047",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_047.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 20,
+            "expected_unity_dimensions_m": {
+                "x": 0.6000000238418579,
+                "y": 0.3799999952316284,
+                "z": 0.44999998807907107
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.6000000238418579,
+                "y": 0.3799999952316284,
+                "z": 0.44999998807907107
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_048",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_048.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 30 exceeds preferred maximum 28."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 30,
+            "expected_unity_dimensions_m": {
+                "x": 0.5799999833106995,
+                "y": 0.4000000059604645,
+                "z": 0.5199999809265137
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.5799999833106995,
+                "y": 0.4000000059604645,
+                "z": 0.5199999213218689
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_049",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_049.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 0.6800000071525574,
+                "y": 0.41999998688697817,
+                "z": 0.550000011920929
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.6800000071525574,
+                "y": 0.41999998688697817,
+                "z": 0.5499999523162842
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_050",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_050.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.7200000286102295,
+                "y": 0.2800000011920929,
+                "z": 0.6000000238418579
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.7200000286102295,
+                "y": 0.2800000309944153,
+                "z": 0.5999999046325684
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_051",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_051.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 44,
+            "expected_unity_dimensions_m": {
+                "x": 0.6499999761581421,
+                "y": 0.47999998927116396,
+                "z": 0.5799999833106995
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.6499999761581421,
+                "y": 0.47999995946884158,
+                "z": 0.5799999237060547
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_052",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_052.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 28,
+            "expected_unity_dimensions_m": {
+                "x": 0.75,
+                "y": 0.4000000059604645,
+                "z": 0.5199999809265137
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.75,
+                "y": 0.4000000059604645,
+                "z": 0.5199999213218689
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_053",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_053.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 42,
+            "expected_unity_dimensions_m": {
+                "x": 0.7799999713897705,
+                "y": 0.44999998807907107,
+                "z": 0.6399999856948853
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.7799999713897705,
+                "y": 0.4500000476837158,
+                "z": 0.6399999260902405
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_054",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_054.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 24,
+            "expected_unity_dimensions_m": {
+                "x": 0.8199999928474426,
+                "y": 0.3199999928474426,
+                "z": 0.6800000071525574
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.8199999928474426,
+                "y": 0.3200000524520874,
+                "z": 0.6799999475479126
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_055",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_055.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 38,
+            "expected_unity_dimensions_m": {
+                "x": 0.800000011920929,
+                "y": 0.5199999809265137,
+                "z": 0.6200000047683716
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.800000011920929,
+                "y": 0.5199999809265137,
+                "z": 0.6199999451637268
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_056",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_056.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 44,
+            "expected_unity_dimensions_m": {
+                "x": 0.8500000238418579,
+                "y": 0.550000011920929,
+                "z": 0.699999988079071
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.8500000238418579,
+                "y": 0.5499999523162842,
+                "z": 0.6999999284744263
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_057",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_057.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 52 exceeds preferred maximum 48."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 52,
+            "expected_unity_dimensions_m": {
+                "x": 0.8799999952316284,
+                "y": 0.46000000834465029,
+                "z": 0.6499999761581421
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.8799999952316284,
+                "y": 0.46000003814697268,
+                "z": 0.6499999165534973
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_058",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_058.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 42,
+            "expected_unity_dimensions_m": {
+                "x": 0.9200000166893005,
+                "y": 0.5799999833106995,
+                "z": 0.7400000095367432
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.9200000166893005,
+                "y": 0.5799999237060547,
+                "z": 0.7399999499320984
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_059",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_059.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 50 exceeds preferred maximum 48."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 50,
+            "expected_unity_dimensions_m": {
+                "x": 0.949999988079071,
+                "y": 0.6200000047683716,
+                "z": 0.800000011920929
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.949999988079071,
+                "y": 0.6200000047683716,
+                "z": 0.800000011920929
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_060",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_060.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 52 exceeds preferred maximum 48."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 52,
+            "expected_unity_dimensions_m": {
+                "x": 0.9800000190734863,
+                "y": 0.6499999761581421,
+                "z": 0.7799999713897705
+            },
+            "measured_unity_dimensions_m": {
+                "x": 0.9800000190734863,
+                "y": 0.6499999761581421,
+                "z": 0.7799999117851257
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_061",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_061.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [
+                "Triangle count 82 exceeds preferred maximum 80."
+            ],
+            "mesh_count": 1,
+            "triangle_count": 82,
+            "expected_unity_dimensions_m": {
+                "x": 1.149999976158142,
+                "y": 0.75,
+                "z": 0.949999988079071
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.149999976158142,
+                "y": 0.75,
+                "z": 0.9499999284744263
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_062",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_062.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 28,
+            "expected_unity_dimensions_m": {
+                "x": 1.25,
+                "y": 0.44999998807907107,
+                "z": 1.0499999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.25,
+                "y": 0.45000001788139346,
+                "z": 1.049999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_063",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_063.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 60,
+            "expected_unity_dimensions_m": {
+                "x": 1.100000023841858,
+                "y": 1.350000023841858,
+                "z": 0.8999999761581421
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.100000023841858,
+                "y": 1.3499999046325684,
+                "z": 0.8999999761581421
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_064",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_064.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 76,
+            "expected_unity_dimensions_m": {
+                "x": 1.2999999523162842,
+                "y": 0.8500000238418579,
+                "z": 1.100000023841858
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.2999999523162842,
+                "y": 0.8500000238418579,
+                "z": 1.0999999046325684
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_065",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_065.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 1.350000023841858,
+                "y": 0.8999999761581421,
+                "z": 1.149999976158142
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.350000023841858,
+                "y": 0.8999999165534973,
+                "z": 1.1499998569488526
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_066",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_066.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 1.399999976158142,
+                "y": 0.75,
+                "z": 1.0499999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.399999976158142,
+                "y": 0.75,
+                "z": 1.0499998331069947
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_067",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_067.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 60,
+            "expected_unity_dimensions_m": {
+                "x": 1.4500000476837159,
+                "y": 0.949999988079071,
+                "z": 1.2000000476837159
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.4500000476837159,
+                "y": 0.9499999284744263,
+                "z": 1.1999999284744263
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_068",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_068.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 60,
+            "expected_unity_dimensions_m": {
+                "x": 1.3799999952316285,
+                "y": 0.8799999952316284,
+                "z": 1.1799999475479127
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.3799999952316285,
+                "y": 0.8799999952316284,
+                "z": 1.179999828338623
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_069",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_069.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 60,
+            "expected_unity_dimensions_m": {
+                "x": 1.4800000190734864,
+                "y": 1.0,
+                "z": 1.25
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.4800000190734864,
+                "y": 0.9999999403953552,
+                "z": 1.2499998807907105
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_070",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_070.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 54,
+            "expected_unity_dimensions_m": {
+                "x": 1.2000000476837159,
+                "y": 1.4800000190734864,
+                "z": 1.0
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.2000000476837159,
+                "y": 1.4799997806549073,
+                "z": 1.0
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_071",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_071.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 66,
+            "expected_unity_dimensions_m": {
+                "x": 1.649999976158142,
+                "y": 1.100000023841858,
+                "z": 1.350000023841858
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.649999976158142,
+                "y": 1.0999999046325684,
+                "z": 1.3499999046325684
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_072",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_072.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 36,
+            "expected_unity_dimensions_m": {
+                "x": 1.75,
+                "y": 0.6000000238418579,
+                "z": 1.4500000476837159
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.75,
+                "y": 0.6000001430511475,
+                "z": 1.4499998092651368
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_073",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_073.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 1.7000000476837159,
+                "y": 1.2000000476837159,
+                "z": 1.399999976158142
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.7000000476837159,
+                "y": 1.2000000476837159,
+                "z": 1.3999998569488526
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_074",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_074.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 76,
+            "expected_unity_dimensions_m": {
+                "x": 1.5499999523162842,
+                "y": 1.850000023841858,
+                "z": 1.25
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.5499999523162842,
+                "y": 1.8499999046325684,
+                "z": 1.25
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_075",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_075.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 70,
+            "expected_unity_dimensions_m": {
+                "x": 1.850000023841858,
+                "y": 1.25,
+                "z": 1.5
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.850000023841858,
+                "y": 1.25,
+                "z": 1.4999998807907105
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_076",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_076.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 64,
+            "expected_unity_dimensions_m": {
+                "x": 1.7999999523162842,
+                "y": 1.149999976158142,
+                "z": 1.5499999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.7999999523162842,
+                "y": 1.149999976158142,
+                "z": 1.5499998331069947
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_077",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_077.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 78,
+            "expected_unity_dimensions_m": {
+                "x": 1.899999976158142,
+                "y": 1.2999999523162842,
+                "z": 1.600000023841858
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.899999976158142,
+                "y": 1.2999999523162842,
+                "z": 1.600000023841858
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_078",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_078.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 36,
+            "expected_unity_dimensions_m": {
+                "x": 1.9500000476837159,
+                "y": 1.100000023841858,
+                "z": 1.4500000476837159
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.9500000476837159,
+                "y": 1.0999999046325684,
+                "z": 1.4499999284744263
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_079",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_079.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 80,
+            "expected_unity_dimensions_m": {
+                "x": 1.600000023841858,
+                "y": 1.9500000476837159,
+                "z": 1.2999999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.600000023841858,
+                "y": 1.9499998092651368,
+                "z": 1.2999999523162842
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_080",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_080.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 1.9800000190734864,
+                "y": 1.350000023841858,
+                "z": 1.649999976158142
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.9800000190734864,
+                "y": 1.350000023841858,
+                "z": 1.649999976158142
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_081",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_081.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 46,
+            "expected_unity_dimensions_m": {
+                "x": 2.200000047683716,
+                "y": 1.4500000476837159,
+                "z": 1.7999999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.200000047683716,
+                "y": 1.4500000476837159,
+                "z": 1.7999999523162842
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_082",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_082.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 2.3499999046325685,
+                "y": 0.8500000238418579,
+                "z": 1.899999976158142
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.3499999046325685,
+                "y": 0.8500000834465027,
+                "z": 1.899999737739563
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_083",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_083.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 1.7999999523162842,
+                "y": 2.4000000953674318,
+                "z": 1.5
+            },
+            "measured_unity_dimensions_m": {
+                "x": 1.7999999523162842,
+                "y": 2.4000000953674318,
+                "z": 1.5
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_084",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_084.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 88,
+            "expected_unity_dimensions_m": {
+                "x": 2.450000047683716,
+                "y": 1.5499999523162842,
+                "z": 1.9500000476837159
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.450000047683716,
+                "y": 1.5499999523162842,
+                "z": 1.9500000476837159
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_085",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_085.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 52,
+            "expected_unity_dimensions_m": {
+                "x": 2.299999952316284,
+                "y": 1.600000023841858,
+                "z": 1.850000023841858
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.299999952316284,
+                "y": 1.600000023841858,
+                "z": 1.8499999046325684
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_086",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_086.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 62,
+            "expected_unity_dimensions_m": {
+                "x": 2.5,
+                "y": 1.649999976158142,
+                "z": 2.049999952316284
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.5,
+                "y": 1.649999976158142,
+                "z": 2.049999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_087",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_087.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 44,
+            "expected_unity_dimensions_m": {
+                "x": 2.799999952316284,
+                "y": 1.850000023841858,
+                "z": 2.25
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.799999952316284,
+                "y": 1.8499999046325684,
+                "z": 2.249999761581421
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_088",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_088.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 3.0,
+                "y": 1.100000023841858,
+                "z": 2.4000000953674318
+            },
+            "measured_unity_dimensions_m": {
+                "x": 3.0,
+                "y": 1.1000001430511475,
+                "z": 2.3999996185302736
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_089",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_089.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 2.200000047683716,
+                "y": 3.200000047683716,
+                "z": 1.7999999523162842
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.200000047683716,
+                "y": 3.1999998092651369,
+                "z": 1.7999999523162842
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_090",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_090.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 124,
+            "expected_unity_dimensions_m": {
+                "x": 3.25,
+                "y": 2.0999999046325685,
+                "z": 2.549999952316284
+            },
+            "measured_unity_dimensions_m": {
+                "x": 3.25,
+                "y": 2.0999999046325685,
+                "z": 2.549999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_091",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_091.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 60,
+            "expected_unity_dimensions_m": {
+                "x": 3.0999999046325685,
+                "y": 2.0,
+                "z": 2.450000047683716
+            },
+            "measured_unity_dimensions_m": {
+                "x": 3.0999999046325685,
+                "y": 1.9999998807907105,
+                "z": 2.4499998092651369
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_092",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_092.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 44,
+            "expected_unity_dimensions_m": {
+                "x": 3.450000047683716,
+                "y": 2.25,
+                "z": 2.75
+            },
+            "measured_unity_dimensions_m": {
+                "x": 3.450000047683716,
+                "y": 2.25,
+                "z": 2.749999761581421
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_093",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_093.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 80,
+            "expected_unity_dimensions_m": {
+                "x": 3.5999999046325685,
+                "y": 4.800000190734863,
+                "z": 3.0
+            },
+            "measured_unity_dimensions_m": {
+                "x": 3.5999999046325685,
+                "y": 4.800000190734863,
+                "z": 3.0
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_094",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_094.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 116,
+            "expected_unity_dimensions_m": {
+                "x": 4.849999904632568,
+                "y": 2.799999952316284,
+                "z": 3.4000000953674318
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.849999904632568,
+                "y": 2.799999952316284,
+                "z": 3.3999996185302736
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_095",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_095.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 4.199999809265137,
+                "y": 3.200000047683716,
+                "z": 3.799999952316284
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.199999809265137,
+                "y": 3.200000047683716,
+                "z": 3.799999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_096",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_096.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 128,
+            "expected_unity_dimensions_m": {
+                "x": 4.5,
+                "y": 3.5,
+                "z": 3.200000047683716
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.5,
+                "y": 3.499999761581421,
+                "z": 3.1999998092651369
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_097",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_097.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 74,
+            "expected_unity_dimensions_m": {
+                "x": 2.799999952316284,
+                "y": 4.949999809265137,
+                "z": 2.5
+            },
+            "measured_unity_dimensions_m": {
+                "x": 2.799999952316284,
+                "y": 4.94999885559082,
+                "z": 2.5
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_098",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_098.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 66,
+            "expected_unity_dimensions_m": {
+                "x": 4.400000095367432,
+                "y": 3.0999999046325685,
+                "z": 3.5999999046325685
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.400000095367432,
+                "y": 3.0999999046325685,
+                "z": 3.5999999046325685
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_099",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_099.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 68,
+            "expected_unity_dimensions_m": {
+                "x": 4.599999904632568,
+                "y": 3.4000000953674318,
+                "z": 3.299999952316284
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.599999904632568,
+                "y": 3.3999998569488527,
+                "z": 3.299999713897705
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        },
+        {
+            "id": "natural_rock_100",
+            "asset_path": "Assets/Art/environment/natural_rock_pack/Models/natural_rock_100.fbx",
+            "passed": true,
+            "failures": [],
+            "warnings": [],
+            "mesh_count": 1,
+            "triangle_count": 32,
+            "expected_unity_dimensions_m": {
+                "x": 4.949999809265137,
+                "y": 2.0999999046325685,
+                "z": 4.199999809265137
+            },
+            "measured_unity_dimensions_m": {
+                "x": 4.949999809265137,
+                "y": 2.0999999046325685,
+                "z": 4.19999885559082
+            },
+            "root_transform_valid": true,
+            "bottom_center_origin": true,
+            "material_present": true
+        }
+    ]
+}
