@@ -659,21 +659,21 @@ namespace LifeEngine.SimulatedHumans
 
         public void BuildBehaviorTree()
         {
-            // Priority 0: Sleep Sequence
+            // Sleep goal execution
             Sequence sleepSequence = new Sequence("Sleep Sequence", new List<Node>
             {
                 new NeedsSleepNode(aiContext),
                 new SleepNode(aiContext)
             });
 
-            // Priority 1: Flee from Threats
+            // Flee goal execution
             Sequence fleeSequence = new Sequence("Flee Sequence", new List<Node>
             {
                 new CheckDangerNode(aiContext),
                 new FleeNode(aiContext)
             });
 
-            // Priority 2: Eat Food
+            // Eat goal execution
             Sequence eatSequence = new Sequence("Eat Sequence", new List<Node>
             {
                 new NeedsFoodNode(aiContext),
@@ -681,7 +681,7 @@ namespace LifeEngine.SimulatedHumans
                 new EatFoodNode(aiContext)
             });
 
-            // Priority 3: Seek Shelter
+            // Shelter goal execution
             Sequence shelterSequence = new Sequence("Seek Shelter Sequence", new List<Node>
             {
                 new NeedsShelterNode(aiContext),
@@ -770,7 +770,7 @@ namespace LifeEngine.SimulatedHumans
                 })
             });
 
-            // Priority 5: Fell Tree (Tool Dependency Example)
+            // Fell-tree test goal execution
             Sequence fellTreeSequence = new Sequence("Fell Tree Goal", new List<Node>
             {
                 // Only run if test flag is on
@@ -805,7 +805,7 @@ namespace LifeEngine.SimulatedHumans
                 })
             });
 
-            // Priority 6: Wander
+            // Wander fallback execution
             Sequence wanderSequence = new Sequence("Wander Sequence", new List<Node>
             {
                 new WanderNode(aiContext)
