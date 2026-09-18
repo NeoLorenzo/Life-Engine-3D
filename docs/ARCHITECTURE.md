@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Life Engine 3D** is an agentic artificial-life simulation where autonomous humanoid agents interact with a dynamic physical environment. The architecture decouples high-level decision-making (Behavior Trees), physical locomotion and steering (NavMesh + Rigidbody physics), sensory perception (Raycasting + FOV), memory, and environmental systems.
+**Life Engine 3D** is an agentic artificial-life simulation where autonomous humanoid agents interact with a dynamic physical environment. The architecture decouples top-level utility-based motivation arbitration, procedural behavior-tree execution, physical locomotion and steering (NavMesh + Rigidbody physics), sensory perception (Raycasting + FOV), memory, and environmental systems.
 
 ---
 
@@ -23,7 +23,8 @@ graph TD
     end
 
     subgraph Agent Core
-        HB -->|Executes Root Node| BT[Behavior Tree]
+        HB -->|Scores + Selects Goal| GA[Utility Goal Arbitration]
+        GA -->|Selects Active Subtree| BT[Behavior Tree]
         HB -->|Holds Components & Transient State| HC[HumanContext]
         BT -->|Evaluates Nodes via| HC
         HC -->|Reads State & Updates Hands| HB
@@ -66,7 +67,8 @@ graph TD
 ## Component Responsibilities & Relationships
 
 ### 1. Agent Decision & Drive Core
-* **[`HumanBrain`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanBrain.cs)**: Central coordinator for the agent. Owns metabolic variables (adenosine for sleep, ghrelin for hunger), authoritative thermal evaluation (`currentThermalStatus`), carried inventories (`ResourceStack` inventory and `toolInventory`), hand visual slots, and the behavior tree lifecycle.
+* **[`HumanBrain`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanBrain.cs)**: Central coordinator for the agent. Owns metabolic variables (adenosine for sleep, ghrelin for hunger), authoritative thermal evaluation (`currentThermalStatus`), carried inventories, top-level goal arbitration/telemetry, and the behavior-tree lifecycle.
+* **[`HumanGoalUtility`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/HumanGoalUtility.cs)**: Converts authoritative state into comparable goal utilities, implements switching guards, and provides the stable utility behavior-tree root.
 * **[`HumanContext`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs)**: Transient data container instantiated per agent. Passed into all behavior tree nodes to provide direct access to `Brain`, `Locomotion`, `Perception`, and `Memory`, as well as holding in-flight task data (timers, target transforms, placement vectors).
 * **Behavior Tree Engine ([`BehaviorTree.cs`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/AI/BehaviorTree.cs))**: Custom hierarchical behavior tree implementation containing composite nodes (`Selector`, `Sequence`) and `ActionNode` delegates. Evaluated every frame from the root.
 
@@ -121,7 +123,7 @@ Clear ownership rules ensure determinism and prevent race conditions across syst
 3. **Agent Physiology**: If awake, `HumanBrain` increments `adenosineConcentration` and `ghrelinConcentration`.
 4. **Thermal Evaluation**: `HumanBrain.UpdateThermalState()` performs 5-point silhouette shade raycasts, scans heat sources via `HumanPerception.PerformHeatSourceScan()`, moves `perceivedTemperature` toward target, and updates `currentThermalStatus` with hysteresis.
 5. **Memory Pruning**: `HumanMemory.Update()` purges expired threat entries.
-6. **Behavior Tree Evaluation**: `HumanBrain` resets the root tree (`rootNode.ResetState()`) and traverses the tree (`rootNode.Evaluate()`).
+6. **Goal Arbitration & Behavior Execution**: `HumanBrain` refreshes danger/shelter appraisal, computes goal utilities/eligibility, applies emergency/commitment/switch guards, then resets and evaluates the stable utility behavior-tree root for the selected goal.
 7. **Animation Driving**: `HumanAnimationDriver` samples planar velocity and states to update `Animator` floats and booleans.
 
 ### 2. `FixedUpdate()` Phase (Physics Cadence)
