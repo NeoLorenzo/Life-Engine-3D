@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using LifeEngine.AI;
 using LifeEngine.SimulatedHumans.Behaviors;
 using System;
@@ -62,6 +63,18 @@ namespace LifeEngine.SimulatedHumans
 
         [Header("AI State")]
         public string currentStateDisplay;
+
+        [Header("Goal Arbitration")]
+        [SerializeField] private HumanGoal currentGoal = HumanGoal.Wander;
+        [SerializeField, Range(0f, 1f)] private float currentGoalUtility;
+        [SerializeField] private bool currentGoalRetainedByCommitment;
+        [SerializeField] private List<HumanGoalScore> goalScores = new List<HumanGoalScore>();
+        [Tooltip("Candidate goal must exceed the current goal by this utility margin before switching.")]
+        public float goalSwitchMargin = 0.10f;
+        [Tooltip("Minimum scaled seconds to retain an eligible goal before a normal switch is allowed.")]
+        public float minimumGoalCommitmentSeconds = 0.75f;
+        [Tooltip("Scaled seconds between normal goal arbitration passes. Emergency threats bypass this interval.")]
+        public float goalEvaluationInterval = 0.20f;
 
         [Header("Inventory")]
         public List<ResourceStack> inventory = new List<ResourceStack>();
@@ -161,13 +174,52 @@ namespace LifeEngine.SimulatedHumans
             // visual.layer = LayerMask.NameToLayer("Ignore Raycast");
         }
 
+        private static readonly HumanGoal[] GoalEvaluationOrder =
+        {
+            HumanGoal.Flee,
+            HumanGoal.Sleep,
+            HumanGoal.Eat,
+            HumanGoal.SeekShelter,
+            HumanGoal.WarmUp,
+            HumanGoal.CoolDown,
+            HumanGoal.FellTree,
+            HumanGoal.Wander
+        };
+
         private HumanContext aiContext;
-        private Selector rootNode;
-        public Selector RootNode => rootNode;
+        private Node rootNode;
+        private readonly Dictionary<HumanGoal, Node> goalBehaviors = new Dictionary<HumanGoal, Node>();
+        private float nextGoalEvaluationTime;
+        private float currentGoalSelectedAt;
+        private bool hasVisibleThreat;
+        private bool hasActiveDanger;
+        private bool needsShelter;
+
+        public Node RootNode => rootNode;
+        public HumanGoal CurrentGoal => currentGoal;
+        public float CurrentGoalUtility => currentGoalUtility;
+        public bool CurrentGoalRetainedByCommitment => currentGoalRetainedByCommitment;
+        public IReadOnlyList<HumanGoalScore> GoalScores => goalScores;
+        public bool HasVisibleThreat => hasVisibleThreat;
+        public bool HasActiveDanger => hasActiveDanger;
+        public bool NeedsShelter => needsShelter;
+        public float ShelterComfortRemaining => aiContext != null ? aiContext.OutsideRoomComfortTimer : 0f;
 
         public HumanLocomotion Locomotion { get; private set; }
         public HumanPerception Perception { get; private set; }
         public HumanMemory Memory { get; private set; }
+
+        public float GetGoalUtility(HumanGoal goal)
+        {
+            HumanGoalScore score = FindGoalScore(goal);
+            return score != null ? score.utility : 0f;
+        }
+
+        public bool IsGoalEligible(HumanGoal goal)
+        {
+            HumanGoalScore score = FindGoalScore(goal);
+            return score != null && score.eligible;
+        }
 
         public void SetSelected(bool selected)
         {
@@ -192,6 +244,9 @@ namespace LifeEngine.SimulatedHumans
                 OutsideRoomComfortDuration = 10f,
                 OutsideRoomComfortTimer = 10f
             };
+
+            InitializeGoalTelemetry();
+            currentGoalSelectedAt = Time.time;
         }
 
         private void Start()
@@ -212,6 +267,9 @@ namespace LifeEngine.SimulatedHumans
             }
 
             UpdateThermalState();
+            UpdateDangerState();
+            UpdateShelterState();
+            UpdateGoalArbitration();
 
             if (rootNode != null)
             {
@@ -219,6 +277,239 @@ namespace LifeEngine.SimulatedHumans
                 rootNode.Evaluate();
                 currentStateDisplay = GetBehaviorTreeStatus();
             }
+        }
+
+        private void InitializeGoalTelemetry()
+        {
+            goalScores.Clear();
+            foreach (HumanGoal goal in GoalEvaluationOrder)
+            {
+                goalScores.Add(new HumanGoalScore(goal));
+            }
+        }
+
+        private HumanGoalScore FindGoalScore(HumanGoal goal)
+        {
+            for (int i = 0; i < goalScores.Count; i++)
+            {
+                if (goalScores[i].goal == goal) return goalScores[i];
+            }
+            return null;
+        }
+
+        private void SetGoalScore(HumanGoal goal, float utility, bool eligible)
+        {
+            HumanGoalScore score = FindGoalScore(goal);
+            if (score == null)
+            {
+                score = new HumanGoalScore(goal);
+                goalScores.Add(score);
+            }
+
+            score.utility = Mathf.Clamp01(utility);
+            score.eligible = eligible;
+        }
+
+        private void UpdateDangerState()
+        {
+            if (Perception == null || Memory == null || aiContext == null)
+            {
+                hasVisibleThreat = false;
+                hasActiveDanger = false;
+                return;
+            }
+
+            hasVisibleThreat = Perception.PerformDangerScan(out Transform closestThreat);
+
+            if (hasVisibleThreat && closestThreat != null)
+            {
+                Memory.SetPrimaryThreat(closestThreat);
+                aiContext.PanicTimer = 0f;
+            }
+            else
+            {
+                Memory.SetPrimaryThreat(null);
+                aiContext.PanicTimer += Time.deltaTime;
+            }
+
+            // Refresh bounded threat memory whether or not the flee goal currently owns execution.
+            Memory.GetActiveThreatPositions(Perception.currentlyVisibleThreatPositions);
+            hasActiveDanger = hasVisibleThreat || aiContext.PanicTimer < aiContext.PanicPersistence;
+        }
+
+        private void UpdateShelterState()
+        {
+            if (aiContext == null)
+            {
+                needsShelter = false;
+                return;
+            }
+
+            const int roomAreaMask = 1 << 3;
+            bool inRoom = false;
+
+            if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
+            {
+                inRoom = (hit.mask & roomAreaMask) != 0;
+            }
+
+            if (inRoom)
+            {
+                aiContext.OutsideRoomComfortTimer = Mathf.Max(0f, aiContext.OutsideRoomComfortDuration);
+
+                if (aiContext.CurrentShelterTarget != Vector3.zero &&
+                    Locomotion != null &&
+                    !Locomotion.HasReachedDestination(1.5f))
+                {
+                    // Keep the shelter goal active until the agent reaches its intended indoor destination.
+                    needsShelter = true;
+                    return;
+                }
+
+                aiContext.CurrentShelterTarget = Vector3.zero;
+                needsShelter = false;
+                return;
+            }
+
+            aiContext.OutsideRoomComfortTimer = Mathf.Max(
+                0f,
+                aiContext.OutsideRoomComfortTimer - Time.deltaTime);
+            needsShelter = aiContext.OutsideRoomComfortTimer <= 0f;
+        }
+
+        private void UpdateGoalScores()
+        {
+            bool sleepEligible = isSleeping || adenosineConcentration >= 100f;
+            float sleepUtility = isSleeping ? 1f : HumanGoalUtility.Sleep(adenosineConcentration);
+            SetGoalScore(HumanGoal.Sleep, sleepUtility, sleepEligible);
+
+            bool foodLocked = aiContext != null &&
+                              (aiContext.CurrentFoodTarget != null || aiContext.EatingTimer > 0f);
+            bool eatEligible = !isSleeping && (foodLocked || ghrelinConcentration >= ghrelinHungerThreshold);
+            SetGoalScore(
+                HumanGoal.Eat,
+                HumanGoalUtility.Hunger(ghrelinConcentration, ghrelinHungerThreshold),
+                eatEligible);
+
+            bool fleeEligible = !isSleeping && hasActiveDanger;
+            SetGoalScore(
+                HumanGoal.Flee,
+                HumanGoalUtility.Danger(
+                    hasVisibleThreat,
+                    aiContext != null ? aiContext.PanicTimer : float.MaxValue,
+                    aiContext != null ? aiContext.PanicPersistence : 0f),
+                fleeEligible);
+
+            SetGoalScore(
+                HumanGoal.SeekShelter,
+                HumanGoalUtility.Shelter(needsShelter),
+                !isSleeping && needsShelter);
+
+            bool cold = !isSleeping && currentThermalStatus == ThermalStatus.Cold;
+            SetGoalScore(
+                HumanGoal.WarmUp,
+                HumanGoalUtility.Warmth(perceivedTemperature, comfortRangeMin, currentThermalStatus),
+                cold);
+
+            bool hot = !isSleeping && currentThermalStatus == ThermalStatus.Hot;
+            SetGoalScore(
+                HumanGoal.CoolDown,
+                HumanGoalUtility.Cooling(perceivedTemperature, comfortRangeMax, currentThermalStatus),
+                hot);
+
+            SetGoalScore(
+                HumanGoal.FellTree,
+                HumanGoalUtility.FellTreeTest(startFellingTest),
+                !isSleeping && startFellingTest);
+
+            SetGoalScore(HumanGoal.Wander, 0f, !isSleeping);
+        }
+
+        private void UpdateGoalArbitration(bool force = false)
+        {
+            UpdateGoalScores();
+
+            bool emergencyThreat = hasVisibleThreat && !isSleeping;
+            bool currentEligible = IsGoalEligible(currentGoal);
+
+            if (emergencyThreat && currentGoal != HumanGoal.Flee)
+            {
+                SelectGoal(HumanGoal.Flee, GetGoalUtility(HumanGoal.Flee));
+                nextGoalEvaluationTime = Time.time + Mathf.Max(0.01f, goalEvaluationInterval);
+                return;
+            }
+
+            bool evaluationDue = force || !currentEligible || Time.time >= nextGoalEvaluationTime;
+            if (!evaluationDue)
+            {
+                currentGoalUtility = GetGoalUtility(currentGoal);
+                currentGoalRetainedByCommitment = false;
+                return;
+            }
+
+            nextGoalEvaluationTime = Time.time + Mathf.Max(0.01f, goalEvaluationInterval);
+            FindBestEligibleGoal(out HumanGoal candidateGoal, out float candidateUtility);
+
+            if (currentGoal == HumanGoal.None)
+            {
+                SelectGoal(candidateGoal, candidateUtility);
+                return;
+            }
+
+            float currentUtility = GetGoalUtility(currentGoal);
+            if (candidateGoal == currentGoal)
+            {
+                currentGoalUtility = currentUtility;
+                currentGoalRetainedByCommitment = false;
+                return;
+            }
+
+            bool commitmentActive =
+                currentEligible &&
+                Time.time - currentGoalSelectedAt < Mathf.Max(0f, minimumGoalCommitmentSeconds);
+            bool emergencyOverride = candidateGoal == HumanGoal.Flee && hasVisibleThreat;
+
+            if (HumanGoalUtility.ShouldSwitchGoal(
+                currentUtility,
+                candidateUtility,
+                currentEligible,
+                emergencyOverride,
+                commitmentActive,
+                goalSwitchMargin))
+            {
+                SelectGoal(candidateGoal, candidateUtility);
+            }
+            else
+            {
+                currentGoalUtility = currentUtility;
+                currentGoalRetainedByCommitment = true;
+            }
+        }
+
+        private void FindBestEligibleGoal(out HumanGoal bestGoal, out float bestUtility)
+        {
+            bestGoal = HumanGoal.Wander;
+            bestUtility = GetGoalUtility(HumanGoal.Wander);
+
+            foreach (HumanGoal goal in GoalEvaluationOrder)
+            {
+                if (!IsGoalEligible(goal)) continue;
+
+                float utility = GetGoalUtility(goal);
+                if (utility > bestUtility + 0.0001f)
+                {
+                    bestGoal = goal;
+                    bestUtility = utility;
+                }
+            }
+        }
+
+        private void SelectGoal(HumanGoal goal, float utility)
+        {
+            currentGoal = goal;
+            currentGoalUtility = Mathf.Clamp01(utility);
+            currentGoalSelectedAt = Time.time;
+            currentGoalRetainedByCommitment = false;
         }
 
 
@@ -368,21 +659,21 @@ namespace LifeEngine.SimulatedHumans
 
         public void BuildBehaviorTree()
         {
-            // Priority 0: Sleep Sequence
+            // Sleep goal execution
             Sequence sleepSequence = new Sequence("Sleep Sequence", new List<Node>
             {
                 new NeedsSleepNode(aiContext),
                 new SleepNode(aiContext)
             });
 
-            // Priority 1: Flee from Threats
+            // Flee goal execution
             Sequence fleeSequence = new Sequence("Flee Sequence", new List<Node>
             {
                 new CheckDangerNode(aiContext),
                 new FleeNode(aiContext)
             });
 
-            // Priority 2: Eat Food
+            // Eat goal execution
             Sequence eatSequence = new Sequence("Eat Sequence", new List<Node>
             {
                 new NeedsFoodNode(aiContext),
@@ -390,7 +681,7 @@ namespace LifeEngine.SimulatedHumans
                 new EatFoodNode(aiContext)
             });
 
-            // Priority 3: Seek Shelter
+            // Shelter goal execution
             Sequence shelterSequence = new Sequence("Seek Shelter Sequence", new List<Node>
             {
                 new NeedsShelterNode(aiContext),
@@ -454,38 +745,32 @@ namespace LifeEngine.SimulatedHumans
                     })
             });
 
-            // Priority 4: Thermal Comfort
-            Selector thermalSelector = new Selector("Thermal Comfort Goals", new List<Node>
+            Sequence coolDownSequence = new Sequence("Seek Shade Goal", new List<Node>
             {
-                // A. Seek Shade (When Hot)
-                new Sequence("Seek Shade Branch", new List<Node>
-                {
-                    new ActionNode("Check Is Hot", () => currentThermalStatus == ThermalStatus.Hot ? NodeState.Success : NodeState.Failure),
-                    new FindShadeSpotNode(aiContext),
-                    new MoveToShadeNode(aiContext)
-                }),
+                new ActionNode("Check Is Hot", () => currentThermalStatus == ThermalStatus.Hot ? NodeState.Success : NodeState.Failure),
+                new FindShadeSpotNode(aiContext),
+                new MoveToShadeNode(aiContext)
+            });
 
-                // B. Seek Warmth (When Cold)
-                new Sequence("Seek Warmth Branch", new List<Node>
+            Sequence warmUpSequence = new Sequence("Seek Warmth Goal", new List<Node>
+            {
+                new NeedsWarmthNode(aiContext),
+                new Selector("Find or Build Fire", new List<Node>
                 {
-                    new NeedsWarmthNode(aiContext),
-                    new Selector("Find or Build Fire", new List<Node>
+                    new Sequence("Use existing fire", new List<Node>
                     {
-                        new Sequence("Use existing fire", new List<Node>
-                        {
-                            new FindHeatSourceNode(aiContext),
-                            new MoveToHeatSourceNode(aiContext)
-                        }),
-                        new Sequence("Build new fire fallback", new List<Node>
-                        {
-                            new SetCraftingTargetNode(aiContext, campfireBlueprintPrefab),
-                            craftSubtree
-                        })
+                        new FindHeatSourceNode(aiContext),
+                        new MoveToHeatSourceNode(aiContext)
+                    }),
+                    new Sequence("Build new fire fallback", new List<Node>
+                    {
+                        new SetCraftingTargetNode(aiContext, campfireBlueprintPrefab),
+                        craftSubtree
                     })
                 })
             });
 
-            // Priority 5: Fell Tree (Tool Dependency Example)
+            // Fell-tree test goal execution
             Sequence fellTreeSequence = new Sequence("Fell Tree Goal", new List<Node>
             {
                 // Only run if test flag is on
@@ -520,22 +805,26 @@ namespace LifeEngine.SimulatedHumans
                 })
             });
 
-            // Priority 6: Wander
+            // Wander fallback execution
             Sequence wanderSequence = new Sequence("Wander Sequence", new List<Node>
             {
                 new WanderNode(aiContext)
             });
 
-            rootNode = new Selector("Human Behavior", new List<Node>
-            {
-                sleepSequence,
-                fleeSequence,
-                eatSequence,
-                shelterSequence,
-                thermalSelector,
-                fellTreeSequence,
-                wanderSequence
-            });
+            goalBehaviors.Clear();
+            goalBehaviors[HumanGoal.Flee] = fleeSequence;
+            goalBehaviors[HumanGoal.Sleep] = sleepSequence;
+            goalBehaviors[HumanGoal.Eat] = eatSequence;
+            goalBehaviors[HumanGoal.SeekShelter] = shelterSequence;
+            goalBehaviors[HumanGoal.WarmUp] = warmUpSequence;
+            goalBehaviors[HumanGoal.CoolDown] = coolDownSequence;
+            goalBehaviors[HumanGoal.FellTree] = fellTreeSequence;
+            goalBehaviors[HumanGoal.Wander] = wanderSequence;
+
+            rootNode = new UtilityGoalRootNode(
+                goalBehaviors,
+                GoalEvaluationOrder,
+                () => currentGoal);
         }
 
         private Node CreateConversionFallback(World.ResourceType needed, World.ResourceType source, int resultCount, float duration = 1.0f)
@@ -565,7 +854,9 @@ namespace LifeEngine.SimulatedHumans
             if (rootNode == null) return "Initializing...";
             
             string thermalInfo = currentThermalStatus != ThermalStatus.Comfortable ? $" [{currentThermalStatus}]" : "";
-            return rootNode.GetTreeStateAsString(0) + thermalInfo;
+            string retentionInfo = currentGoalRetainedByCommitment ? " [Held]" : "";
+            return $"Goal: {currentGoal} ({currentGoalUtility:F2}){retentionInfo}{thermalInfo}\n" +
+                   rootNode.GetTreeStateAsString(0);
         }
 
     }
