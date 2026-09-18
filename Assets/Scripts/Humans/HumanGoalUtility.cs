@@ -141,7 +141,10 @@ namespace LifeEngine.SimulatedHumans
                 }
             }
 
-            goalNodes.TryGetValue(HumanGoal.Wander, out wanderFallback);
+            if (goalNodes.TryGetValue(HumanGoal.Wander, out Node fallback))
+            {
+                wanderFallback = fallback;
+            }
         }
 
         public override void ResetState()
