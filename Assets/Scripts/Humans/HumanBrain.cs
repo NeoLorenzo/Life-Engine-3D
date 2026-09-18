@@ -443,7 +443,6 @@ namespace LifeEngine.SimulatedHumans
             if (!evaluationDue)
             {
                 currentGoalUtility = GetGoalUtility(currentGoal);
-                currentGoalRetainedByCommitment = false;
                 return;
             }
 
