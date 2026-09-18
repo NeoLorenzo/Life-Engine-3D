@@ -65,7 +65,7 @@ namespace LifeEngine.SimulatedHumans
         public string currentStateDisplay;
 
         [Header("Goal Arbitration")]
-        [SerializeField] private HumanGoal currentGoal = HumanGoal.Wander;
+        [SerializeField] private HumanGoal currentGoal = HumanGoal.None;
         [SerializeField, Range(0f, 1f)] private float currentGoalUtility;
         [SerializeField] private bool currentGoalRetainedByCommitment;
         [SerializeField] private List<HumanGoalScore> goalScores = new List<HumanGoalScore>();
