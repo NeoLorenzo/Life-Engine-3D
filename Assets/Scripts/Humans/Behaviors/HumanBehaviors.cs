@@ -144,34 +144,11 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override NodeState Evaluate()
         {
-            Transform closestThreat;
-            bool hasVisibleThreat = context.Perception.PerformDangerScan(out closestThreat);
-            
-            if (hasVisibleThreat)
-            {
-                context.Memory.SetPrimaryThreat(closestThreat);
-            }
-            
-            // Re-sync memory's active threat list from perception's raw points
-            context.Memory.GetActiveThreatPositions(context.Perception.currentlyVisibleThreatPositions);
-
-            if (hasVisibleThreat && closestThreat != null)
-            {
-                context.PanicTimer = 0f;
-                state = NodeState.Success;
-                return state;
-            }
-
-            context.Memory.SetPrimaryThreat(null);
-            context.PanicTimer += Time.deltaTime;
-
-            if (context.PanicTimer < context.PanicPersistence)
-            {
-                state = NodeState.Success; // Still panicking from recent threat
-                return state;
-            }
-
-            state = NodeState.Failure;
+            // Threat sensing and panic persistence are updated by HumanBrain before goal arbitration,
+            // so danger can become eligible even when the flee subtree was not previously selected.
+            state = context.Brain != null && context.Brain.HasActiveDanger
+                ? NodeState.Success
+                : NodeState.Failure;
             return state;
         }
     }
@@ -405,44 +382,18 @@ namespace LifeEngine.SimulatedHumans.Behaviors
 
         public override string GetDebugText()
         {
-            if (context.OutsideRoomComfortTimer > 0f) return $"Comfort CD: {context.OutsideRoomComfortTimer:F1}s";
+            if (context.Brain != null && context.Brain.ShelterComfortRemaining > 0f)
+                return $"Comfort CD: {context.Brain.ShelterComfortRemaining:F1}s";
             return "Need Room!";
         }
 
         public override NodeState Evaluate()
         {
-            int roomAreaMask = 1 << 3;
-
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(context.Brain.transform.position, out hit, 2.0f, NavMesh.AllAreas))
-            {
-                if ((hit.mask & roomAreaMask) != 0) 
-                {
-                    context.OutsideRoomComfortTimer = Mathf.Max(0f, context.OutsideRoomComfortDuration);
-
-                    if (context.CurrentShelterTarget != Vector3.zero)
-                    {
-                        if (!context.Locomotion.HasReachedDestination(1.5f))
-                        {
-                            state = NodeState.Success;
-                            return state;
-                        }
-                        context.CurrentShelterTarget = Vector3.zero;
-                    }
-                    
-                    state = NodeState.Failure; 
-                    return state;
-                }
-            }
-
-            if (context.OutsideRoomComfortTimer > 0f)
-            {
-                context.OutsideRoomComfortTimer = Mathf.Max(0f, context.OutsideRoomComfortTimer - Time.deltaTime);
-                state = NodeState.Failure;
-                return state;
-            }
-
-            state = NodeState.Success; 
+            // Shelter appraisal is updated independently of behavior execution so the utility layer
+            // can compare it with other needs without first selecting the shelter subtree.
+            state = context.Brain != null && context.Brain.NeedsShelter
+                ? NodeState.Success
+                : NodeState.Failure;
             return state;
         }
     }

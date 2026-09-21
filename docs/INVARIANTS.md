@@ -47,13 +47,17 @@ This document records the foundational invariants and architectural rules of the
 
 ---
 
-## 5. Behavior Tree Evaluation Semantics
+## 5. Goal Arbitration & Behavior Tree Evaluation Semantics
 
-> **Rule**: The behavior tree is stateless across frame transitions; nodes manage task progress through timestamps or shared `HumanContext` state.
+> **Rule**: Top-level motivation is selected by utility arbitration; behavior trees execute the selected goal and remain stateless across frame transitions.
 
-* **Top-Down Priority Evaluation**: Every frame in `HumanBrain.Update()`, `rootNode.ResetState()` is executed followed by `rootNode.Evaluate()`.
-* **Priority Preemption**: If a higher-priority branch (e.g., Sleep at Priority 0 or Danger at Priority 1) succeeds or enters `Running`, lower-priority branches are preempted immediately.
-* **Interruptibility & Cleanup**: Nodes must not assume uninterrupted execution. In-flight timers and target references must fail cleanly if a higher-priority behavior preempts execution.
+* **Utility Before Execution**: `HumanBrain` updates authoritative appraisal state (danger, shelter, physiology, thermal status), computes normalized goal utilities, and selects one eligible `HumanGoal` before behavior-tree execution.
+* **No Fixed Motivation Priority Ladder**: Sleep, hunger, shelter, and thermal needs must not be selected by static behavior-tree branch order. Relative utility determines normal competition between eligible goals.
+* **Emergency Danger Preemption**: A currently visible threat may immediately select `HumanGoal.Flee`, bypassing normal evaluation intervals, commitment time, and switch-margin hysteresis.
+* **Switch Stability**: Normal goal changes are guarded by `minimumGoalCommitmentSeconds` and `goalSwitchMargin`. An ineligible current goal must be abandoned immediately.
+* **Behavior Tree Statelessness**: Every frame in `HumanBrain.Update()`, the stable utility root executes `rootNode.ResetState()` followed by `rootNode.Evaluate()`. Task progress must live in timestamps or shared `HumanContext` state rather than composite-node traversal state.
+* **Procedural Fallback**: If the selected goal subtree cannot currently act (for example, hunger is active but no food is perceptible), the utility root may evaluate Wander as a procedural fallback without changing the selected motivation.
+* **Interruptibility & Cleanup**: Goal subtrees must tolerate arbitration preemption. In-flight timers and target references must fail cleanly when another goal becomes active.
 
 ---
 

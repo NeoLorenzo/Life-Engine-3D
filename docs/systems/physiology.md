@@ -50,17 +50,17 @@ The Physiology system models internal biological drives—specifically sleep pre
 stateDiagram-v2
     [*] --> Awake_Satiated
     Awake_Satiated --> Awake_Hungry: Ghrelin >= 1200 pg/mL (5h)
-    Awake_Hungry --> Eating: Locates Food (Priority 2)
+    Awake_Hungry --> Eating: Eat goal selected + food perceived
     Eating --> Awake_Satiated: 1.5s Eating Timer (Ghrelin = 500)
 
     Awake_Satiated --> Sleepy: Adenosine >= 100 nM (16h)
-    Awake_Hungry --> Sleepy: Adenosine >= 100 nM (Priority 0 overrides Eat)
+    Awake_Hungry --> Sleepy: Sleep goal wins utility arbitration
     Sleepy --> Sleeping: FallAsleep() invoked
     Sleeping --> Awake_Satiated: Adenosine <= 10 nM (8h) -> WakeUp()
 ```
 
 ### Sleep Lifecycle
-1. **Trigger**: When `adenosineConcentration >= 100f`, [`NeedsSleepNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) succeeds (Priority 0 in behavior tree).
+1. **Eligibility**: When `adenosineConcentration >= 100f`, the Sleep goal becomes eligible. Its utility competes with other eligible goals before [`NeedsSleepNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) executes the selected sleep subtree.
 2. **Sleep Onset (`HumanBrain.FallAsleep()`)**:
    * Sets `isSleeping = true`.
    * Disables `HumanLocomotion` and `NavMeshAgent`.
@@ -75,7 +75,7 @@ stateDiagram-v2
    * Repositions $+0.5\text{m}$ on Y and resets rotation to upright ($0^\circ$ pitch/roll).
 
 ### Hunger Lifecycle
-1. **Trigger**: When `ghrelinConcentration >= 1200f`, [`NeedsFoodNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) succeeds (Priority 2).
+1. **Eligibility**: When `ghrelinConcentration >= 1200f`, the Eat goal becomes eligible. Its utility competes with other eligible goals before [`NeedsFoodNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) executes the selected eating subtree.
 2. **Perception**: [`SeesFoodNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) scans for items on `Food` layer (`Layer 8`).
 3. **Execution ([`EatFoodNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs))**:
    * Agent runs toward food target.

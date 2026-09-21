@@ -15,7 +15,10 @@ This guide outlines runtime inspection tools, visual gizmos, diagnostic rays, an
   * `perceivedTemperature`: Smoothed body temperature ($^\circ\text{C}$).
   * `currentThermalStatus`: Current enum state (`Cold`, `Comfortable`, `Hot`).
   * `isInShade`: True if all 5 silhouette raycasts are obstructed.
-  * `currentStateDisplay`: Multiline formatted string showing active node states.
+  * `currentStateDisplay`: Multiline formatted string showing the selected goal, utility, and active node states.
+  * `CurrentGoal` / `CurrentGoalUtility`: Active top-level motivation and normalized score.
+  * `GoalScores`: Utility and eligibility telemetry for every top-level goal.
+  * `CurrentGoalRetainedByCommitment`: Indicates that the last arbitration pass retained the current goal through the switch guard.
   * `inventory` & `toolInventory`: Carried resources and tools.
 
 ---
@@ -53,7 +56,7 @@ Open the debugger via **Window $\rightarrow$ Life Engine $\rightarrow$ Behavior 
 
 ```text
 [Window] Behavior Tree Debugger
-├── Tree Graph View (Hierarchical Bezier Curves)
+├── Tree Graph View (Stable Utility Goal Root + Goal Subtrees)
 │   ├── [Green Box] Running Node (Active execution)
 │   ├── [Grey Box]  Idle / Succeeded / Failed Node
 │   └── Node Name + Dynamic Debug Text (e.g., "Ghrelin: 1250 pg/mL", "Harvesting Oak (45%)")

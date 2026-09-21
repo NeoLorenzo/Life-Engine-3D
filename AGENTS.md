@@ -31,9 +31,11 @@ This document defines core conventions, ownership rules, and development practic
   * [`CraftingBlueprint.AddResource()`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Crafting/CraftingBlueprint.cs) determines the exact count of items accepted.
   * Delivering agents must only deduct the integer amount returned by `AddResource()`. Surplus inventory must remain in the agent's inventory.
   * Conversions must only consume specified input quantities and spawn exact configured outputs.
-* **Behavior Tree Stateless Evaluation**:
-  * The root tree is reset and evaluated anew each frame (`rootNode.ResetState()`, `rootNode.Evaluate()`).
-  * Action nodes must handle interruptibility gracefully, ensuring that external state changes (e.g., target destruction, blueprint completion) fail cleanly without leaving orphaned timers or invalid references.
+* **Utility Goal Arbitration & Stateless Execution**:
+  * Top-level human motivation is selected by utility scoring before behavior-tree execution; do not reintroduce a fixed priority ladder for competing needs.
+  * Visible danger may bypass normal goal commitment/hysteresis. Other goal switches must respect the configured switch guards unless the current goal becomes ineligible.
+  * The stable utility root is reset and evaluated anew each frame (`rootNode.ResetState()`, `rootNode.Evaluate()`).
+  * Goal behavior nodes must handle interruptibility gracefully, ensuring that external state changes (e.g., target destruction, blueprint completion) fail cleanly without leaving orphaned timers or invalid references.
 
 ---
 

@@ -1,6 +1,6 @@
 # Life Engine 3D
 
-**Life Engine 3D** is an experimental 3D artificial-life simulation built in Unity. Autonomous human agents perceive and remember their environment, manage internal physiological needs, seek thermal comfort and shelter, gather resources, craft tools, and interact with a dynamic world through a priority-based behavior-tree architecture.
+**Life Engine 3D** is an experimental 3D artificial-life simulation built in Unity. Autonomous human agents perceive and remember their environment, manage internal physiological needs, arbitrate competing motivations through utility scoring, and execute goals through behavior trees while interacting with a dynamic world.
 
 The project explores how local rules, metabolic drives, perception, memory, and physical constraints produce emergent agent behaviors in a real-time 3D environment.
 
@@ -8,7 +8,7 @@ The project explores how local rules, metabolic drives, perception, memory, and 
 
 ## Current Capabilities
 
-* **Priority-Based AI**: Autonomous human agents driven by an extensible behavior-tree architecture.
+* **Utility-Based Goal Arbitration**: Competing human motivations receive normalized utility scores, with commitment/hysteresis for stable switching and behavior trees retained for procedural execution.
 * **Internal Metabolic Drives**: Sleep pressure (adenosine) and hunger (ghrelin) modeled continuously over game time.
 * **Thermal Comfort & Solar Exposure**: Dynamic diurnal ambient temperatures, 5-point silhouette shade detection from sunlight, and proximity-based heat sources.
 * **Sensory Perception & Spatial Memory**: Visual field of view ($200^\circ$), line-of-sight obstruction raycasts, hearing, and short-term threat memory.

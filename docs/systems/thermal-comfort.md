@@ -80,14 +80,18 @@ $$\Delta T = \text{strength} \cdot \left(1 - \frac{\text{distance}}{\text{radius
 
 ---
 
-## Behavior Tree Integration
+## Goal Arbitration & Behavior Tree Integration
 
-Thermal goals execute under **Priority 4**:
+Thermal status controls goal eligibility, while temperature severity contributes to utility:
 * **Overheating (`ThermalStatus.Hot`)**:
-  * `Seek Shade Branch`: `FindShadeSpotNode` locates nearest tree $> 2.0\text{m}$ tall; `MoveToShadeNode` positions agent $2.5\text{m}$ along the shadow vector until `isInShade == true`.
+  * Enables the `CoolDown` goal.
+  * If selected by utility arbitration, `FindShadeSpotNode` locates a nearby shade-providing tree and `MoveToShadeNode` moves toward the computed shadow position until `isInShade == true`.
 * **Freezing (`ThermalStatus.Cold`)**:
-  * `Seek Warmth Branch`: [`NeedsWarmthNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) evaluates `currentThermalStatus == Cold`.
-  * `Find or Build Fire`: Searches for existing heat sources via `FindHeatSourceNode` $\rightarrow$ `MoveToHeatSourceNode`. If none exist, falls back to `SetCraftingTargetNode(campfireBlueprintPrefab)` and executes the crafting subtree.
+  * Enables the `WarmUp` goal.
+  * If selected, [`NeedsWarmthNode`](file:///c:/UnityProjects/LifeEngine/Assets/Scripts/Humans/Behaviors/HumanBehaviors.cs) confirms the authoritative thermal status.
+  * `Find or Build Fire` searches for existing heat sources via `FindHeatSourceNode` $\rightarrow$ `MoveToHeatSourceNode`. If none exist, it falls back to `SetCraftingTargetNode(campfireBlueprintPrefab)` and the crafting subtree.
+
+The utility layer never determines whether the human is Cold/Comfortable/Hot; that remains exclusively owned by `HumanBrain.UpdateThermalState()`.
 
 ---
 
